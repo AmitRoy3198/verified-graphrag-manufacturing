@@ -1,0 +1,26 @@
+{
+  "failures": [],
+  "maintenance_actions": [],
+  "machines": [
+    {
+      "id": "P1",
+      "name": "Press P1",
+      "machine_type": "Press",
+      "line": "Line A",
+      "cycle_time_s": 42.0,
+      "power_kw": 75.0,
+      "mtbf_h": 160.0,
+      "mttr_h": 3.5,
+      "feeds_buffer": null
+    }
+  ],
+  "buffers": [],
+  "shifts": [],
+  "lines": [
+    {
+      "id": "Line A",
+      "name": "Line A",
+      "final_machine": "P1"
+    }
+  ]
+}

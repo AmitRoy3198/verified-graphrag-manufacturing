@@ -1,0 +1,7 @@
+Maintenance report WO-1101
+
+Date: 2026-03-03
+Machine: Press P2
+Incident INC-201 happened during the Night shift. Failure mode: Hydraulic leak at the main cylinder seal.
+Production downtime: 4.5 h.
+Corrective maintenance: the seal was replaced. Work duration 4.5 h.

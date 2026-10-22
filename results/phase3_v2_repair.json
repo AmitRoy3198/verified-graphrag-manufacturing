@@ -1,0 +1,2003 @@
+{
+  "rounds": [
+    {
+      "round": 0,
+      "conforms": false,
+      "violations": 54,
+      "entities_with_violations": 26,
+      "triples": 274,
+      "precision": 0.613,
+      "recall": 0.939,
+      "f1": 0.742,
+      "correct": 168,
+      "extracted": 274,
+      "gold": 179
+    },
+    {
+      "round": 1,
+      "accepted_repairs": 17,
+      "conforms": false,
+      "violations": 24,
+      "entities_with_violations": 12,
+      "triples": 254,
+      "precision": 0.65,
+      "recall": 0.922,
+      "f1": 0.762,
+      "correct": 165,
+      "extracted": 254,
+      "gold": 179
+    },
+    {
+      "round": 2,
+      "accepted_repairs": 1,
+      "conforms": false,
+      "violations": 21,
+      "entities_with_violations": 11,
+      "triples": 251,
+      "precision": 0.657,
+      "recall": 0.922,
+      "f1": 0.767,
+      "correct": 165,
+      "extracted": 251,
+      "gold": 179
+    },
+    {
+      "round": 3,
+      "accepted_repairs": 0,
+      "conforms": false,
+      "violations": 21,
+      "entities_with_violations": 11,
+      "triples": 251,
+      "precision": 0.657,
+      "recall": 0.922,
+      "f1": 0.767,
+      "correct": 165,
+      "extracted": 251,
+      "gold": 179
+    }
+  ],
+  "attempts": 49,
+  "accepted": 18,
+  "deleted_entities": [
+    "buffer_NULL"
+  ],
+  "deleted_entities_that_exist_in_ground_truth": [],
+  "repairs": [
+    {
+      "round": 1,
+      "entity": "B3",
+      "node": "action_B3",
+      "class": "MaintenanceAction",
+      "plan": {
+        "onMachine": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "onMachine": null,
+        "delete_entity": false
+      },
+      "violations_before": 54,
+      "violations_after": 54,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 25.5
+    },
+    {
+      "round": 1,
+      "entity": "WASHER",
+      "node": "action_WASHER",
+      "class": "MaintenanceAction",
+      "plan": {
+        "durationH": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "durationH": null,
+        "delete_entity": false
+      },
+      "violations_before": 54,
+      "violations_after": 54,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 30.4
+    },
+    {
+      "round": 1,
+      "entity": "B2",
+      "node": "buffer_B2",
+      "class": "Buffer",
+      "plan": {
+        "fedBy": {
+          "choices": [
+            "P2",
+            "W1"
+          ],
+          "current": [
+            "P2",
+            "W1"
+          ]
+        }
+      },
+      "answer": {
+        "fedBy": "P2",
+        "delete_entity": false
+      },
+      "violations_before": 54,
+      "violations_after": 52,
+      "accepted": true,
+      "seconds": 33.2
+    },
+    {
+      "round": 1,
+      "entity": "B3",
+      "node": "buffer_B3",
+      "class": "Buffer",
+      "plan": {
+        "fedBy": {
+          "choices": [
+            "A1",
+            "W1"
+          ],
+          "current": [
+            "A1",
+            "W1"
+          ]
+        },
+        "label": {
+          "choices": [
+            "B3",
+            "Buffer B3"
+          ],
+          "current": [
+            "B3",
+            "Buffer B3"
+          ]
+        }
+      },
+      "answer": {
+        "fedBy": "W1",
+        "label": "Buffer B3",
+        "delete_entity": false
+      },
+      "violations_before": 52,
+      "violations_after": 49,
+      "accepted": true,
+      "seconds": 28.3
+    },
+    {
+      "round": 1,
+      "entity": "B4",
+      "node": "buffer_B4",
+      "class": "Buffer",
+      "plan": {
+        "fedBy": {
+          "choices": [
+            "A1",
+            "I1"
+          ],
+          "current": [
+            "A1",
+            "I1"
+          ]
+        },
+        "feeds": {
+          "choices": [
+            "I1",
+            "K1"
+          ],
+          "current": [
+            "I1",
+            "K1"
+          ]
+        },
+        "label": {
+          "choices": [
+            "Buffer",
+            "Buffer B4"
+          ],
+          "current": [
+            "Buffer",
+            "Buffer B4"
+          ]
+        }
+      },
+      "answer": {
+        "fedBy": "A1",
+        "feeds": "I1",
+        "label": "Buffer B4",
+        "delete_entity": false
+      },
+      "violations_before": 49,
+      "violations_after": 46,
+      "accepted": true,
+      "seconds": 39.8
+    },
+    {
+      "round": 1,
+      "entity": "B5",
+      "node": "buffer_B5",
+      "class": "Buffer",
+      "plan": {
+        "fedBy": {
+          "choices": [
+            "I1",
+            "K1"
+          ],
+          "current": [
+            "I1",
+            "K1"
+          ]
+        }
+      },
+      "answer": {
+        "fedBy": "I1",
+        "delete_entity": false
+      },
+      "violations_before": 46,
+      "violations_after": 45,
+      "accepted": true,
+      "seconds": 26.7
+    },
+    {
+      "round": 1,
+      "entity": "B6",
+      "node": "buffer_B6",
+      "class": "Buffer",
+      "plan": {
+        "capacity": {
+          "choices": null,
+          "current": []
+        },
+        "fedBy": {
+          "choices": null,
+          "current": []
+        },
+        "feeds": {
+          "choices": null,
+          "current": []
+        },
+        "label": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "capacity": null,
+        "fedBy": "P1",
+        "feeds": "A1",
+        "label": "Buffer B6",
+        "delete_entity": false
+      },
+      "violations_before": 45,
+      "violations_after": 43,
+      "accepted": true,
+      "seconds": 34.4
+    },
+    {
+      "round": 1,
+      "entity": "NULL",
+      "node": "buffer_NULL",
+      "class": "Buffer",
+      "plan": {
+        "capacity": {
+          "choices": null,
+          "current": []
+        },
+        "fedBy": {
+          "choices": null,
+          "current": []
+        },
+        "feeds": {
+          "choices": null,
+          "current": []
+        },
+        "label": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "capacity": null,
+        "fedBy": "Press P1",
+        "feeds": "Assembly cell A2",
+        "label": "Buffer B101",
+        "delete_entity": false
+      },
+      "violations_before": 43,
+      "violations_after": 41,
+      "accepted": true,
+      "seconds": 48.0
+    },
+    {
+      "round": 1,
+      "entity": "REDBOX",
+      "node": "buffer_REDBOX",
+      "class": "Buffer",
+      "plan": {
+        "capacity": {
+          "choices": null,
+          "current": []
+        },
+        "feeds": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "capacity": null,
+        "feeds": "REDBOX (a Buffer)",
+        "delete_entity": false
+      },
+      "violations_before": 41,
+      "violations_after": 41,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 21.5
+    },
+    {
+      "round": 1,
+      "entity": "INSPECTIONSTATIONREJECTEDPARTS",
+      "node": "failure_INSPECTIONSTATIONREJECTEDPARTS",
+      "class": "Failure",
+      "plan": {
+        "date": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "date": "2023-03-15",
+        "delete_entity": false
+      },
+      "violations_before": 41,
+      "violations_after": 40,
+      "accepted": true,
+      "seconds": 20.4
+    },
+    {
+      "round": 1,
+      "entity": "NEARMISS1",
+      "node": "failure_NEARMISS1",
+      "class": "Failure",
+      "plan": {
+        "downtimeH": {
+          "choices": null,
+          "current": []
+        },
+        "onMachine": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "downtimeH": null,
+        "onMachine": null,
+        "delete_entity": false
+      },
+      "violations_before": 40,
+      "violations_after": 40,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 20.1
+    },
+    {
+      "round": 1,
+      "entity": "NEARMISS2",
+      "node": "failure_NEARMISS2",
+      "class": "Failure",
+      "plan": {
+        "downtimeH": {
+          "choices": null,
+          "current": []
+        },
+        "onMachine": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "downtimeH": null,
+        "onMachine": null,
+        "delete_entity": false
+      },
+      "violations_before": 40,
+      "violations_after": 40,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 19.4
+    },
+    {
+      "round": 1,
+      "entity": "A",
+      "node": "line_A",
+      "class": "ProductionLine",
+      "plan": {
+        "finalMachine": {
+          "choices": [
+            "A1",
+            "I1",
+            "K1"
+          ],
+          "current": [
+            "A1",
+            "I1",
+            "K1"
+          ]
+        }
+      },
+      "answer": {
+        "finalMachine": "K1",
+        "delete_entity": false
+      },
+      "violations_before": 40,
+      "violations_after": 39,
+      "accepted": true,
+      "seconds": 26.3
+    },
+    {
+      "round": 1,
+      "entity": "LINEA",
+      "node": "line_LINEA",
+      "class": "ProductionLine",
+      "plan": {
+        "finalMachine": {
+          "choices": [
+            "I1",
+            "K1",
+            "P1",
+            "P2",
+            "W1"
+          ],
+          "current": [
+            "I1",
+            "K1",
+            "P1",
+            "P2",
+            "W1"
+          ]
+        }
+      },
+      "answer": {
+        "finalMachine": "P1",
+        "delete_entity": false
+      },
+      "violations_before": 39,
+      "violations_after": 38,
+      "accepted": true,
+      "seconds": 52.2
+    },
+    {
+      "round": 1,
+      "entity": "NULL",
+      "node": "line_NULL",
+      "class": "ProductionLine",
+      "plan": {
+        "finalMachine": {
+          "choices": null,
+          "current": []
+        },
+        "label": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "finalMachine": "Press P2",
+        "label": "ProductionLine_20260303_20260312_20260321_20260326_10_11_12_13_15_16_17",
+        "delete_entity": false
+      },
+      "violations_before": 38,
+      "violations_after": 36,
+      "accepted": true,
+      "seconds": 64.5
+    },
+    {
+      "round": 1,
+      "entity": "A1",
+      "node": "machine_A1",
+      "class": "Machine",
+      "plan": {
+        "label": {
+          "choices": [
+            "Assembly",
+            "Assembly A1",
+            "Assembly cell A1"
+          ],
+          "current": [
+            "Assembly",
+            "Assembly A1",
+            "Assembly cell A1"
+          ]
+        },
+        "partOfLine": {
+          "choices": [
+            "A",
+            "LINEA"
+          ],
+          "current": [
+            "A",
+            "LINEA"
+          ]
+        }
+      },
+      "answer": {
+        "label": "Assembly cell A1",
+        "partOfLine": "A",
+        "delete_entity": false
+      },
+      "violations_before": 36,
+      "violations_after": 34,
+      "accepted": true,
+      "seconds": 79.8
+    },
+    {
+      "round": 1,
+      "entity": "I1",
+      "node": "machine_I1",
+      "class": "Machine",
+      "plan": {
+        "feeds": {
+          "choices": [
+            "B5",
+            "REDBOX"
+          ],
+          "current": [
+            "B5",
+            "REDBOX"
+          ]
+        },
+        "label": {
+          "choices": [
+            "Inspection",
+            "Inspection I1",
+            "Inspection station I1"
+          ],
+          "current": [
+            "Inspection",
+            "Inspection I1",
+            "Inspection station I1"
+          ]
+        },
+        "partOfLine": {
+          "choices": [
+            "A",
+            "LINEA"
+          ],
+          "current": [
+            "A",
+            "LINEA"
+          ]
+        }
+      },
+      "answer": {
+        "feeds": "B5",
+        "label": "Inspection station I1",
+        "partOfLine": "A",
+        "delete_entity": false
+      },
+      "violations_before": 34,
+      "violations_after": 32,
+      "accepted": true,
+      "seconds": 63.4
+    },
+    {
+      "round": 1,
+      "entity": "K1",
+      "node": "machine_K1",
+      "class": "Machine",
+      "plan": {
+        "label": {
+          "choices": [
+            "Packer",
+            "Packer K1"
+          ],
+          "current": [
+            "Packer",
+            "Packer K1"
+          ]
+        },
+        "partOfLine": {
+          "choices": [
+            "A",
+            "LINEA"
+          ],
+          "current": [
+            "A",
+            "LINEA"
+          ]
+        }
+      },
+      "answer": {
+        "label": "Packer K1",
+        "partOfLine": "LINEA",
+        "delete_entity": false
+      },
+      "violations_before": 32,
+      "violations_after": 30,
+      "accepted": true,
+      "seconds": 51.1
+    },
+    {
+      "round": 1,
+      "entity": "P1",
+      "node": "machine_P1",
+      "class": "Machine",
+      "plan": {
+        "feeds": {
+          "choices": [
+            "B1",
+            "B6",
+            "NULL"
+          ],
+          "current": [
+            "B1",
+            "B6",
+            "NULL"
+          ]
+        },
+        "label": {
+          "choices": [
+            "Press",
+            "Press P1"
+          ],
+          "current": [
+            "Press",
+            "Press P1"
+          ]
+        },
+        "partOfLine": {
+          "choices": [
+            "A",
+            "LINEA"
+          ],
+          "current": [
+            "A",
+            "LINEA"
+          ]
+        }
+      },
+      "answer": {
+        "feeds": "B1",
+        "label": "Press P1",
+        "partOfLine": "LINEA",
+        "delete_entity": false
+      },
+      "violations_before": 30,
+      "violations_after": 29,
+      "accepted": true,
+      "seconds": 49.7
+    },
+    {
+      "round": 1,
+      "entity": "P2",
+      "node": "machine_P2",
+      "class": "Machine",
+      "plan": {
+        "label": {
+          "choices": [
+            "Press",
+            "Press P2"
+          ],
+          "current": [
+            "Press",
+            "Press P2"
+          ]
+        },
+        "partOfLine": {
+          "choices": [
+            "A",
+            "LINEA"
+          ],
+          "current": [
+            "A",
+            "LINEA"
+          ]
+        }
+      },
+      "answer": {
+        "label": "Press P2",
+        "partOfLine": "LINEA",
+        "delete_entity": false
+      },
+      "violations_before": 29,
+      "violations_after": 27,
+      "accepted": true,
+      "seconds": 59.3
+    },
+    {
+      "round": 1,
+      "entity": "W1",
+      "node": "machine_W1",
+      "class": "Machine",
+      "plan": {
+        "label": {
+          "choices": [
+            "Washer",
+            "Washer W1"
+          ],
+          "current": [
+            "Washer",
+            "Washer W1"
+          ]
+        },
+        "partOfLine": {
+          "choices": [
+            "A",
+            "LINEA"
+          ],
+          "current": [
+            "A",
+            "LINEA"
+          ]
+        }
+      },
+      "answer": {
+        "label": "Washer W1",
+        "partOfLine": "LINEA",
+        "delete_entity": false
+      },
+      "violations_before": 27,
+      "violations_after": 25,
+      "accepted": true,
+      "seconds": 51.6
+    },
+    {
+      "round": 1,
+      "entity": "WASHER",
+      "node": "machine_WASHER",
+      "class": "Machine",
+      "plan": {
+        "cycleTimeS": {
+          "choices": null,
+          "current": []
+        },
+        "mtbfH": {
+          "choices": null,
+          "current": []
+        },
+        "mttrH": {
+          "choices": null,
+          "current": []
+        },
+        "partOfLine": {
+          "choices": null,
+          "current": []
+        },
+        "powerKW": {
+          "choices": null,
+          "current": []
+        },
+        "feeds": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "cycleTimeS": null,
+        "mtbfH": null,
+        "mttrH": null,
+        "partOfLine": null,
+        "powerKW": null,
+        "feeds": null,
+        "delete_entity": false
+      },
+      "violations_before": 25,
+      "violations_after": 25,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 35.9
+    },
+    {
+      "round": 1,
+      "entity": "EARLY",
+      "node": "shift_EARLY",
+      "class": "Shift",
+      "plan": {
+        "startHour": {
+          "choices": [
+            "0",
+            "4",
+            "6"
+          ],
+          "current": [
+            "0",
+            "4",
+            "6"
+          ]
+        }
+      },
+      "answer": {
+        "startHour": null,
+        "delete_entity": false
+      },
+      "violations_before": 25,
+      "violations_after": 25,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 37.6
+    },
+    {
+      "round": 1,
+      "entity": "LATE",
+      "node": "shift_LATE",
+      "class": "Shift",
+      "plan": {
+        "startHour": {
+          "choices": [
+            "10",
+            "12",
+            "14",
+            "16",
+            "18",
+            "20"
+          ],
+          "current": [
+            "10",
+            "12",
+            "14",
+            "16",
+            "18",
+            "20"
+          ]
+        }
+      },
+      "answer": {
+        "startHour": null,
+        "delete_entity": false
+      },
+      "violations_before": 25,
+      "violations_after": 25,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 36.2
+    },
+    {
+      "round": 1,
+      "entity": "NIGHT",
+      "node": "shift_NIGHT",
+      "class": "Shift",
+      "plan": {
+        "startHour": {
+          "choices": [
+            "16",
+            "20",
+            "22"
+          ],
+          "current": [
+            "16",
+            "20",
+            "22"
+          ]
+        }
+      },
+      "answer": {
+        "startHour": null,
+        "delete_entity": false
+      },
+      "violations_before": 25,
+      "violations_after": 25,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 40.1
+    },
+    {
+      "round": 1,
+      "entity": "NULL",
+      "node": "shift_NULL",
+      "class": "Shift",
+      "plan": {
+        "label": {
+          "choices": null,
+          "current": []
+        },
+        "startHour": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "label": "Late shift",
+        "startHour": null,
+        "delete_entity": false
+      },
+      "violations_before": 25,
+      "violations_after": 24,
+      "accepted": true,
+      "seconds": 28.3
+    },
+    {
+      "round": 2,
+      "entity": "B3",
+      "node": "action_B3",
+      "class": "MaintenanceAction",
+      "plan": {
+        "onMachine": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "onMachine": null,
+        "delete_entity": false
+      },
+      "violations_before": 24,
+      "violations_after": 24,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 30.0
+    },
+    {
+      "round": 2,
+      "entity": "WASHER",
+      "node": "action_WASHER",
+      "class": "MaintenanceAction",
+      "plan": {
+        "durationH": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "durationH": null,
+        "delete_entity": false
+      },
+      "violations_before": 24,
+      "violations_after": 24,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 27.9
+    },
+    {
+      "round": 2,
+      "entity": "B6",
+      "node": "buffer_B6",
+      "class": "Buffer",
+      "plan": {
+        "capacity": {
+          "choices": null,
+          "current": []
+        },
+        "fedBy": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "capacity": null,
+        "fedBy": "A1",
+        "delete_entity": false
+      },
+      "violations_before": 24,
+      "violations_after": 24,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 26.8
+    },
+    {
+      "round": 2,
+      "entity": "NULL",
+      "node": "buffer_NULL",
+      "class": "Buffer",
+      "plan": {
+        "capacity": {
+          "choices": null,
+          "current": []
+        },
+        "fedBy": {
+          "choices": null,
+          "current": []
+        },
+        "feeds": {
+          "choices": null,
+          "current": [
+            "A2"
+          ]
+        }
+      },
+      "answer": {
+        "capacity": null,
+        "fedBy": "A1",
+        "feeds": "A2",
+        "delete_entity": true
+      },
+      "violations_before": 24,
+      "violations_after": 21,
+      "accepted": true,
+      "seconds": 49.9
+    },
+    {
+      "round": 2,
+      "entity": "REDBOX",
+      "node": "buffer_REDBOX",
+      "class": "Buffer",
+      "plan": {
+        "capacity": {
+          "choices": null,
+          "current": []
+        },
+        "fedBy": {
+          "choices": null,
+          "current": []
+        },
+        "feeds": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "capacity": null,
+        "fedBy": "none",
+        "feeds": "none",
+        "delete_entity": false
+      },
+      "violations_before": 21,
+      "violations_after": 21,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 27.8
+    },
+    {
+      "round": 2,
+      "entity": "NEARMISS1",
+      "node": "failure_NEARMISS1",
+      "class": "Failure",
+      "plan": {
+        "downtimeH": {
+          "choices": null,
+          "current": []
+        },
+        "onMachine": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "downtimeH": null,
+        "onMachine": null,
+        "delete_entity": false
+      },
+      "violations_before": 21,
+      "violations_after": 21,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 24.7
+    },
+    {
+      "round": 2,
+      "entity": "NEARMISS2",
+      "node": "failure_NEARMISS2",
+      "class": "Failure",
+      "plan": {
+        "downtimeH": {
+          "choices": null,
+          "current": []
+        },
+        "onMachine": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "downtimeH": null,
+        "onMachine": null,
+        "delete_entity": false
+      },
+      "violations_before": 21,
+      "violations_after": 21,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 26.9
+    },
+    {
+      "round": 2,
+      "entity": "WASHER",
+      "node": "machine_WASHER",
+      "class": "Machine",
+      "plan": {
+        "cycleTimeS": {
+          "choices": null,
+          "current": []
+        },
+        "mtbfH": {
+          "choices": null,
+          "current": []
+        },
+        "mttrH": {
+          "choices": null,
+          "current": []
+        },
+        "partOfLine": {
+          "choices": null,
+          "current": []
+        },
+        "powerKW": {
+          "choices": null,
+          "current": []
+        },
+        "feeds": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "cycleTimeS": null,
+        "mtbfH": null,
+        "mttrH": null,
+        "partOfLine": null,
+        "powerKW": null,
+        "feeds": null,
+        "delete_entity": false
+      },
+      "violations_before": 21,
+      "violations_after": 21,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 34.9
+    },
+    {
+      "round": 2,
+      "entity": "EARLY",
+      "node": "shift_EARLY",
+      "class": "Shift",
+      "plan": {
+        "startHour": {
+          "choices": [
+            "0",
+            "4",
+            "6"
+          ],
+          "current": [
+            "0",
+            "4",
+            "6"
+          ]
+        }
+      },
+      "answer": {
+        "startHour": null,
+        "delete_entity": false
+      },
+      "violations_before": 21,
+      "violations_after": 21,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 40.1
+    },
+    {
+      "round": 2,
+      "entity": "LATE",
+      "node": "shift_LATE",
+      "class": "Shift",
+      "plan": {
+        "startHour": {
+          "choices": [
+            "10",
+            "12",
+            "14",
+            "16",
+            "18",
+            "20"
+          ],
+          "current": [
+            "10",
+            "12",
+            "14",
+            "16",
+            "18",
+            "20"
+          ]
+        }
+      },
+      "answer": {
+        "startHour": null,
+        "delete_entity": false
+      },
+      "violations_before": 21,
+      "violations_after": 21,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 48.3
+    },
+    {
+      "round": 2,
+      "entity": "NIGHT",
+      "node": "shift_NIGHT",
+      "class": "Shift",
+      "plan": {
+        "startHour": {
+          "choices": [
+            "16",
+            "20",
+            "22"
+          ],
+          "current": [
+            "16",
+            "20",
+            "22"
+          ]
+        }
+      },
+      "answer": {
+        "startHour": null,
+        "delete_entity": false
+      },
+      "violations_before": 21,
+      "violations_after": 21,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 41.3
+    },
+    {
+      "round": 2,
+      "entity": "NULL",
+      "node": "shift_NULL",
+      "class": "Shift",
+      "plan": {
+        "startHour": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "startHour": null,
+        "delete_entity": false
+      },
+      "violations_before": 21,
+      "violations_after": 21,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 20.8
+    },
+    {
+      "round": 3,
+      "entity": "B3",
+      "node": "action_B3",
+      "class": "MaintenanceAction",
+      "plan": {
+        "onMachine": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "onMachine": null,
+        "delete_entity": false
+      },
+      "violations_before": 21,
+      "violations_after": 21,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 32.7
+    },
+    {
+      "round": 3,
+      "entity": "WASHER",
+      "node": "action_WASHER",
+      "class": "MaintenanceAction",
+      "plan": {
+        "durationH": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "durationH": null,
+        "delete_entity": false
+      },
+      "violations_before": 21,
+      "violations_after": 21,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 26.9
+    },
+    {
+      "round": 3,
+      "entity": "B6",
+      "node": "buffer_B6",
+      "class": "Buffer",
+      "plan": {
+        "capacity": {
+          "choices": null,
+          "current": []
+        },
+        "fedBy": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "capacity": null,
+        "fedBy": "A1",
+        "delete_entity": false
+      },
+      "violations_before": 21,
+      "violations_after": 21,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 32.3
+    },
+    {
+      "round": 3,
+      "entity": "REDBOX",
+      "node": "buffer_REDBOX",
+      "class": "Buffer",
+      "plan": {
+        "capacity": {
+          "choices": null,
+          "current": []
+        },
+        "fedBy": {
+          "choices": null,
+          "current": []
+        },
+        "feeds": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "capacity": null,
+        "fedBy": "none",
+        "feeds": "none",
+        "delete_entity": false
+      },
+      "violations_before": 21,
+      "violations_after": 21,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 36.5
+    },
+    {
+      "round": 3,
+      "entity": "NEARMISS1",
+      "node": "failure_NEARMISS1",
+      "class": "Failure",
+      "plan": {
+        "downtimeH": {
+          "choices": null,
+          "current": []
+        },
+        "onMachine": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "downtimeH": null,
+        "onMachine": null,
+        "delete_entity": false
+      },
+      "violations_before": 21,
+      "violations_after": 21,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 29.7
+    },
+    {
+      "round": 3,
+      "entity": "NEARMISS2",
+      "node": "failure_NEARMISS2",
+      "class": "Failure",
+      "plan": {
+        "downtimeH": {
+          "choices": null,
+          "current": []
+        },
+        "onMachine": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "downtimeH": null,
+        "onMachine": null,
+        "delete_entity": false
+      },
+      "violations_before": 21,
+      "violations_after": 21,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 25.1
+    },
+    {
+      "round": 3,
+      "entity": "WASHER",
+      "node": "machine_WASHER",
+      "class": "Machine",
+      "plan": {
+        "cycleTimeS": {
+          "choices": null,
+          "current": []
+        },
+        "mtbfH": {
+          "choices": null,
+          "current": []
+        },
+        "mttrH": {
+          "choices": null,
+          "current": []
+        },
+        "partOfLine": {
+          "choices": null,
+          "current": []
+        },
+        "powerKW": {
+          "choices": null,
+          "current": []
+        },
+        "feeds": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "cycleTimeS": null,
+        "mtbfH": null,
+        "mttrH": null,
+        "partOfLine": null,
+        "powerKW": null,
+        "feeds": null,
+        "delete_entity": false
+      },
+      "violations_before": 21,
+      "violations_after": 21,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 31.6
+    },
+    {
+      "round": 3,
+      "entity": "EARLY",
+      "node": "shift_EARLY",
+      "class": "Shift",
+      "plan": {
+        "startHour": {
+          "choices": [
+            "0",
+            "4",
+            "6"
+          ],
+          "current": [
+            "0",
+            "4",
+            "6"
+          ]
+        }
+      },
+      "answer": {
+        "startHour": null,
+        "delete_entity": false
+      },
+      "violations_before": 21,
+      "violations_after": 21,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 35.2
+    },
+    {
+      "round": 3,
+      "entity": "LATE",
+      "node": "shift_LATE",
+      "class": "Shift",
+      "plan": {
+        "startHour": {
+          "choices": [
+            "10",
+            "12",
+            "14",
+            "16",
+            "18",
+            "20"
+          ],
+          "current": [
+            "10",
+            "12",
+            "14",
+            "16",
+            "18",
+            "20"
+          ]
+        }
+      },
+      "answer": {
+        "startHour": null,
+        "delete_entity": false
+      },
+      "violations_before": 21,
+      "violations_after": 21,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 35.2
+    },
+    {
+      "round": 3,
+      "entity": "NIGHT",
+      "node": "shift_NIGHT",
+      "class": "Shift",
+      "plan": {
+        "startHour": {
+          "choices": [
+            "16",
+            "20",
+            "22"
+          ],
+          "current": [
+            "16",
+            "20",
+            "22"
+          ]
+        }
+      },
+      "answer": {
+        "startHour": null,
+        "delete_entity": false
+      },
+      "violations_before": 21,
+      "violations_after": 21,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 38.0
+    },
+    {
+      "round": 3,
+      "entity": "NULL",
+      "node": "shift_NULL",
+      "class": "Shift",
+      "plan": {
+        "startHour": {
+          "choices": null,
+          "current": []
+        }
+      },
+      "answer": {
+        "startHour": null,
+        "delete_entity": false
+      },
+      "violations_before": 21,
+      "violations_after": 21,
+      "accepted": false,
+      "reason": "rolled back: violations did not drop",
+      "seconds": 29.3
+    }
+  ],
+  "final_per_predicate": {
+    "actionType": {
+      "precision": 0.615,
+      "recall": 1.0,
+      "f1": 0.762,
+      "correct": 8,
+      "extracted": 13,
+      "gold": 8
+    },
+    "addresses": {
+      "precision": 0.545,
+      "recall": 1.0,
+      "f1": 0.706,
+      "correct": 6,
+      "extracted": 11,
+      "gold": 6
+    },
+    "capacity": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "correct": 5,
+      "extracted": 5,
+      "gold": 5
+    },
+    "cycleTimeS": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "correct": 6,
+      "extracted": 6,
+      "gold": 6
+    },
+    "date": {
+      "precision": 0.56,
+      "recall": 0.875,
+      "f1": 0.683,
+      "correct": 14,
+      "extracted": 25,
+      "gold": 16
+    },
+    "downtimeH": {
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.889,
+      "correct": 8,
+      "extracted": 10,
+      "gold": 8
+    },
+    "durationH": {
+      "precision": 0.667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "correct": 8,
+      "extracted": 12,
+      "gold": 8
+    },
+    "duringShift": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "correct": 8,
+      "extracted": 8,
+      "gold": 8
+    },
+    "failureMode": {
+      "precision": 0.333,
+      "recall": 0.5,
+      "f1": 0.4,
+      "correct": 4,
+      "extracted": 12,
+      "gold": 8
+    },
+    "feeds": {
+      "precision": 0.909,
+      "recall": 1.0,
+      "f1": 0.952,
+      "correct": 10,
+      "extracted": 11,
+      "gold": 10
+    },
+    "finalMachine": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "correct": 0,
+      "extracted": 4,
+      "gold": 1
+    },
+    "label": {
+      "precision": 0.545,
+      "recall": 0.8,
+      "f1": 0.649,
+      "correct": 12,
+      "extracted": 22,
+      "gold": 15
+    },
+    "machineType": {
+      "precision": 0.857,
+      "recall": 1.0,
+      "f1": 0.923,
+      "correct": 6,
+      "extracted": 7,
+      "gold": 6
+    },
+    "mtbfH": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "correct": 6,
+      "extracted": 6,
+      "gold": 6
+    },
+    "mttrH": {
+      "precision": 0.667,
+      "recall": 0.667,
+      "f1": 0.667,
+      "correct": 4,
+      "extracted": 6,
+      "gold": 6
+    },
+    "onMachine": {
+      "precision": 0.727,
+      "recall": 1.0,
+      "f1": 0.842,
+      "correct": 16,
+      "extracted": 22,
+      "gold": 16
+    },
+    "partOfLine": {
+      "precision": 0.667,
+      "recall": 0.667,
+      "f1": 0.667,
+      "correct": 4,
+      "extracted": 6,
+      "gold": 6
+    },
+    "powerKW": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "correct": 6,
+      "extracted": 6,
+      "gold": 6
+    },
+    "startHour": {
+      "precision": 0.25,
+      "recall": 1.0,
+      "f1": 0.4,
+      "correct": 3,
+      "extracted": 12,
+      "gold": 3
+    },
+    "type": {
+      "precision": 0.66,
+      "recall": 1.0,
+      "f1": 0.795,
+      "correct": 31,
+      "extracted": 47,
+      "gold": 31
+    }
+  },
+  "final_missing": [
+    "action_WO1106 date 2026-03-20",
+    "failure_INC201 failureMode hydraulic leak",
+    "failure_INC204 failureMode pump failure",
+    "failure_INC205 failureMode gripper sensor fault",
+    "failure_INC206 date 2026-03-20",
+    "failure_INC208 failureMode screwdriver torque fault",
+    "line_LINEA finalMachine http://example.org/line/machine_K1",
+    "machine_A1 partOfLine http://example.org/line/line_LINEA",
+    "machine_I1 mttrH 0.75",
+    "machine_I1 partOfLine http://example.org/line/line_LINEA",
+    "machine_K1 mttrH 1.2",
+    "shift_EARLY label early shift",
+    "shift_LATE label late shift",
+    "shift_NIGHT label night shift"
+  ],
+  "final_wrong_or_extra": [
+    "action_B3 actionType corrective",
+    "action_B3 addresses http://example.org/line/failure_NEARMISS1",
+    "action_B3 date 2026-03-10",
+    "action_B3 durationH 0.5",
+    "action_B3 type http://example.org/mfg#MaintenanceAction",
+    "action_INC207 actionType corrective",
+    "action_INC207 addresses http://example.org/line/failure_INC207",
+    "action_INC207 date 2026-03-24",
+    "action_INC207 durationH 0.083",
+    "action_INC207 onMachine http://example.org/line/machine_I1",
+    "action_INC207 type http://example.org/mfg#MaintenanceAction",
+    "action_P2 actionType preventive",
+    "action_P2 addresses http://example.org/line/failure_NEARMISS1",
+    "action_P2 date 2026-03-10",
+    "action_P2 durationH 0.25",
+    "action_P2 onMachine http://example.org/line/machine_P2",
+    "action_P2 type http://example.org/mfg#MaintenanceAction",
+    "action_W1 actionType preventive",
+    "action_W1 date 2026-03-10",
+    "action_W1 durationH 0.25",
+    "action_W1 onMachine http://example.org/line/machine_W1",
+    "action_W1 type http://example.org/mfg#MaintenanceAction",
+    "action_WASHER actionType preventive",
+    "action_WASHER addresses http://example.org/line/failure_INC205",
+    "action_WASHER date 2026-03-17",
+    "action_WASHER onMachine http://example.org/line/machine_WASHER",
+    "action_WASHER type http://example.org/mfg#MaintenanceAction",
+    "action_WO1106 date 2026-03-01",
+    "action_WO1107 addresses http://example.org/line/failure_FAILURE1107",
+    "buffer_B6 feeds http://example.org/line/machine_A1",
+    "buffer_B6 label buffer b6",
+    "buffer_B6 type http://example.org/mfg#Buffer",
+    "buffer_REDBOX label red box",
+    "buffer_REDBOX type http://example.org/mfg#Buffer",
+    "failure_FAILURE1107 date 2026-03-21",
+    "failure_FAILURE1107 downtimeH 2.0",
+    "failure_FAILURE1107 failureMode camera calibration and lens cleaning",
+    "failure_FAILURE1107 onMachine http://example.org/line/machine_I1",
+    "failure_FAILURE1107 type http://example.org/mfg#Failure",
+    "failure_INC201 failureMode hydraulic leak at the main cylinder seal",
+    "failure_INC204 failureMode pump failure in the spray circuit",
+    "failure_INC205 failureMode sensor fault",
+    "failure_INC206 date 2026-03-01",
+    "failure_INC208 failureMode screwdriver torque fault on screwdriver 1",
+    "failure_INSPECTIONSTATIONREJECTEDPARTS date 2023-03-15",
+    "failure_INSPECTIONSTATIONREJECTEDPARTS downtimeH 0.75",
+    "failure_INSPECTIONSTATIONREJECTEDPARTS failureMode rejected parts",
+    "failure_INSPECTIONSTATIONREJECTEDPARTS onMachine http://example.org/line/machine_I1",
+    "failure_INSPECTIONSTATIONREJECTEDPARTS type http://example.org/mfg#Failure",
+    "failure_NEARMISS1 date 2026-03-10",
+    "failure_NEARMISS1 failureMode near_miss",
+    "failure_NEARMISS1 type http://example.org/mfg#Failure",
+    "failure_NEARMISS2 date 2026-03-10",
+    "failure_NEARMISS2 failureMode near_miss",
+    "failure_NEARMISS2 type http://example.org/mfg#Failure",
+    "line_A finalMachine http://example.org/line/machine_K1",
+    "line_A label line a",
+    "line_A type http://example.org/mfg#ProductionLine",
+    "line_LINE1 finalMachine http://example.org/line/machine_K1",
+    "line_LINE1 label line 1",
+    "line_LINE1 type http://example.org/mfg#ProductionLine",
+    "line_LINEA finalMachine http://example.org/line/machine_P1",
+    "line_NULL finalMachine http://example.org/line/machine_P2",
+    "line_NULL label productionline_20260303_20260312_20260321_20260326_10_11_12_13_15_16_17",
+    "line_NULL type http://example.org/mfg#ProductionLine",
+    "machine_A1 partOfLine http://example.org/line/line_A",
+    "machine_I1 mttrH 45.0",
+    "machine_I1 partOfLine http://example.org/line/line_A",
+    "machine_K1 mttrH 12.0",
+    "machine_WASHER label washer",
+    "machine_WASHER machineType washer",
+    "machine_WASHER type http://example.org/mfg#Machine",
+    "shift_EARLY label early",
+    "shift_EARLY startHour 0.0",
+    "shift_EARLY startHour 4.0",
+    "shift_LATE label late",
+    "shift_LATE startHour 10.0",
+    "shift_LATE startHour 12.0",
+    "shift_LATE startHour 16.0",
+    "shift_LATE startHour 18.0",
+    "shift_LATE startHour 20.0",
+    "shift_NIGHT label night",
+    "shift_NIGHT startHour 16.0",
+    "shift_NIGHT startHour 20.0",
+    "shift_NULL label late shift",
+    "shift_NULL type http://example.org/mfg#Shift"
+  ],
+  "remaining_violations": [
+    {
+      "focus": "ex:action_B3",
+      "path": "mfg:onMachine",
+      "value": "",
+      "shape": "shp:Maintenance-onMachine",
+      "component": "MinCount",
+      "message": "A maintenance action must refer to exactly one Machine (onMachine)."
+    },
+    {
+      "focus": "ex:action_WASHER",
+      "path": "mfg:durationH",
+      "value": "",
+      "shape": "shp:Maintenance-duration",
+      "component": "MinCount",
+      "message": "A maintenance action needs exactly one durationH: decimal hours > 0."
+    },
+    {
+      "focus": "ex:buffer_B6",
+      "path": "mfg:capacity",
+      "value": "",
+      "shape": "shp:Buffer-capacity",
+      "component": "MinCount",
+      "message": "A buffer needs exactly one capacity: a whole number of parts > 0."
+    },
+    {
+      "focus": "ex:buffer_B6",
+      "path": "^mfg:feeds",
+      "value": "",
+      "shape": "shp:Buffer-fedBy",
+      "component": "MinCount",
+      "message": "A buffer must be fed by exactly one Machine (the previous station)."
+    },
+    {
+      "focus": "ex:buffer_REDBOX",
+      "path": "mfg:capacity",
+      "value": "",
+      "shape": "shp:Buffer-capacity",
+      "component": "MinCount",
+      "message": "A buffer needs exactly one capacity: a whole number of parts > 0."
+    },
+    {
+      "focus": "ex:buffer_REDBOX",
+      "path": "^mfg:feeds",
+      "value": "",
+      "shape": "shp:Buffer-fedBy",
+      "component": "MinCount",
+      "message": "A buffer must be fed by exactly one Machine (the previous station)."
+    },
+    {
+      "focus": "ex:buffer_REDBOX",
+      "path": "mfg:feeds",
+      "value": "",
+      "shape": "shp:Buffer-feeds",
+      "component": "MinCount",
+      "message": "A buffer must feed exactly one Machine (the next station)."
+    },
+    {
+      "focus": "ex:failure_NEARMISS1",
+      "path": "mfg:downtimeH",
+      "value": "",
+      "shape": "shp:Failure-downtime",
+      "component": "MinCount",
+      "message": "A failure needs exactly one downtimeH: decimal hours > 0."
+    },
+    {
+      "focus": "ex:failure_NEARMISS1",
+      "path": "mfg:onMachine",
+      "value": "",
+      "shape": "shp:Failure-onMachine",
+      "component": "MinCount",
+      "message": "A failure must refer to exactly one Machine (onMachine)."
+    },
+    {
+      "focus": "ex:failure_NEARMISS2",
+      "path": "mfg:downtimeH",
+      "value": "",
+      "shape": "shp:Failure-downtime",
+      "component": "MinCount",
+      "message": "A failure needs exactly one downtimeH: decimal hours > 0."
+    },
+    {
+      "focus": "ex:failure_NEARMISS2",
+      "path": "mfg:onMachine",
+      "value": "",
+      "shape": "shp:Failure-onMachine",
+      "component": "MinCount",
+      "message": "A failure must refer to exactly one Machine (onMachine)."
+    },
+    {
+      "focus": "ex:machine_WASHER",
+      "path": "mfg:cycleTimeS",
+      "value": "",
+      "shape": "shp:Machine-cycleTime",
+      "component": "MinCount",
+      "message": "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0."
+    },
+    {
+      "focus": "ex:machine_WASHER",
+      "path": "mfg:mtbfH",
+      "value": "",
+      "shape": "shp:Machine-mtbf",
+      "component": "MinCount",
+      "message": "A machine needs exactly one mtbfH: a decimal number of hours > 0."
+    },
+    {
+      "focus": "ex:machine_WASHER",
+      "path": "mfg:mttrH",
+      "value": "",
+      "shape": "shp:Machine-mttr",
+      "component": "MinCount",
+      "message": "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH."
+    },
+    {
+      "focus": "ex:machine_WASHER",
+      "path": "mfg:partOfLine",
+      "value": "",
+      "shape": "shp:Machine-partOfLine",
+      "component": "MinCount",
+      "message": "A machine must belong to exactly one ProductionLine (partOfLine)."
+    },
+    {
+      "focus": "ex:machine_WASHER",
+      "path": "mfg:powerKW",
+      "value": "",
+      "shape": "shp:Machine-power",
+      "component": "MinCount",
+      "message": "A machine needs exactly one powerKW: a decimal number of kW > 0."
+    },
+    {
+      "focus": "ex:machine_WASHER",
+      "path": "",
+      "value": "http://example.org/line/machine_WASHER",
+      "shape": "shp:MachineTopologyShape",
+      "component": "SPARQL",
+      "message": "This machine is not the line's final machine, so it must feed a Buffer."
+    },
+    {
+      "focus": "ex:shift_EARLY",
+      "path": "mfg:startHour",
+      "value": "",
+      "shape": "shp:Shift-startHour",
+      "component": "MaxCount",
+      "message": "A shift needs exactly one startHour: a whole number from 0 to 23."
+    },
+    {
+      "focus": "ex:shift_LATE",
+      "path": "mfg:startHour",
+      "value": "",
+      "shape": "shp:Shift-startHour",
+      "component": "MaxCount",
+      "message": "A shift needs exactly one startHour: a whole number from 0 to 23."
+    },
+    {
+      "focus": "ex:shift_NIGHT",
+      "path": "mfg:startHour",
+      "value": "",
+      "shape": "shp:Shift-startHour",
+      "component": "MaxCount",
+      "message": "A shift needs exactly one startHour: a whole number from 0 to 23."
+    },
+    {
+      "focus": "ex:shift_NULL",
+      "path": "mfg:startHour",
+      "value": "",
+      "shape": "shp:Shift-startHour",
+      "component": "MinCount",
+      "message": "A shift needs exactly one startHour: a whole number from 0 to 23."
+    }
+  ]
+}

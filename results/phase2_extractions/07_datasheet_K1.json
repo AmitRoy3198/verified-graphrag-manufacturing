@@ -1,0 +1,26 @@
+{
+  "failures": [],
+  "maintenance_actions": [],
+  "machines": [
+    {
+      "id": "Packer K1",
+      "name": "Packer K1",
+      "machine_type": "Packing",
+      "line": "Line A",
+      "cycle_time_s": 25.0,
+      "power_kw": 12.0,
+      "mtbf_h": 350.0,
+      "mttr_h": 12.0,
+      "feeds_buffer": null
+    }
+  ],
+  "buffers": [],
+  "shifts": [],
+  "lines": [
+    {
+      "id": "Line A",
+      "name": "Line A",
+      "final_machine": "Packer K1"
+    }
+  ]
+}

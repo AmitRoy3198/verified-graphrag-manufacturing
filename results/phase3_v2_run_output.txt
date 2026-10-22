@@ -1,0 +1,53 @@
+{'round': 0, 'conforms': False, 'violations': 54, 'entities_with_violations': 26, 'triples': 274, 'precision': 0.613, 'recall': 0.939, 'f1': 0.742, 'correct': 168, 'extracted': 274, 'gold': 179}
+round 1 B3: accepted=False rolled back: violations did not drop
+round 1 WASHER: accepted=False rolled back: violations did not drop
+round 1 B2: accepted=True 
+round 1 B3: accepted=True 
+round 1 B4: accepted=True 
+round 1 B5: accepted=True 
+round 1 B6: accepted=True 
+round 1 NULL: accepted=True 
+round 1 REDBOX: accepted=False rolled back: violations did not drop
+round 1 INSPECTIONSTATIONREJECTEDPARTS: accepted=True 
+round 1 NEARMISS1: accepted=False rolled back: violations did not drop
+round 1 NEARMISS2: accepted=False rolled back: violations did not drop
+round 1 A: accepted=True 
+round 1 LINEA: accepted=True 
+round 1 NULL: accepted=True 
+round 1 A1: accepted=True 
+round 1 I1: accepted=True 
+round 1 K1: accepted=True 
+round 1 P1: accepted=True 
+round 1 P2: accepted=True 
+round 1 W1: accepted=True 
+round 1 WASHER: accepted=False rolled back: violations did not drop
+round 1 EARLY: accepted=False rolled back: violations did not drop
+round 1 LATE: accepted=False rolled back: violations did not drop
+round 1 NIGHT: accepted=False rolled back: violations did not drop
+round 1 NULL: accepted=True 
+{'round': 1, 'accepted_repairs': 17, 'conforms': False, 'violations': 24, 'entities_with_violations': 12, 'triples': 254, 'precision': 0.65, 'recall': 0.922, 'f1': 0.762, 'correct': 165, 'extracted': 254, 'gold': 179}
+round 2 B3: accepted=False rolled back: violations did not drop
+round 2 WASHER: accepted=False rolled back: violations did not drop
+round 2 B6: accepted=False rolled back: violations did not drop
+round 2 NULL: accepted=True 
+round 2 REDBOX: accepted=False rolled back: violations did not drop
+round 2 NEARMISS1: accepted=False rolled back: violations did not drop
+round 2 NEARMISS2: accepted=False rolled back: violations did not drop
+round 2 WASHER: accepted=False rolled back: violations did not drop
+round 2 EARLY: accepted=False rolled back: violations did not drop
+round 2 LATE: accepted=False rolled back: violations did not drop
+round 2 NIGHT: accepted=False rolled back: violations did not drop
+round 2 NULL: accepted=False rolled back: violations did not drop
+{'round': 2, 'accepted_repairs': 1, 'conforms': False, 'violations': 21, 'entities_with_violations': 11, 'triples': 251, 'precision': 0.657, 'recall': 0.922, 'f1': 0.767, 'correct': 165, 'extracted': 251, 'gold': 179}
+round 3 B3: accepted=False rolled back: violations did not drop
+round 3 WASHER: accepted=False rolled back: violations did not drop
+round 3 B6: accepted=False rolled back: violations did not drop
+round 3 REDBOX: accepted=False rolled back: violations did not drop
+round 3 NEARMISS1: accepted=False rolled back: violations did not drop
+round 3 NEARMISS2: accepted=False rolled back: violations did not drop
+round 3 WASHER: accepted=False rolled back: violations did not drop
+round 3 EARLY: accepted=False rolled back: violations did not drop
+round 3 LATE: accepted=False rolled back: violations did not drop
+round 3 NIGHT: accepted=False rolled back: violations did not drop
+round 3 NULL: accepted=False rolled back: violations did not drop
+{'round': 3, 'accepted_repairs': 0, 'conforms': False, 'violations': 21, 'entities_with_violations': 11, 'triples': 251, 'precision': 0.657, 'recall': 0.922, 'f1': 0.767, 'correct': 165, 'extracted': 251, 'gold': 179}

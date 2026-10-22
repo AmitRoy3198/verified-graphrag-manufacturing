@@ -1,0 +1,34 @@
+{
+  "machines": [
+    {
+      "id": "P1",
+      "name": null,
+      "machine_type": null,
+      "line": "Line A",
+      "cycle_time_s": 42.0,
+      "power_kw": 75.0,
+      "mtbf_h": 160.0,
+      "mttr_h": 3.5,
+      "feeds_buffer": null
+    }
+  ],
+  "buffers": [
+    {
+      "id": "B1",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": "P1",
+      "feeds_machine": null
+    }
+  ],
+  "failures": [],
+  "maintenance_actions": [],
+  "shifts": [],
+  "lines": [
+    {
+      "id": "Line A",
+      "name": null,
+      "final_machine": "P1"
+    }
+  ]
+}

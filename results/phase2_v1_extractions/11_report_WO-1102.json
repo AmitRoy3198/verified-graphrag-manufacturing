@@ -1,0 +1,42 @@
+{
+  "machines": [
+    {
+      "id": "A1",
+      "name": null,
+      "machine_type": null,
+      "line": "Line Z",
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": null
+    }
+  ],
+  "buffers": [],
+  "failures": [],
+  "maintenance_actions": [],
+  "shifts": [
+    {
+      "id": "Early",
+      "name": null,
+      "start_hour": 0
+    },
+    {
+      "id": "Late",
+      "name": null,
+      "start_hour": 6
+    },
+    {
+      "id": "Night",
+      "name": null,
+      "start_hour": 18
+    }
+  ],
+  "lines": [
+    {
+      "id": "Line Z",
+      "name": null,
+      "final_machine": "A1"
+    }
+  ]
+}

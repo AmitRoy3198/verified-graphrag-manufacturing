@@ -1,0 +1,6 @@
+Maintenance report WO-1105
+
+Date: 2026-03-14 (Saturday, no production planned)
+Machine: Press P2
+Preventive maintenance: full hydraulic overhaul, filters and hoses replaced.
+Work duration: 6 h. No incident, no production loss.

@@ -1,0 +1,567 @@
+[
+  {
+    "id": "Q01",
+    "type": "1-hop",
+    "question": "What is the rated power of Press P2 in kW?",
+    "expected": 90,
+    "answer": ">(machine_P2 powerKW 90.0)",
+    "evidence": [
+      "machine_P2 powerKW 90.0"
+    ],
+    "seconds": 56.0,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 3086,
+    "seeds": [
+      "action_P2",
+      "machine_P1",
+      "machine_P2"
+    ],
+    "class_seeds": 0,
+    "facts": 103,
+    "truncated": 0
+  },
+  {
+    "id": "Q02",
+    "type": "1-hop",
+    "question": "What is the cycle time of Washer W1 in seconds?",
+    "expected": 35,
+    "answer": ">(machine_W1 cycleTimeS 35.0)",
+    "evidence": [
+      "machine_W1 cycleTimeS 35.0"
+    ],
+    "seconds": 46.9,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 2496,
+    "seeds": [
+      "action_W1",
+      "action_WASHER",
+      "machine_W1",
+      "machine_WASHER"
+    ],
+    "class_seeds": 0,
+    "facts": 86,
+    "truncated": 0
+  },
+  {
+    "id": "Q03",
+    "type": "1-hop",
+    "question": "What is the mean time to repair (MTTR) of Inspection station I1 in hours?",
+    "expected": 0.75,
+    "answer": "",
+    "evidence": [],
+    "error": "Failed to parse Answer from completion {\"answer\": \"><?=machine_I1->mttrH?></machine_I1, used facts: machine_I1 mttrH 45.0} 45.0 user\u00f3rio de produ\u00e7\u00e3o. A linha A tem tr\u00eas m\u00e1quinas finais: m\u00e1quina A1, m\u00e1quina I1 e m\u00e1quina K1. A m\u00e1quina I1 \u00e9 uma m\u00e1quina de inspe\u00e7\u00e3o e a m\u00e1quina K1 \u00e9 uma m\u00e1quina de embalagem. A m\u00e1quina I1 tem uma MTTR de 45 horas. Portanto, a MTTR da m\u00e1quina de inspe\u00e7\u00e3o I1 \u00e9 45 horas. Como a pergunta pede apenas o n\u00famero, a resposta \u00e9 45. N\u00e3o \u00e9 necess\u00e1rio copiar mais fatores. A MTTR da m\u00e1quina de inspe\u00e7\u00e3o I1 \u00e9 45 horas. Isso foi obtido usando o fato: machine_I1 mttrH 45.0. N\u00e3o h\u00e1 necessidade de usar mais fatores para responder \u00e0 pergunta. A resposta \u00e9 45. N\u00e3o \u00e9 necess\u00e1rio copiar mais fatores. A MTTR da m\u00e1quina de inspe\u00e7\u00e3o I1 \u00e9 45 horas. Isso foi obtido usando o fato: machine_I1 mttrH 45.0. N\u00e3o h\u00e1 necessidade de usar mais fatores para responder \u00e0 pergunta. A resposta \u00e9 45. N\u00e3o \u00e9 necess\u00e1rio copiar mais fatores. A MTTR da m\u00e1quina de inspe\u00e7\u00e3o I1 \u00e9 45 horas. Isso foi obtido usando o fato: machine_I1 mttrH 45.0. N\u00e3o h\u00e1 necessidade de usar mais fatores para responder \u00e0 pergunta. A resposta \u00e9 45. N\u00e3o \u00e9 necess\u00e1rio copiar mais fatores. A MTTR da m\u00e1quina de inspe\u00e7\u00e3o I1 \u00e9 45 horas. Isso foi obtido usando o fato: machine_I1 mttrH 45.0. N\u00e3o h\u00e1 necessidade de usar mais fatores para responder \u00e0 pergunta. A resposta \u00e9 45. N\u00e3o \u00e9 necess\u00e1rio copiar mais fatores. A MTTR da m\u00e1quina de inspe\u00e7\u00e3o I1 \u00e9 45 horas. Isso foi obtido usando o fato: machine_I1 mttrH 45.0. N\u00e3o h\u00e1 necessidade de usar mais fatores para responder \u00e0 pergunta. A resposta \u00e9 45. N\u00e3o \u00e9 necess\u00e1rio copiar mais fatores. A MTTR da m\u00e1quina de inspe\u00e7\u00e3o I1 \u00e9 45 horas. Isso foi obtido usando o fato: machine_I1 mttrH 45.0. N\u00e3o h\u00e1 necessidade de usar mais fatores para responder \u00e0 pergunta. A resposta \u00e9 45. N\u00e3o \u00e9 necess\u00e1rio copiar mais fatores. A MTTR da m\u00e1quina de inspe\u00e7\u00e3o I1 \u00e9 45 horas. Isso foi obtido usando o fato: machine_I1 mttrH 45.0. N\u00e3o h\u00e1 necessidade de usar mais fatores para responder \u00e0 pergunta. A resposta \u00e9 45. N\u00e3o \u00e9 necess\u00e1rio copiar mais fatores. A MTTR da m\u00e1quina de inspe\u00e7\u00e3o I1 \u00e9 45 horas. Isso foi obtido usando o fato: machine_I1 mttrH 45.0. N\u00e3o h\u00e1 necessidade de usar mais fatores para responder \u00e0 pergunta. A resposta \u00e9 45. N\u00e3o \u00e9 necess\u00e1rio copiar mais fatores. A MTTR da m\u00e1quina de inspe\u00e7\u00e3o I1 \u00e9 45 horas. Isso foi obtido usando o fato: machine_I1 mttrH 45.0. N\u00e3o h\u00e1 necessidade de usar mais fatores para responder \u00e0 pergunta. A resposta \u00e9 45. N\u00e3o \u00e9 necess\u00e1rio copiar mais fatores. A MTTR da m\u00e1quina de inspe\u00e7\u00e3o I1 \u00e9 45 horas. Isso foi obtido usando o fato: machine_I1 mttrH 45.0. N\u00e3o h\u00e1 necessidade de usar mais fatores para responder \u00e0 pergunta. A resposta \u00e9 45. N\u00e3o \u00e9 necess\u00e1rio copiar mais fatores. A MTTR da m\u00e1quina de inspe\u00e7\u00e3o I1 \u00e9 45 horas. Isso foi obtido usando o fato: machine_I1 mttrH 45.0. N\u00e3o h\u00e1 necessidade de usar mais fatores para responder \u00e0 pergunta. A resposta \u00e9 45. N\u00e3o \u00e9 necess\u00e1rio copiar mais fatores. A MTTR da m\u00e1quina de inspe\u00e7\u00e3o I1 \u00e9 45 horas. Isso foi obtido usando o fato: machine_I1 mttrH 45.0. N\u00e3o h\u00e1 necessidade de usar mais fatores para responder \u00e0 pergunta. A resposta \u00e9 45. N\u00e3o \u00e9 necess\u00e1rio copiar mais fatores. A MTTR da m\u00e1quina de inspe\u00e7\u00e3o I1 \u00e9 45 horas. Isso foi obtido usando o fato: machine_I1 mttrH 45.0. N\u00e3o h\u00e1 necessidade de usar mais fatores para responder \u00e0 pergunta. A resposta \u00e9 45. N\u00e3o \u00e9 necess\u00e1rio copiar mais fatores. A MTTR da m\u00e1quina de inspe\u00e7\u00e3o I1 \u00e9 45 horas. Isso foi obtido usando o fato: machine_I1 mttrH 45.0. N\u00e3o h\u00e1 necessidade de usar mais fatores para responder \u00e0 pergunta. A resposta \u00e9 45. N\u00e3o \u00e9 necess\u00e1rio copiar mais fatores. A MTTR da m\u00e1quina de inspe\u00e7\u00e3o I1 \u00e9 45 horas. Isso foi obtido usando o fato: machine_I1 mttrH 45.0. N\u00e3o h\u00e1 necessidade de usar mais fatores para responder \u00e0 pergunta. A resposta \u00e9 45. N\u00e3o \u00e9 necess\u00e1rio copiar mais fatores. A MTTR da m\u00e1quina de inspe\u00e7\u00e3o I1 \u00e9 45 horas. Isso foi obtido usando o fato: machine_I1 mttrH 45.0. N\u00e3o h\u00e1 necessidade de usar mais fatores para responder \u00e0 pergunta. A resposta \u00e9 45. N\u00e3o \u00e9 necess\u00e1rio copiar mais fatores. A MTTR da m\u00e1quina de inspe\u00e7\u00e3o I1 \u00e9 45 horas. Isso foi obtido usando o fato: machine_I1 mttrH 45.0. N\u00e3o h\u00e1 necessidade de usar mais fatores para responder \u00e0 pergunta. A resposta \u00e9 45. N\u00e3o \u00e9 necess\u00e1rio copiar mais fatores. A MTTR da m\u00e1quina de inspe\u00e7\u00e3o I1 \u00e9 45 horas. Isso foi obtido usando o fato: machine_I1 mttrH 45.0. N\u00e3o h\u00e1 necessidade de usar mais fatores para responder \u00e0 pergunta. A resposta \u00e9 45. N\u00e3o \u00e9 necess\u00e1rio copiar mais fatores. A MTTR da m\u00e1quina de inspe\u00e7\u00e3o I1 \u00e9 45 horas. Isso foi obtido usando o fato: machine_I1 mttrH 45.0. N\u00e3o h\u00e1 necessidade de usar mais fatores para responder\"}. Got: 1 validation error for Answer\nevidence\n  Field required [type=missing, input_value={'answer': '><?=machine_I...fatores para responder'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/OUTPUT_PARSING_FAILURE ",
+    "seconds": 295.5,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 2406,
+    "seeds": [
+      "machine_I1"
+    ],
+    "class_seeds": 0,
+    "facts": 76,
+    "truncated": 0
+  },
+  {
+    "id": "Q04",
+    "type": "1-hop",
+    "question": "What is the capacity of buffer B3 in parts?",
+    "expected": 25,
+    "answer": ">(buffer_B3 capacity 25)",
+    "evidence": [
+      "buffer_B3 capacity 25",
+      "machine_A1 feeds buffer_B3"
+    ],
+    "seconds": 73.1,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 4651,
+    "seeds": [
+      "action_B3",
+      "buffer_B3",
+      "buffer_B4"
+    ],
+    "class_seeds": 0,
+    "facts": 146,
+    "truncated": 0
+  },
+  {
+    "id": "Q05",
+    "type": "1-hop",
+    "question": "Which machine does buffer B4 feed?",
+    "expected": "I1",
+    "answer": "machine_I1",
+    "evidence": [
+      "buffer_B4 feeds machine_I1",
+      "buffer_B4 feeds machine_K1"
+    ],
+    "seconds": 65.9,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 3460,
+    "seeds": [
+      "buffer_B4"
+    ],
+    "class_seeds": 0,
+    "facts": 107,
+    "truncated": 0
+  },
+  {
+    "id": "Q06",
+    "type": "1-hop",
+    "question": "On which machine did incident INC-207 happen?",
+    "expected": "K1",
+    "answer": "machine_K1",
+    "evidence": [
+      "failure_INC204 onMachine machine_K1",
+      "failure_INC204 date 2026-03-24"
+    ],
+    "seconds": 45.0,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 2229,
+    "seeds": [
+      "action_INC207",
+      "failure_INC207"
+    ],
+    "class_seeds": 0,
+    "facts": 70,
+    "truncated": 0
+  },
+  {
+    "id": "Q07",
+    "type": "1-hop",
+    "question": "What was the failure mode of incident INC-203?",
+    "expected": "Die misalignment",
+    "answer": "Die misalignment",
+    "evidence": [
+      "failure_INC203 failureMode Die misalignment"
+    ],
+    "seconds": 30.5,
+    "exact": true,
+    "lenient": true,
+    "context_chars": 1167,
+    "seeds": [
+      "failure_INC203"
+    ],
+    "class_seeds": 0,
+    "facts": 40,
+    "truncated": 0
+  },
+  {
+    "id": "Q08",
+    "type": "1-hop",
+    "question": "At what hour of the day does the Night shift start?",
+    "expected": 22,
+    "answer": "context",
+    "evidence": [
+      "shift_NIGHT label Night",
+      "shift_NIGHT startHour 16",
+      "shift_NIGHT startHour 20",
+      "shift_NIGHT startHour 22"
+    ],
+    "seconds": 49.0,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 2443,
+    "seeds": [
+      "shift_NIGHT"
+    ],
+    "class_seeds": 0,
+    "facts": 77,
+    "truncated": 0
+  },
+  {
+    "id": "Q09",
+    "type": "1-hop",
+    "question": "Which incident was repaired by work order WO-1104?",
+    "expected": "INC-204",
+    "answer": "failure_INC204",
+    "evidence": [
+      "failure_INC204 date 2026-03-12",
+      "action_WO1104 addresses failure_INC204"
+    ],
+    "seconds": 37.2,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 1356,
+    "seeds": [
+      "action_WO1104"
+    ],
+    "class_seeds": 0,
+    "facts": 46,
+    "truncated": 0
+  },
+  {
+    "id": "Q10",
+    "type": "1-hop",
+    "question": "Which machine is the last station of Line A?",
+    "expected": "K1",
+    "answer": "machine_I1",
+    "evidence": [
+      "line_A finalMachine machine_I1",
+      "line_LINEA finalMachine machine_I1"
+    ],
+    "seconds": 93.1,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 6247,
+    "seeds": [
+      "line_A",
+      "line_LINEA"
+    ],
+    "class_seeds": 0,
+    "facts": 197,
+    "truncated": 0
+  },
+  {
+    "id": "Q11",
+    "type": "multi-hop",
+    "question": "Which machine downstream of the bottleneck machine (the machine with the longest cycle time) has the highest rated power?",
+    "expected": "K1",
+    "answer": "Press P2",
+    "evidence": [
+      "machine_P2 cycleTimeS 48.0",
+      "machine_P2 partOfLine line_A",
+      "machine_P2 powerKW 90.0",
+      "machine_P1 cycleTimeS 42.0",
+      "machine_P1 partOfLine line_A",
+      "machine_P1 powerKW 75.0"
+    ],
+    "seconds": 56.6,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 2329,
+    "seeds": [],
+    "class_seeds": 15,
+    "facts": 87,
+    "truncated": 0
+  },
+  {
+    "id": "Q12",
+    "type": "multi-hop",
+    "question": "Which machine feeds the buffer that feeds Washer W1?",
+    "expected": "P2",
+    "answer": "machine_W1",
+    "evidence": [
+      "machine_W1 feeds buffer_B2",
+      "buffer_B2 feeds machine_W1"
+    ],
+    "seconds": 78.2,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 5038,
+    "seeds": [
+      "action_W1",
+      "action_WASHER",
+      "buffer_B4",
+      "machine_W1",
+      "machine_WASHER"
+    ],
+    "class_seeds": 0,
+    "facts": 162,
+    "truncated": 0
+  },
+  {
+    "id": "Q13",
+    "type": "multi-hop",
+    "question": "What is the rated power, in kW, of the machine that buffer B1 feeds?",
+    "expected": 90,
+    "answer": ">(machine_P2 powerKW 90.0)",
+    "evidence": [
+      "machine_P2 feeds buffer_B2",
+      "buffer_B2 feeds machine_A1",
+      "machine_P2 powerKW 90.0",
+      "buffer_B1 feeds machine_K1",
+      "machine_K1 feeds buffer_B5",
+      "buffer_B5 feeds machine_I1",
+      "machine_I1 feeds buffer_REDBOX",
+      "buffer_REDBOX label red box",
+      "buffer_REDBOX label Buffer B4",
+      "buffer_B4 feeds machine_I1",
+      "buffer_B4 feeds machine_K1",
+      "buffer_B4 label Buffer B4",
+      "buffer_B4 label Buffer"
+    ],
+    "seconds": 102.8,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 5477,
+    "seeds": [
+      "buffer_B1",
+      "buffer_B4"
+    ],
+    "class_seeds": 0,
+    "facts": 172,
+    "truncated": 0
+  },
+  {
+    "id": "Q14",
+    "type": "multi-hop",
+    "question": "On which machine did the failure that was repaired by work order WO-1103 happen?",
+    "expected": "P1",
+    "answer": "machine_P1",
+    "evidence": [
+      "failure_INC203 onMachine machine_P1",
+      "action_WO1103 addresses failure_INC203"
+    ],
+    "seconds": 35.7,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 1167,
+    "seeds": [
+      "action_WO1103"
+    ],
+    "class_seeds": 0,
+    "facts": 40,
+    "truncated": 0
+  },
+  {
+    "id": "Q15",
+    "type": "multi-hop",
+    "question": "What is the capacity, in parts, of the buffer directly upstream of Assembly cell A1?",
+    "expected": 25,
+    "answer": "bytes, ",
+    "evidence": [
+      "machine_A1 feeds buffer_B3",
+      "buffer_B3 label Buffer B3",
+      "buffer_B3 capacity 25"
+    ],
+    "seconds": 86.7,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 4993,
+    "seeds": [
+      "buffer_B4",
+      "machine_A1"
+    ],
+    "class_seeds": 15,
+    "facts": 165,
+    "truncated": 0
+  },
+  {
+    "id": "Q16",
+    "type": "multi-hop",
+    "question": "During which shift did the failure that was repaired by work order WO-1108 happen?",
+    "expected": "Night",
+    "answer": "shift_NIGHT",
+    "evidence": [
+      "failure_INC208 date 2026-03-26",
+      "action_WO1108 addresses failure_INC208",
+      "action_WO1108 onMachine machine_A1",
+      "shift_NIGHT label Night",
+      "shift_NIGHT startHour 16",
+      "shift_NIGHT startHour 20",
+      "shift_NIGHT startHour 22"
+    ],
+    "seconds": 52.9,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 1869,
+    "seeds": [
+      "action_WO1108"
+    ],
+    "class_seeds": 0,
+    "facts": 60,
+    "truncated": 0
+  },
+  {
+    "id": "Q17",
+    "type": "multi-hop",
+    "question": "What is the MTTR, in hours, of the machine on which incident INC-204 happened?",
+    "expected": 1.5,
+    "answer": ">1",
+    "evidence": [
+      "failure_INC204 onMachine machine_W1",
+      "machine_W1 mttrH 1.5"
+    ],
+    "seconds": 33.7,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 1356,
+    "seeds": [
+      "failure_INC204"
+    ],
+    "class_seeds": 0,
+    "facts": 46,
+    "truncated": 0
+  },
+  {
+    "id": "Q18",
+    "type": "multi-hop",
+    "question": "What is the cycle time, in seconds, of the machine that feeds the buffer in front of Packer K1?",
+    "expected": 30,
+    "answer": "strings",
+    "evidence": [
+      "machine_K1 feeds buffer_B5",
+      "buffer_B5 feeds machine_K1",
+      "machine_K1 cycleTimeS 25.0"
+    ],
+    "seconds": 59.0,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 3556,
+    "seeds": [
+      "buffer_B4",
+      "machine_K1"
+    ],
+    "class_seeds": 0,
+    "facts": 111,
+    "truncated": 0
+  },
+  {
+    "id": "Q19",
+    "type": "aggregation",
+    "question": "Which machine is the bottleneck of Line A, i.e. has the longest cycle time?",
+    "expected": "A1",
+    "answer": "machine_P2",
+    "evidence": [
+      "machine_P2 cycleTimeS 48.0",
+      "line_LINEA finalMachine machine_P2"
+    ],
+    "seconds": 90.8,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 6309,
+    "seeds": [
+      "line_A",
+      "line_LINEA"
+    ],
+    "class_seeds": 15,
+    "facts": 199,
+    "truncated": 0
+  },
+  {
+    "id": "Q20",
+    "type": "aggregation",
+    "question": "How many failures happened during the Night shift?",
+    "expected": 4,
+    "answer": ">=3",
+    "evidence": [
+      "failure_INC201 duringShift shift_NIGHT",
+      "failure_INC204 duringShift shift_NIGHT",
+      "failure_INC206 duringShift shift_NIGHT"
+    ],
+    "seconds": 75.7,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 3923,
+    "seeds": [
+      "shift_NIGHT"
+    ],
+    "class_seeds": 16,
+    "facts": 119,
+    "truncated": 0
+  },
+  {
+    "id": "Q21",
+    "type": "aggregation",
+    "question": "What is the total production downtime, in hours, caused by failures of Press P2?",
+    "expected": 9.5,
+    "answer": "context",
+    "evidence": [
+      "failure_INC204 downtimeH 1.5",
+      "failure_INC206 downtimeH 5.0",
+      "failure_INC207 downtimeH 0.5",
+      "failure_INC208 downtimeH 2.5",
+      "failure_INC201 onMachine machine_P2",
+      "failure_INC202 onMachine machine_P2",
+      "failure_INC203 onMachine machine_P1"
+    ],
+    "seconds": 82.1,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 4452,
+    "seeds": [
+      "action_P2",
+      "machine_P1",
+      "machine_P2"
+    ],
+    "class_seeds": 12,
+    "facts": 137,
+    "truncated": 0
+  },
+  {
+    "id": "Q22",
+    "type": "aggregation",
+    "question": "Which machine had the most failures?",
+    "expected": "A1",
+    "answer": "machine_P2",
+    "evidence": [
+      "failure_INC202 onMachine machine_P2",
+      "failure_INC204 onMachine machine_P2"
+    ],
+    "seconds": 61.9,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 3855,
+    "seeds": [],
+    "class_seeds": 19,
+    "facts": 119,
+    "truncated": 0
+  },
+  {
+    "id": "Q23",
+    "type": "aggregation",
+    "question": "How many preventive maintenance actions were carried out?",
+    "expected": 2,
+    "answer": ">= 4, used evidence: action_P2 onMachine machine_P2, action_W1 onMachine machine_W1, action_WASHER onMachine machine_WASHER, action_WO1105 onMachine machine_P2",
+    "evidence": [
+      "action_P2 actionType Preventive",
+      "action_W1 actionType Preventive",
+      "action_WASHER actionType Preventive",
+      "action_WO1105 actionType Preventive"
+    ],
+    "seconds": 58.9,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 2029,
+    "seeds": [],
+    "class_seeds": 13,
+    "facts": 61,
+    "truncated": 0
+  },
+  {
+    "id": "Q24",
+    "type": "aggregation",
+    "question": "What is the total rated power, in kW, of all machines on Line A?",
+    "expected": 246,
+    "answer": ": 233.0, used evidence: machine_P1 powerKW 75.0, machine_P2 powerKW 90.0, machine_W1 powerKW 45.0, machine_A1 powerKW 18.0, machine_I1 powerKW 6.0, machine_K1 powerKW 12.0",
+    "evidence": [
+      "machine_P1 powerKW 75.0",
+      "machine_P2 powerKW 90.0",
+      "machine_W1 powerKW 45.0",
+      "machine_A1 powerKW 18.0",
+      "machine_I1 powerKW 6.0",
+      "machine_K1 powerKW 12.0"
+    ],
+    "seconds": 119.3,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 6309,
+    "seeds": [
+      "line_A",
+      "line_LINEA"
+    ],
+    "class_seeds": 7,
+    "facts": 199,
+    "truncated": 0
+  },
+  {
+    "id": "Q25",
+    "type": "aggregation",
+    "question": "What is the total production downtime, in hours, of all failures?",
+    "expected": 20,
+    "answer": "Nowhere in the provided facts is the production downtime for all failures given. ",
+    "evidence": [],
+    "seconds": 40.3,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 2004,
+    "seeds": [],
+    "class_seeds": 12,
+    "facts": 51,
+    "truncated": 0
+  }
+]

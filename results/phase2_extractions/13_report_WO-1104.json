@@ -1,0 +1,58 @@
+{
+  "failures": [
+    {
+      "id": "INC-204",
+      "machine": "W1",
+      "failure_mode": "Pump failure in the spray circuit",
+      "downtime_h": 1.5,
+      "date": "2026-03-12",
+      "shift": "Night"
+    }
+  ],
+  "maintenance_actions": [
+    {
+      "id": "WO-1104",
+      "machine": "W1",
+      "action_type": "Corrective",
+      "date": "2026-03-12",
+      "duration_h": 1.5,
+      "addresses_failure": "INC-204"
+    }
+  ],
+  "machines": [
+    {
+      "id": "W1",
+      "name": "Washer",
+      "machine_type": "Washer",
+      "line": null,
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": null
+    }
+  ],
+  "buffers": [
+    {
+      "id": "null",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": null,
+      "feeds_machine": null
+    }
+  ],
+  "shifts": [
+    {
+      "id": "Night",
+      "name": "Night",
+      "start_hour": 20
+    }
+  ],
+  "lines": [
+    {
+      "id": "null",
+      "name": null,
+      "final_machine": null
+    }
+  ]
+}

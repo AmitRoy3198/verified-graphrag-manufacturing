@@ -1,0 +1,10 @@
+Machine data sheet - Inspection station I1
+
+Type: camera inspection station (Inspection)
+Installed on: Line A
+Cycle time: 30 s per part
+Rated power: 6 kW
+MTBF: 600 h
+MTTR: 45 min
+
+Notes: three cameras, rejected parts go to a red box next to the station.

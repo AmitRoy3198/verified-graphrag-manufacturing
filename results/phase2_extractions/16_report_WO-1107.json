@@ -1,0 +1,58 @@
+{
+  "failures": [
+    {
+      "id": "failure-1107",
+      "machine": "I1",
+      "failure_mode": "camera calibration and lens cleaning",
+      "downtime_h": 2.0,
+      "date": "2026-03-21",
+      "shift": null
+    }
+  ],
+  "maintenance_actions": [
+    {
+      "id": "WO-1107",
+      "machine": "I1",
+      "action_type": "Preventive",
+      "date": "2026-03-21",
+      "duration_h": 2.0,
+      "addresses_failure": "failure-1107"
+    }
+  ],
+  "machines": [
+    {
+      "id": "I1",
+      "name": "Inspection station I1",
+      "machine_type": "Inspection",
+      "line": null,
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": null
+    }
+  ],
+  "buffers": [
+    {
+      "id": "null",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": null,
+      "feeds_machine": null
+    }
+  ],
+  "shifts": [
+    {
+      "id": "null",
+      "name": null,
+      "start_hour": null
+    }
+  ],
+  "lines": [
+    {
+      "id": "null",
+      "name": null,
+      "final_machine": null
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "failures": [
+    {
+      "id": "INC-201",
+      "machine": "Press P2",
+      "failure_mode": "Hydraulic leak at the main cylinder seal",
+      "downtime_h": 4.5,
+      "date": "2026-03-03",
+      "shift": "Night"
+    }
+  ],
+  "maintenance_actions": [
+    {
+      "id": "WO-1101",
+      "machine": "Press P2",
+      "action_type": "Corrective",
+      "date": "2026-03-03",
+      "duration_h": 4.5,
+      "addresses_failure": "INC-201"
+    }
+  ],
+  "machines": [
+    {
+      "id": "Press P2",
+      "name": "Press",
+      "machine_type": "Press",
+      "line": null,
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": null
+    }
+  ],
+  "buffers": [
+    {
+      "id": "null",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": null,
+      "feeds_machine": null
+    }
+  ],
+  "shifts": [
+    {
+      "id": "Night",
+      "name": "Night",
+      "start_hour": 20
+    }
+  ],
+  "lines": [
+    {
+      "id": "null",
+      "name": null,
+      "final_machine": null
+    }
+  ]
+}

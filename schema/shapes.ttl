@@ -1,0 +1,166 @@
+# SHACL shapes = the rules an extracted graph must satisfy.
+# Every property shape has its own IRI (shp:...) so a violation tells us
+# exactly which rule failed, and the tests can check that each rule can fire.
+# sh:message texts are written for the LLM: Phase 3 sends them back for repair.
+
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix mfg:  <http://example.org/mfg#> .
+@prefix shp:  <http://example.org/mfg/shapes#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# ======================= Machine =======================
+shp:MachineShape a sh:NodeShape ;
+    sh:targetClass mfg:Machine ;
+    sh:property shp:Machine-label, shp:Machine-machineType, shp:Machine-cycleTime,
+                shp:Machine-power, shp:Machine-mtbf, shp:Machine-mttr,
+                shp:Machine-partOfLine, shp:Machine-feeds .
+
+shp:Machine-label a sh:PropertyShape ; sh:path rdfs:label ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+    sh:message "A machine needs exactly one name (rdfs:label)." .
+
+shp:Machine-machineType a sh:PropertyShape ; sh:path mfg:machineType ;
+    sh:minCount 1 ; sh:maxCount 1 ;
+    sh:in ( "Press" "Washer" "Assembly" "Inspection" "Packing" ) ;
+    sh:message "machineType must be exactly one of: Press, Washer, Assembly, Inspection, Packing." .
+
+shp:Machine-cycleTime a sh:PropertyShape ; sh:path mfg:cycleTimeS ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:minExclusive 0 ;
+    sh:message "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0." .
+
+shp:Machine-power a sh:PropertyShape ; sh:path mfg:powerKW ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:minExclusive 0 ;
+    sh:message "A machine needs exactly one powerKW: a decimal number of kW > 0." .
+
+shp:Machine-mtbf a sh:PropertyShape ; sh:path mfg:mtbfH ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:minExclusive 0 ;
+    sh:message "A machine needs exactly one mtbfH: a decimal number of hours > 0." .
+
+shp:Machine-mttr a sh:PropertyShape ; sh:path mfg:mttrH ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:minExclusive 0 ;
+    sh:lessThan mfg:mtbfH ;
+    sh:message "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH." .
+
+shp:Machine-partOfLine a sh:PropertyShape ; sh:path mfg:partOfLine ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:class mfg:ProductionLine ;
+    sh:message "A machine must belong to exactly one ProductionLine (partOfLine)." .
+
+shp:Machine-feeds a sh:PropertyShape ; sh:path mfg:feeds ;
+    sh:maxCount 1 ; sh:class mfg:Buffer ;
+    sh:message "A machine can feed at most one thing, and it must be a Buffer (never a machine directly)." .
+
+# Topology rule (needs SPARQL, plain SHACL cannot say "unless it is the final machine"):
+# every machine that is not the final machine of a line must feed a Buffer.
+shp:MachineTopologyShape a sh:NodeShape ;
+    sh:targetClass mfg:Machine ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "This machine is not the line's final machine, so it must feed a Buffer." ;
+        sh:select """
+            SELECT $this WHERE {
+                FILTER NOT EXISTS { $this <http://example.org/mfg#feeds> ?b .
+                                    ?b a <http://example.org/mfg#Buffer> . }
+                FILTER NOT EXISTS { ?line <http://example.org/mfg#finalMachine> $this . }
+            }""" ;
+    ] .
+
+# ======================= Buffer =======================
+shp:BufferShape a sh:NodeShape ;
+    sh:targetClass mfg:Buffer ;
+    sh:property shp:Buffer-label, shp:Buffer-capacity, shp:Buffer-feeds, shp:Buffer-fedBy .
+
+shp:Buffer-label a sh:PropertyShape ; sh:path rdfs:label ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+    sh:message "A buffer needs exactly one name (rdfs:label)." .
+
+shp:Buffer-capacity a sh:PropertyShape ; sh:path mfg:capacity ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minExclusive 0 ;
+    sh:message "A buffer needs exactly one capacity: a whole number of parts > 0." .
+
+shp:Buffer-feeds a sh:PropertyShape ; sh:path mfg:feeds ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:class mfg:Machine ;
+    sh:message "A buffer must feed exactly one Machine (the next station)." .
+
+shp:Buffer-fedBy a sh:PropertyShape ; sh:path [ sh:inversePath mfg:feeds ] ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:class mfg:Machine ;
+    sh:message "A buffer must be fed by exactly one Machine (the previous station)." .
+
+# ======================= Failure =======================
+shp:FailureShape a sh:NodeShape ;
+    sh:targetClass mfg:Failure ;
+    sh:property shp:Failure-onMachine, shp:Failure-mode, shp:Failure-downtime,
+                shp:Failure-date, shp:Failure-shift .
+
+shp:Failure-onMachine a sh:PropertyShape ; sh:path mfg:onMachine ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:class mfg:Machine ;
+    sh:message "A failure must refer to exactly one Machine (onMachine)." .
+
+shp:Failure-mode a sh:PropertyShape ; sh:path mfg:failureMode ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+    sh:message "A failure needs exactly one failureMode text." .
+
+shp:Failure-downtime a sh:PropertyShape ; sh:path mfg:downtimeH ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:minExclusive 0 ;
+    sh:message "A failure needs exactly one downtimeH: decimal hours > 0." .
+
+shp:Failure-date a sh:PropertyShape ; sh:path mfg:date ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ;
+    sh:message "A failure needs exactly one date in YYYY-MM-DD format." .
+
+shp:Failure-shift a sh:PropertyShape ; sh:path mfg:duringShift ;
+    sh:maxCount 1 ; sh:class mfg:Shift ;
+    sh:message "A failure can happen during at most one Shift." .
+
+# ======================= MaintenanceAction =======================
+shp:MaintenanceShape a sh:NodeShape ;
+    sh:targetClass mfg:MaintenanceAction ;
+    sh:property shp:Maintenance-onMachine, shp:Maintenance-type, shp:Maintenance-date,
+                shp:Maintenance-duration, shp:Maintenance-addresses .
+
+shp:Maintenance-onMachine a sh:PropertyShape ; sh:path mfg:onMachine ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:class mfg:Machine ;
+    sh:message "A maintenance action must refer to exactly one Machine (onMachine)." .
+
+shp:Maintenance-type a sh:PropertyShape ; sh:path mfg:actionType ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:in ( "Preventive" "Corrective" ) ;
+    sh:message "actionType must be exactly one of: Preventive, Corrective." .
+
+shp:Maintenance-date a sh:PropertyShape ; sh:path mfg:date ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:date ;
+    sh:message "A maintenance action needs exactly one date in YYYY-MM-DD format." .
+
+shp:Maintenance-duration a sh:PropertyShape ; sh:path mfg:durationH ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ; sh:minExclusive 0 ;
+    sh:message "A maintenance action needs exactly one durationH: decimal hours > 0." .
+
+shp:Maintenance-addresses a sh:PropertyShape ; sh:path mfg:addresses ;
+    sh:maxCount 1 ; sh:class mfg:Failure ;
+    sh:message "A maintenance action can address at most one Failure." .
+
+# ======================= Shift =======================
+shp:ShiftShape a sh:NodeShape ;
+    sh:targetClass mfg:Shift ;
+    sh:property shp:Shift-label, shp:Shift-startHour .
+
+shp:Shift-label a sh:PropertyShape ; sh:path rdfs:label ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+    sh:message "A shift needs exactly one name (rdfs:label)." .
+
+shp:Shift-startHour a sh:PropertyShape ; sh:path mfg:startHour ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ;
+    sh:minInclusive 0 ; sh:maxInclusive 23 ;
+    sh:message "A shift needs exactly one startHour: a whole number from 0 to 23." .
+
+# ======================= ProductionLine =======================
+shp:LineShape a sh:NodeShape ;
+    sh:targetClass mfg:ProductionLine ;
+    sh:property shp:Line-label, shp:Line-finalMachine .
+
+shp:Line-label a sh:PropertyShape ; sh:path rdfs:label ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ;
+    sh:message "A production line needs exactly one name (rdfs:label)." .
+
+shp:Line-finalMachine a sh:PropertyShape ; sh:path mfg:finalMachine ;
+    sh:minCount 1 ; sh:maxCount 1 ; sh:class mfg:Machine ;
+    sh:message "A production line must name exactly one finalMachine." .

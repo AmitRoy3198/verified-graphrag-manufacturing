@@ -1,0 +1,35 @@
+{
+  "ontology": {
+    "classes": 6,
+    "object_properties": 6,
+    "datatype_properties": 12
+  },
+  "shapes": {
+    "node_shapes": 7,
+    "property_shapes": 26,
+    "constraints_by_type": {
+      "minCount": 23,
+      "maxCount": 26,
+      "datatype": 15,
+      "class": 9,
+      "in": 2,
+      "minExclusive": 7,
+      "minInclusive": 1,
+      "maxInclusive": 1,
+      "lessThan": 1,
+      "sparql": 1
+    },
+    "constraints_total": 86
+  },
+  "valid_fixture_conforms": true,
+  "example_violation_powerKW_minus_5": [
+    {
+      "focus": "ex:M1",
+      "path": "mfg:powerKW",
+      "value": "-5",
+      "shape": "shp:Machine-power",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one powerKW: a decimal number of kW > 0."
+    }
+  ]
+}

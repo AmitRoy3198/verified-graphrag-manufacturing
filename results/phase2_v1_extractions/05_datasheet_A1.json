@@ -1,0 +1,14 @@
+{
+  "machines": [],
+  "buffers": [],
+  "failures": [],
+  "maintenance_actions": [],
+  "shifts": [],
+  "lines": [
+    {
+      "id": "Line A",
+      "name": null,
+      "final_machine": null
+    }
+  ]
+}

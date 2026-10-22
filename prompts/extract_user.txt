@@ -1,0 +1,6 @@
+Document:
+"""
+{document}
+"""
+
+Return the JSON with every fact this document states.

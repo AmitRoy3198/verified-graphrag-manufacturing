@@ -1,0 +1,26 @@
+{
+  "failures": [],
+  "maintenance_actions": [],
+  "machines": [
+    {
+      "id": "A1",
+      "name": "Assembly cell A1",
+      "machine_type": "Assembly",
+      "line": "Line A",
+      "cycle_time_s": 55.0,
+      "power_kw": 18.0,
+      "mtbf_h": 220.0,
+      "mttr_h": 2.0,
+      "feeds_buffer": null
+    }
+  ],
+  "buffers": [],
+  "shifts": [],
+  "lines": [
+    {
+      "id": "A",
+      "name": "Line A",
+      "final_machine": "A1"
+    }
+  ]
+}

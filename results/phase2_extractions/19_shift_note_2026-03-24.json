@@ -1,0 +1,69 @@
+{
+  "failures": [
+    {
+      "id": "INC-207",
+      "machine": "Packer K1",
+      "failure_mode": "Film jam",
+      "downtime_h": 0.5,
+      "date": "2026-03-24",
+      "shift": "Early"
+    }
+  ],
+  "maintenance_actions": [
+    {
+      "id": "INC-207",
+      "machine": "Inspection I1",
+      "action_type": "Corrective",
+      "date": "2026-03-24",
+      "duration_h": 0.0833333333333333,
+      "addresses_failure": "INC-207"
+    }
+  ],
+  "machines": [
+    {
+      "id": "Inspection I1",
+      "name": "Inspection",
+      "machine_type": "Inspection",
+      "line": null,
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": "B4"
+    },
+    {
+      "id": "Packer K1",
+      "name": "Packer",
+      "machine_type": "Packing",
+      "line": null,
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": null
+    }
+  ],
+  "buffers": [
+    {
+      "id": "B4",
+      "name": "Buffer",
+      "capacity": null,
+      "fed_by_machine": "Inspection I1",
+      "feeds_machine": "Packer K1"
+    }
+  ],
+  "shifts": [
+    {
+      "id": "Early",
+      "name": "Early",
+      "start_hour": 0
+    }
+  ],
+  "lines": [
+    {
+      "id": "Line 1",
+      "name": "Line 1",
+      "final_machine": "Packer K1"
+    }
+  ]
+}

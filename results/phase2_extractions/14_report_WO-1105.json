@@ -1,0 +1,29 @@
+{
+  "failures": [],
+  "maintenance_actions": [
+    {
+      "id": "WO-1105",
+      "machine": "Press P2",
+      "action_type": "Preventive",
+      "date": "2026-03-14",
+      "duration_h": 6.0,
+      "addresses_failure": null
+    }
+  ],
+  "machines": [
+    {
+      "id": "Press P2",
+      "name": "Press",
+      "machine_type": "Press",
+      "line": null,
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": null
+    }
+  ],
+  "buffers": [],
+  "shifts": [],
+  "lines": []
+}

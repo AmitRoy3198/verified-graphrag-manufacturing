@@ -1,0 +1,6 @@
+Shift plan, Line A, March 2026
+
+The Early shift starts at 06:00.
+The Late shift starts at 14:00.
+The Night shift starts at 22:00.
+Each shift lasts 8 hours including a 30-minute break.

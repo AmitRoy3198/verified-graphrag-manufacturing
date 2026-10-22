@@ -1,0 +1,109 @@
+@prefix ex: <http://example.org/line/> .
+@prefix mfg: <http://example.org/mfg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:buffer_B10 a mfg:Buffer ;
+    mfg:feeds ex:machine_A1,
+        ex:machine_I1,
+        ex:machine_P1,
+        ex:machine_P2 .
+
+ex:line_A a mfg:ProductionLine ;
+    rdfs:label "Line A" .
+
+ex:shift_EARLY a mfg:Shift ;
+    mfg:startHour 0,
+        4,
+        6 .
+
+ex:shift_LATE a mfg:Shift ;
+    mfg:startHour 6,
+        14,
+        17,
+        18 .
+
+ex:shift_NIGHT a mfg:Shift ;
+    mfg:startHour 18,
+        20,
+        22 .
+
+ex:buffer_B2 a mfg:Buffer ;
+    mfg:feeds ex:machine_W1 .
+
+ex:buffer_B3 a mfg:Buffer ;
+    mfg:feeds ex:machine_A1 .
+
+ex:buffer_B4 a mfg:Buffer ;
+    mfg:feeds ex:machine_I1 .
+
+ex:buffer_B5 a mfg:Buffer ;
+    mfg:feeds ex:machine_K1 .
+
+ex:machine_W1 a mfg:Machine ;
+    mfg:cycleTimeS 35.0 ;
+    mfg:feeds ex:buffer_B3 ;
+    mfg:machineType "Washer" ;
+    mfg:mtbfH 400.0 ;
+    mfg:mttrH 1.5 ;
+    mfg:partOfLine ex:line_LINEA ;
+    mfg:powerKW 45.0 .
+
+ex:buffer_B1 a mfg:Buffer ;
+    mfg:feeds ex:machine_P1 .
+
+ex:line_LINEZ a mfg:ProductionLine ;
+    mfg:finalMachine ex:machine_A1,
+        ex:machine_I1,
+        ex:machine_K1,
+        ex:machine_P1,
+        ex:machine_P2 .
+
+ex:machine_P2 a mfg:Machine ;
+    mfg:cycleTimeS 48.0 ;
+    mfg:feeds ex:buffer_B1,
+        ex:buffer_B2 ;
+    mfg:machineType "Press" ;
+    mfg:mtbfH 140.0 ;
+    mfg:mttrH 4.0 ;
+    mfg:partOfLine ex:line_LINEA,
+        ex:line_LINEZ ;
+    mfg:powerKW 90.0 .
+
+ex:machine_K1 a mfg:Machine ;
+    mfg:cycleTimeS 25.0 ;
+    mfg:mtbfH 350.0 ;
+    mfg:mttrH 12.0 ;
+    mfg:partOfLine ex:line_LINEA ;
+    mfg:powerKW 12.0 .
+
+ex:machine_A1 a mfg:Machine ;
+    mfg:feeds ex:buffer_B4 ;
+    mfg:partOfLine ex:line_LINEA,
+        ex:line_LINEZ .
+
+ex:machine_I1 a mfg:Machine ;
+    mfg:cycleTimeS 30.0 ;
+    mfg:feeds ex:buffer_B5 ;
+    mfg:machineType "Inspection" ;
+    mfg:mtbfH 600.0 ;
+    mfg:mttrH 45.0 ;
+    mfg:partOfLine ex:line_LINEA ;
+    mfg:powerKW 6.0 .
+
+ex:machine_P1 a mfg:Machine ;
+    mfg:cycleTimeS 42.0 ;
+    mfg:feeds ex:buffer_B1 ;
+    mfg:mtbfH 160.0 ;
+    mfg:mttrH 3.5 ;
+    mfg:partOfLine ex:line_LINEA ;
+    mfg:powerKW 75.0 .
+
+ex:line_LINEA a mfg:ProductionLine ;
+    rdfs:label "Line A" ;
+    mfg:finalMachine ex:machine_A1,
+        ex:machine_I1,
+        ex:machine_K1,
+        ex:machine_M3,
+        ex:machine_P1 .
+

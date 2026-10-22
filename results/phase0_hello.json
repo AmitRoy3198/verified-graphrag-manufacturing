@@ -1,0 +1,12 @@
+{
+  "model": "qwen2.5:3b-instruct",
+  "temperature": 0,
+  "seed": 42,
+  "question": "What does a buffer do between two machines in a production line?",
+  "answers": [
+    "A buffer stores and regulates the flow of products between two machines in a production line.",
+    "A buffer stores and regulates the flow of products between two machines in a production line.",
+    "A buffer stores and regulates the flow of products between two machines in a production line."
+  ],
+  "identical": true
+}

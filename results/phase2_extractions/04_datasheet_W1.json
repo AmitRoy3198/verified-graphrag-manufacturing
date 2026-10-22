@@ -1,0 +1,26 @@
+{
+  "failures": [],
+  "maintenance_actions": [],
+  "machines": [
+    {
+      "id": "W1",
+      "name": "Washer W1",
+      "machine_type": "Washer",
+      "line": "Line A",
+      "cycle_time_s": 35.0,
+      "power_kw": 45.0,
+      "mtbf_h": 400.0,
+      "mttr_h": 1.5,
+      "feeds_buffer": null
+    }
+  ],
+  "buffers": [],
+  "shifts": [],
+  "lines": [
+    {
+      "id": "Line A",
+      "name": "Line A",
+      "final_machine": "W1"
+    }
+  ]
+}

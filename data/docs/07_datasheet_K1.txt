@@ -1,0 +1,10 @@
+Machine data sheet - Packer K1
+
+Type: case packer (Packing)
+Installed on: Line A
+Cycle time: 25 s per part
+Rated power: 12 kW
+MTBF: 350 h
+MTTR: 72 min
+
+Notes: packs 12 housings per box and wraps each pallet in film.

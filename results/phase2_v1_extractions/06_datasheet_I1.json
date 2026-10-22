@@ -1,0 +1,20 @@
+{
+  "machines": [
+    {
+      "id": "I1",
+      "name": null,
+      "machine_type": null,
+      "line": "Line A",
+      "cycle_time_s": 30.0,
+      "power_kw": 6.0,
+      "mtbf_h": 600.0,
+      "mttr_h": 45.0,
+      "feeds_buffer": null
+    }
+  ],
+  "buffers": [],
+  "failures": [],
+  "maintenance_actions": [],
+  "shifts": [],
+  "lines": []
+}

@@ -1,0 +1,30 @@
+{
+  "machines": [],
+  "buffers": [],
+  "failures": [],
+  "maintenance_actions": [],
+  "shifts": [
+    {
+      "id": "Late",
+      "name": null,
+      "start_hour": 17
+    },
+    {
+      "id": "Early",
+      "name": null,
+      "start_hour": 4
+    },
+    {
+      "id": "Night",
+      "name": null,
+      "start_hour": 22
+    }
+  ],
+  "lines": [
+    {
+      "id": "Line A",
+      "name": null,
+      "final_machine": "M3"
+    }
+  ]
+}

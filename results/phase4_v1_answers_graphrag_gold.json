@@ -1,0 +1,721 @@
+[
+  {
+    "id": "Q01",
+    "type": "1-hop",
+    "question": "What is the rated power of Press P2 in kW?",
+    "expected": 90,
+    "answer": ">(machine_P2 powerKW 90.0)",
+    "evidence": [
+      "machine_P2 powerKW 90.0"
+    ],
+    "seconds": 53.7,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 1721,
+    "seeds": [
+      "machine_P2"
+    ],
+    "class_seeds": 0,
+    "facts": 58,
+    "truncated": 0
+  },
+  {
+    "id": "Q02",
+    "type": "1-hop",
+    "question": "What is the cycle time of Washer W1 in seconds?",
+    "expected": 35,
+    "answer": ">35",
+    "evidence": [
+      "machine_W1 cycleTimeS 35.0",
+      "machine_W1 feeds buffer_B3"
+    ],
+    "seconds": 42.3,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 1256,
+    "seeds": [
+      "machine_W1"
+    ],
+    "class_seeds": 0,
+    "facts": 44,
+    "truncated": 0
+  },
+  {
+    "id": "Q03",
+    "type": "1-hop",
+    "question": "What is the mean time to repair (MTTR) of Inspection station I1 in hours?",
+    "expected": 0.75,
+    "answer": ".75",
+    "evidence": [
+      "machine_I1 mttrH 0.75",
+      "machine_I1 label Inspection station I1"
+    ],
+    "seconds": 37.5,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 979,
+    "seeds": [
+      "machine_I1"
+    ],
+    "class_seeds": 0,
+    "facts": 35,
+    "truncated": 0
+  },
+  {
+    "id": "Q04",
+    "type": "1-hop",
+    "question": "What is the capacity of buffer B3 in parts?",
+    "expected": 25,
+    "answer": ">(buffer_B3 capacity 25)",
+    "evidence": [
+      "buffer_B3 capacity 25",
+      "machine_A1 feeds buffer_B4",
+      "machine_A1 feeds buffer_B3"
+    ],
+    "seconds": 45.7,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 1958,
+    "seeds": [
+      "buffer_B3"
+    ],
+    "class_seeds": 0,
+    "facts": 62,
+    "truncated": 0
+  },
+  {
+    "id": "Q05",
+    "type": "1-hop",
+    "question": "Which machine does buffer B4 feed?",
+    "expected": "I1",
+    "answer": "machine_I1",
+    "evidence": [
+      "buffer_B4 feeds machine_I1",
+      "machine_I1 label Inspection station I1",
+      "machine_I1 partOfLine line_LINEA",
+      "line_LINEA finalMachine machine_K1",
+      "line_LINEA label Line A",
+      "machine_A1 feeds buffer_B4",
+      "machine_A1 label Assembly cell A1",
+      "machine_A1 partOfLine line_LINEA",
+      "machine_A1 machineType Assembly",
+      "machine_A1 mtbfH 220.0",
+      "machine_A1 mttrH 2.0",
+      "machine_A1 powerKW 18.0",
+      "machine_I1 cycleTimeS 30.0",
+      "machine_I1 machineType Inspection",
+      "machine_I1 mtbfH 600.0",
+      "machine_I1 mttrH 0.75",
+      "machine_I1 powerKW 6.0"
+    ],
+    "seconds": 67.2,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 1760,
+    "seeds": [
+      "buffer_B4"
+    ],
+    "class_seeds": 0,
+    "facts": 56,
+    "truncated": 0
+  },
+  {
+    "id": "Q06",
+    "type": "1-hop",
+    "question": "On which machine did incident INC-207 happen?",
+    "expected": "K1",
+    "answer": "machine_K1",
+    "evidence": [
+      "failure_INC207 onMachine machine_K1",
+      "machine_K1 partOfLine line_LINEA"
+    ],
+    "seconds": 31.4,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 551,
+    "seeds": [
+      "failure_INC207"
+    ],
+    "class_seeds": 0,
+    "facts": 19,
+    "truncated": 0
+  },
+  {
+    "id": "Q07",
+    "type": "1-hop",
+    "question": "What was the failure mode of incident INC-203?",
+    "expected": "Die misalignment",
+    "answer": "Die misalignment",
+    "evidence": [
+      "failure_INC203 failureMode Die misalignment",
+      "failure_INC203 date 2026-03-09",
+      "failure_INC203 onMachine machine_P1"
+    ],
+    "seconds": 39.5,
+    "exact": true,
+    "lenient": true,
+    "context_chars": 748,
+    "seeds": [
+      "failure_INC203"
+    ],
+    "class_seeds": 0,
+    "facts": 25,
+    "truncated": 0
+  },
+  {
+    "id": "Q08",
+    "type": "1-hop",
+    "question": "At what hour of the day does the Night shift start?",
+    "expected": 22,
+    "answer": ">(shift_NIGHT startHour 22)",
+    "evidence": [
+      "shift_NIGHT label Night shift",
+      "shift_NIGHT startHour 22"
+    ],
+    "seconds": 56.1,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 2092,
+    "seeds": [
+      "shift_NIGHT"
+    ],
+    "class_seeds": 0,
+    "facts": 66,
+    "truncated": 0
+  },
+  {
+    "id": "Q09",
+    "type": "1-hop",
+    "question": "Which incident was repaired by work order WO-1104?",
+    "expected": "INC-204",
+    "answer": "failure_INC204",
+    "evidence": [
+      "action_WO1104 addresses failure_INC204",
+      "action_WO1104 actionType Corrective",
+      "action_WO1104 addresses failure_INC204"
+    ],
+    "seconds": 40.3,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 825,
+    "seeds": [
+      "action_WO1104"
+    ],
+    "class_seeds": 0,
+    "facts": 28,
+    "truncated": 0
+  },
+  {
+    "id": "Q10",
+    "type": "1-hop",
+    "question": "Which machine is the last station of Line A?",
+    "expected": "K1",
+    "answer": "machine_K1",
+    "evidence": [
+      "line_LINEA finalMachine machine_K1",
+      "line_LINEA label Line A"
+    ],
+    "seconds": 102.9,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 4407,
+    "seeds": [
+      "line_LINEA"
+    ],
+    "class_seeds": 0,
+    "facts": 142,
+    "truncated": 0
+  },
+  {
+    "id": "Q11",
+    "type": "multi-hop",
+    "question": "Which machine downstream of the bottleneck machine (the machine with the longest cycle time) has the highest rated power?",
+    "expected": "K1",
+    "answer": "Press P2",
+    "evidence": [
+      "machine_P2 cycleTimeS 48.0",
+      "machine_P2 feeds buffer_B2",
+      "machine_P2 label Press P2",
+      "machine_P2 machineType Press",
+      "machine_P2 mtbfH 140.0",
+      "machine_P2 mttrH 4.0",
+      "machine_P2 partOfLine line_LINEA",
+      "machine_P2 powerKW 90.0",
+      "machine_W1 cycleTimeS 35.0",
+      "machine_W1 feeds buffer_B3",
+      "machine_W1 label Washer W1",
+      "machine_W1 machineType Washer",
+      "machine_W1 mtbfH 400.0",
+      "machine_W1 mttrH 1.5",
+      "machine_W1 partOfLine line_LINEA",
+      "machine_W1 powerKW 45.0"
+    ],
+    "seconds": 89.0,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 1648,
+    "seeds": [],
+    "class_seeds": 11,
+    "facts": 62,
+    "truncated": 0
+  },
+  {
+    "id": "Q12",
+    "type": "multi-hop",
+    "question": "Which machine feeds the buffer that feeds Washer W1?",
+    "expected": "P2",
+    "answer": "machine_P2",
+    "evidence": [
+      "machine_P2 feeds buffer_B2",
+      "buffer_B2 feeds machine_W1"
+    ],
+    "seconds": 46.3,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 1256,
+    "seeds": [
+      "machine_W1"
+    ],
+    "class_seeds": 0,
+    "facts": 44,
+    "truncated": 0
+  },
+  {
+    "id": "Q13",
+    "type": "multi-hop",
+    "question": "What is the rated power, in kW, of the machine that buffer B1 feeds?",
+    "expected": 90,
+    "answer": "",
+    "evidence": [
+      "machine_P1 powerKW 75.0",
+      "machine_P1 feeds buffer_B1"
+    ],
+    "seconds": 57.3,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 1800,
+    "seeds": [
+      "buffer_B1"
+    ],
+    "class_seeds": 0,
+    "facts": 58,
+    "truncated": 0
+  },
+  {
+    "id": "Q14",
+    "type": "multi-hop",
+    "question": "On which machine did the failure that was repaired by work order WO-1103 happen?",
+    "expected": "P1",
+    "answer": "machine_P1",
+    "evidence": [
+      "failure_INC203 onMachine machine_P1",
+      "action_WO1103 addresses failure_INC203"
+    ],
+    "seconds": 40.9,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 748,
+    "seeds": [
+      "action_WO1103"
+    ],
+    "class_seeds": 0,
+    "facts": 25,
+    "truncated": 0
+  },
+  {
+    "id": "Q15",
+    "type": "multi-hop",
+    "question": "What is the capacity, in parts, of the buffer directly upstream of Assembly cell A1?",
+    "expected": 25,
+    "answer": "bytes",
+    "evidence": [
+      "buffer_B4 feeds machine_I1",
+      "machine_I1 feeds buffer_B5",
+      "machine_I1 feeds buffer_B1",
+      "machine_I1 feeds buffer_B2",
+      "machine_I1 feeds buffer_B3",
+      "machine_I1 feeds buffer_B4",
+      "machine_I1 feeds buffer_B5",
+      "machine_I1 feeds machine_A1",
+      "machine_A1 feeds buffer_B4",
+      "machine_A1 label Assembly cell A1",
+      "machine_A1 partOfLine line_LINEA",
+      "machine_A1 feeds buffer_B4",
+      "machine_A1 feeds machine_K1",
+      "machine_K1 label Packer K1",
+      "machine_K1 partOfLine line_LINEA",
+      "machine_K1 feeds buffer_B2",
+      "machine_K1 feeds buffer_B3",
+      "machine_K1 feeds buffer_B5",
+      "machine_K1 feeds machine_P1",
+      "machine_P1 feeds buffer_B1",
+      "machine_P1 feeds buffer_B2",
+      "machine_P1 feeds buffer_B3",
+      "machine_P1 feeds buffer_B4",
+      "machine_P1 feeds buffer_B5",
+      "machine_P1 feeds machine_P2",
+      "machine_P2 feeds buffer_B2",
+      "machine_P2 feeds buffer_B3",
+      "machine_P2 feeds buffer_B4",
+      "machine_P2 feeds buffer_B5",
+      "machine_P2 feeds machine_P1",
+      "machine_P2 feeds machine_P3",
+      "machine_P2 feeds machine_P4",
+      "machine_P2 feeds machine_P5",
+      "machine_P2 feeds machine_P6",
+      "machine_P2 feeds machine_P7",
+      "machine_P2 feeds machine_P8",
+      "machine_P2 feeds machine_P9",
+      "machine_P2 feeds machine_P10",
+      "machine_P2 feeds machine_P11",
+      "machine_P2 feeds machine_P12",
+      "machine_P2 feeds machine_P13",
+      "machine_P2 feeds machine_P14",
+      "machine_P2 feeds machine_P15",
+      "machine_P2 feeds machine_P16",
+      "machine_P2 feeds machine_P17",
+      "machine_P2 feeds machine_P18",
+      "machine_P2 feeds machine_P19",
+      "machine_P2 feeds machine_P20",
+      "machine_P2 feeds machine_P21",
+      "machine_P2 feeds machine_P22",
+      "machine_P2 feeds machine_P23",
+      "machine_P2 feeds machine_P24",
+      "machine_P2 feeds machine_P25",
+      "machine_P2 feeds machine_P26",
+      "machine_P2 feeds machine_P27",
+      "machine_P2 feeds machine_P28",
+      "machine_P2 feeds machine_P29",
+      "machine_P2 feeds machine_P30",
+      "machine_P2 feeds machine_P31",
+      "machine_P2 feeds machine_P32",
+      "machine_P2 feeds machine_P33",
+      "machine_P2 feeds machine_P34",
+      "machine_P2 feeds machine_P35",
+      "machine_P2 feeds machine_P36",
+      "machine_P2 feeds machine_P37",
+      "machine_P2 feeds machine_P38",
+      "machine_P2 feeds machine_P39",
+      "machine_P2 feeds machine_P40",
+      "machine_P2 feeds machine_P41",
+      "machine_P2 feeds machine_P42",
+      "machine_P2 feeds machine_P43",
+      "machine_P2 feeds machine_P44",
+      "machine_P2 feeds machine_P45",
+      "machine_P2 feeds machine_P46",
+      "machine_P2 feeds machine_P47",
+      "machine_P2 feeds machine_P48",
+      "machine_P2 feeds machine_P49",
+      "machine_P2 feeds machine_P50",
+      "machine_P2 feeds machine_P51",
+      "machine_P2 feeds machine_P52",
+      "machine_P2 feeds machine_P53",
+      "machine_P2 feeds machine_P54",
+      "machine_P2 feeds machine_P55",
+      "machine_P2 feeds machine_P56",
+      "machine_P2 feeds machine_P57",
+      "machine_P2 feeds machine_P58",
+      "machine_P2 feeds machine_P59",
+      "machine_P2 feeds machine_P60",
+      "machine_P2 feeds machine_P61",
+      "machine_P2 feeds machine_P62",
+      "machine_P2 feeds machine_P63",
+      "machine_P2 feeds machine_P64",
+      "machine_P2 feeds machine_P65",
+      "machine_P2 feeds machine_P66",
+      "machine_P2 feeds machine_P67",
+      "machine_P2 feeds machine_P68",
+      "machine_P2 feeds machine_P69",
+      "machine_P2 feeds machine_P70",
+      "machine_P2 feeds machine_P71",
+      "machine_P2 feeds machine_P72",
+      "machine_P2 feeds machine_P73",
+      "machine_P2 feeds machine_P74",
+      "machine_P2 feeds machine_P75",
+      "machine_P2 feeds machine_P76",
+      "machine_P2 feeds machine_P77",
+      "machine_P2 feeds machine_P78",
+      "machine_P2 feeds machine_P79",
+      "machine_P2 feeds machine_P80",
+      "machine_P2 feeds machine_P81",
+      "machine_P2 feeds machine_P82",
+      "machine_P2 feeds machine_P83",
+      "machine_P2 feeds machine_P84",
+      "machine_P2 feeds machine_P85",
+      "machine_P2 feeds machine_P86",
+      "machine_P2 feeds machine_P87",
+      "machine_P2 feeds machine_P88",
+      "machine_P2 feeds machine_P89",
+      "machine_P2 feeds machine_P90",
+      "machine_P2 feeds machine_P91",
+      "machine_P2 feeds machine_P92",
+      "machine_P2 feeds machine_P93",
+      "machine_P2 feeds machine_P94",
+      "machine_P2 feeds machine_P95",
+      "machine_P2 feeds machine_P96",
+      "machine_P2 feeds machine_P97",
+      "machine_P2 feeds machine_P98",
+      "machine_P2 feeds machine_P99",
+      "machine_P2 feeds machine_P100",
+      "machine_P2 feeds machine_P101",
+      "machine_P2 feeds machine_P102",
+      "machine_P2 feeds machine_P103",
+      "machine_P2 feeds machine_P104",
+      "machine_P2 feeds machine_P105",
+      "machine_P2 feeds machine_P106",
+      "machine_P2 feeds machine_P107",
+      "machine_P2 feeds machine_P108",
+      "machine_P2 feeds machine_P109",
+      "machine_P2 feeds machine_P110",
+      "machine_P2 feeds machine_P111",
+      "machine_P2 feeds machine_P112",
+      "machine_P2 feeds machine_P113",
+      "machine_P2 feeds machine_P114",
+      "machine_P2 feeds machine_P115",
+      "machine_P2 feeds machine_P116",
+      "machine_P2 feeds machine_P117",
+      "machine_P2 feeds machine_P118",
+      "machine_P2 feeds machine_P119",
+      "machine_P2 feeds machine_P120",
+      "machine_P2 feeds machine_P121",
+      "machine_P2 feeds machine_P"
+    ],
+    "seconds": 403.9,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 2760,
+    "seeds": [
+      "machine_A1"
+    ],
+    "class_seeds": 11,
+    "facts": 95,
+    "truncated": 0
+  },
+  {
+    "id": "Q16",
+    "type": "multi-hop",
+    "question": "During which shift did the failure that was repaired by work order WO-1108 happen?",
+    "expected": "Night",
+    "answer": "shift_NIGHT",
+    "evidence": [
+      "failure_INC208 date 2026-03-26",
+      "action_WO1108 addresses failure_INC208",
+      "action_WO1108 onMachine machine_A1",
+      "shift_NIGHT label Night shift",
+      "failure_INC208 duringShift shift_NIGHT"
+    ],
+    "seconds": 50.6,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 1383,
+    "seeds": [
+      "action_WO1108"
+    ],
+    "class_seeds": 0,
+    "facts": 43,
+    "truncated": 0
+  },
+  {
+    "id": "Q17",
+    "type": "multi-hop",
+    "question": "What is the MTTR, in hours, of the machine on which incident INC-204 happened?",
+    "expected": 1.5,
+    "answer": "/>1.5, <used_facts>action_WO1104 actionType Corrective action_WO1104 addresses failure_INC204 action_WO1104 date 2026-03-12 action_WO1104 durationH 1.5 action_WO1104 onMachine machine_W1 failure_INC204 date 2026-03-12 failure_INC204 downtimeH 1.5 failure_INC204 duringShift shift_NIGHT failure_INC204 failureMode Pump failure failure_INC204 onMachine machine_W1",
+    "evidence": [
+      "action_WO1104 addresses failure_INC204",
+      "failure_INC204 onMachine machine_W1",
+      "action_WO1104 durationH 1.5",
+      "action_WO1104 onMachine machine_W1"
+    ],
+    "seconds": 57.9,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 825,
+    "seeds": [
+      "failure_INC204"
+    ],
+    "class_seeds": 0,
+    "facts": 28,
+    "truncated": 0
+  },
+  {
+    "id": "Q18",
+    "type": "multi-hop",
+    "question": "What is the cycle time, in seconds, of the machine that feeds the buffer in front of Packer K1?",
+    "expected": 30,
+    "answer": "time not provided",
+    "evidence": [
+      "machine_I1 cycleTimeS 30.0",
+      "machine_I1 feeds buffer_B5",
+      "buffer_B5 feeds machine_K1"
+    ],
+    "seconds": 33.2,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 779,
+    "seeds": [
+      "machine_K1"
+    ],
+    "class_seeds": 0,
+    "facts": 27,
+    "truncated": 0
+  },
+  {
+    "id": "Q19",
+    "type": "aggregation",
+    "question": "Which machine is the bottleneck of Line A, i.e. has the longest cycle time?",
+    "expected": "A1",
+    "answer": "machine_P2",
+    "evidence": [
+      "machine_P2 label Press P2",
+      "machine_P2 cycleTimeS 48.0"
+    ],
+    "seconds": 85.8,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 4407,
+    "seeds": [
+      "line_LINEA"
+    ],
+    "class_seeds": 11,
+    "facts": 142,
+    "truncated": 0
+  },
+  {
+    "id": "Q20",
+    "type": "aggregation",
+    "question": "How many failures happened during the Night shift?",
+    "expected": 4,
+    "answer": ">=3",
+    "evidence": [
+      "failure_INC203 duringShift shift_NIGHT",
+      "failure_INC204 duringShift shift_NIGHT",
+      "failure_INC206 duringShift shift_NIGHT",
+      "failure_INC208 duringShift shift_NIGHT"
+    ],
+    "seconds": 62.7,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 2916,
+    "seeds": [
+      "shift_NIGHT"
+    ],
+    "class_seeds": 11,
+    "facts": 90,
+    "truncated": 0
+  },
+  {
+    "id": "Q21",
+    "type": "aggregation",
+    "question": "What is the total production downtime, in hours, caused by failures of Press P2?",
+    "expected": 9.5,
+    "answer": "context",
+    "evidence": [
+      "failure_INC204 downtimeH 1.5",
+      "failure_INC206 downtimeH 5.0"
+    ],
+    "seconds": 64.1,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 2801,
+    "seeds": [
+      "machine_P2"
+    ],
+    "class_seeds": 8,
+    "facts": 88,
+    "truncated": 0
+  },
+  {
+    "id": "Q22",
+    "type": "aggregation",
+    "question": "Which machine had the most failures?",
+    "expected": "A1",
+    "answer": "machine_P2",
+    "evidence": [
+      "failure_INC206 onMachine machine_P2",
+      "failure_INC208 onMachine machine_P2"
+    ],
+    "seconds": 53.4,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 2707,
+    "seeds": [],
+    "class_seeds": 14,
+    "facts": 87,
+    "truncated": 0
+  },
+  {
+    "id": "Q23",
+    "type": "aggregation",
+    "question": "How many preventive maintenance actions were carried out?",
+    "expected": 2,
+    "answer": ">= 2",
+    "evidence": [
+      "action_WO1105 actionType Preventive",
+      "action_WO1107 actionType Preventive"
+    ],
+    "seconds": 39.8,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 1272,
+    "seeds": [],
+    "class_seeds": 8,
+    "facts": 38,
+    "truncated": 0
+  },
+  {
+    "id": "Q24",
+    "type": "aggregation",
+    "question": "What is the total rated power, in kW, of all machines on Line A?",
+    "expected": 246,
+    "answer": ">= 450.0",
+    "evidence": [
+      "machine_P1 powerKW 75.0",
+      "machine_P2 powerKW 90.0",
+      "machine_W1 powerKW 45.0",
+      "machine_K1 powerKW 12.0",
+      "machine_I1 powerKW 6.0",
+      "machine_A1 powerKW 18.0",
+      "machine_P1 partOfLine line_LINEA",
+      "machine_P2 partOfLine line_LINEA",
+      "machine_W1 partOfLine line_LINEA",
+      "machine_K1 partOfLine line_LINEA",
+      "machine_I1 partOfLine line_LINEA",
+      "machine_A1 partOfLine line_LINEA"
+    ],
+    "seconds": 100.6,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 4407,
+    "seeds": [
+      "line_LINEA"
+    ],
+    "class_seeds": 6,
+    "facts": 142,
+    "truncated": 0
+  },
+  {
+    "id": "Q25",
+    "type": "aggregation",
+    "question": "What is the total production downtime, in hours, of all failures?",
+    "expected": 20,
+    "answer": ">= 15.0",
+    "evidence": [
+      "failure_INC201 downtimeH 4.5",
+      "failure_INC202 downtimeH 2.0",
+      "failure_INC203 downtimeH 3.0",
+      "failure_INC204 downtimeH 1.5",
+      "failure_INC205 downtimeH 1.0",
+      "failure_INC206 downtimeH 5.0",
+      "failure_INC208 downtimeH 2.5"
+    ],
+    "seconds": 50.6,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 1440,
+    "seeds": [],
+    "class_seeds": 8,
+    "facts": 40,
+    "truncated": 0
+  }
+]

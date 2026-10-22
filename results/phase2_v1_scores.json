@@ -1,0 +1,458 @@
+{
+  "runs": [
+    {
+      "doc": "01_line_overview.txt",
+      "seconds": 31.3,
+      "parse_error": null,
+      "triples": 3
+    },
+    {
+      "doc": "02_datasheet_P1.txt",
+      "seconds": 47.3,
+      "parse_error": null,
+      "triples": 10
+    },
+    {
+      "doc": "03_datasheet_P2.txt",
+      "seconds": 36.1,
+      "parse_error": null,
+      "triples": 6
+    },
+    {
+      "doc": "04_datasheet_W1.txt",
+      "seconds": 36.5,
+      "parse_error": null,
+      "triples": 6
+    },
+    {
+      "doc": "05_datasheet_A1.txt",
+      "seconds": 28.8,
+      "parse_error": null,
+      "triples": 1
+    },
+    {
+      "doc": "06_datasheet_I1.txt",
+      "seconds": 32.5,
+      "parse_error": null,
+      "triples": 6
+    },
+    {
+      "doc": "07_datasheet_K1.txt",
+      "seconds": 29.2,
+      "parse_error": null,
+      "triples": 6
+    },
+    {
+      "doc": "08_buffer_layout.txt",
+      "seconds": 57.0,
+      "parse_error": null,
+      "triples": 17
+    },
+    {
+      "doc": "09_shift_plan.txt",
+      "seconds": 31.7,
+      "parse_error": null,
+      "triples": 8
+    },
+    {
+      "doc": "10_report_WO-1101.txt",
+      "seconds": 42.4,
+      "parse_error": null,
+      "triples": 7
+    },
+    {
+      "doc": "11_report_WO-1102.txt",
+      "seconds": 44.4,
+      "parse_error": null,
+      "triples": 10
+    },
+    {
+      "doc": "12_report_WO-1103.txt",
+      "seconds": 41.9,
+      "parse_error": null,
+      "triples": 7
+    },
+    {
+      "doc": "13_report_WO-1104.txt",
+      "seconds": 34.3,
+      "parse_error": null,
+      "triples": 3
+    },
+    {
+      "doc": "14_report_WO-1105.txt",
+      "seconds": 39.4,
+      "parse_error": null,
+      "triples": 8
+    },
+    {
+      "doc": "15_report_WO-1106.txt",
+      "seconds": 40.4,
+      "parse_error": null,
+      "triples": 9
+    },
+    {
+      "doc": "16_report_WO-1107.txt",
+      "seconds": 39.4,
+      "parse_error": null,
+      "triples": 8
+    },
+    {
+      "doc": "17_report_WO-1108.txt",
+      "seconds": 44.1,
+      "parse_error": null,
+      "triples": 8
+    },
+    {
+      "doc": "18_shift_note_2026-03-17.txt",
+      "seconds": 26.0,
+      "parse_error": null,
+      "triples": 2
+    },
+    {
+      "doc": "19_shift_note_2026-03-24.txt",
+      "seconds": 24.5,
+      "parse_error": null,
+      "triples": 2
+    },
+    {
+      "doc": "20_energy_audit.txt",
+      "seconds": 8439.2,
+      "parse_error": null,
+      "triples": 3
+    },
+    {
+      "doc": "21_safety_walk.txt",
+      "seconds": 36.8,
+      "parse_error": null,
+      "triples": 8
+    }
+  ],
+  "total_seconds": 9183.2,
+  "overall": {
+    "precision": 0.651,
+    "recall": 0.313,
+    "f1": 0.423,
+    "correct": 56,
+    "extracted": 86,
+    "gold": 179
+  },
+  "per_predicate": {
+    "actionType": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "correct": 0,
+      "extracted": 0,
+      "gold": 8
+    },
+    "addresses": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "correct": 0,
+      "extracted": 0,
+      "gold": 6
+    },
+    "capacity": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "correct": 0,
+      "extracted": 0,
+      "gold": 5
+    },
+    "cycleTimeS": {
+      "precision": 1.0,
+      "recall": 0.833,
+      "f1": 0.909,
+      "correct": 5,
+      "extracted": 5,
+      "gold": 6
+    },
+    "date": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "correct": 0,
+      "extracted": 0,
+      "gold": 16
+    },
+    "downtimeH": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "correct": 0,
+      "extracted": 0,
+      "gold": 8
+    },
+    "durationH": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "correct": 0,
+      "extracted": 0,
+      "gold": 8
+    },
+    "duringShift": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "correct": 0,
+      "extracted": 0,
+      "gold": 8
+    },
+    "failureMode": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "correct": 0,
+      "extracted": 0,
+      "gold": 8
+    },
+    "feeds": {
+      "precision": 0.6,
+      "recall": 0.9,
+      "f1": 0.72,
+      "correct": 9,
+      "extracted": 15,
+      "gold": 10
+    },
+    "finalMachine": {
+      "precision": 0.1,
+      "recall": 1.0,
+      "f1": 0.182,
+      "correct": 1,
+      "extracted": 10,
+      "gold": 1
+    },
+    "label": {
+      "precision": 0.5,
+      "recall": 0.067,
+      "f1": 0.118,
+      "correct": 1,
+      "extracted": 2,
+      "gold": 15
+    },
+    "machineType": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.667,
+      "correct": 3,
+      "extracted": 3,
+      "gold": 6
+    },
+    "mtbfH": {
+      "precision": 1.0,
+      "recall": 0.833,
+      "f1": 0.909,
+      "correct": 5,
+      "extracted": 5,
+      "gold": 6
+    },
+    "mttrH": {
+      "precision": 0.6,
+      "recall": 0.5,
+      "f1": 0.545,
+      "correct": 3,
+      "extracted": 5,
+      "gold": 6
+    },
+    "onMachine": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "correct": 0,
+      "extracted": 0,
+      "gold": 16
+    },
+    "partOfLine": {
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.857,
+      "correct": 6,
+      "extracted": 8,
+      "gold": 6
+    },
+    "powerKW": {
+      "precision": 1.0,
+      "recall": 0.833,
+      "f1": 0.909,
+      "correct": 5,
+      "extracted": 5,
+      "gold": 6
+    },
+    "startHour": {
+      "precision": 0.3,
+      "recall": 1.0,
+      "f1": 0.462,
+      "correct": 3,
+      "extracted": 10,
+      "gold": 3
+    },
+    "type": {
+      "precision": 0.833,
+      "recall": 0.484,
+      "f1": 0.612,
+      "correct": 15,
+      "extracted": 18,
+      "gold": 31
+    }
+  },
+  "missing": [
+    "action_WO1101 actionType corrective",
+    "action_WO1101 addresses http://example.org/line/failure_INC201",
+    "action_WO1101 date 2026-03-03",
+    "action_WO1101 durationH 4.5",
+    "action_WO1101 onMachine http://example.org/line/machine_P2",
+    "action_WO1101 type http://example.org/mfg#MaintenanceAction",
+    "action_WO1102 actionType corrective",
+    "action_WO1102 addresses http://example.org/line/failure_INC202",
+    "action_WO1102 date 2026-03-05",
+    "action_WO1102 durationH 2.0",
+    "action_WO1102 onMachine http://example.org/line/machine_A1",
+    "action_WO1102 type http://example.org/mfg#MaintenanceAction",
+    "action_WO1103 actionType corrective",
+    "action_WO1103 addresses http://example.org/line/failure_INC203",
+    "action_WO1103 date 2026-03-09",
+    "action_WO1103 durationH 3.0",
+    "action_WO1103 onMachine http://example.org/line/machine_P1",
+    "action_WO1103 type http://example.org/mfg#MaintenanceAction",
+    "action_WO1104 actionType corrective",
+    "action_WO1104 addresses http://example.org/line/failure_INC204",
+    "action_WO1104 date 2026-03-12",
+    "action_WO1104 durationH 1.5",
+    "action_WO1104 onMachine http://example.org/line/machine_W1",
+    "action_WO1104 type http://example.org/mfg#MaintenanceAction",
+    "action_WO1105 actionType preventive",
+    "action_WO1105 date 2026-03-14",
+    "action_WO1105 durationH 6.0",
+    "action_WO1105 onMachine http://example.org/line/machine_P2",
+    "action_WO1105 type http://example.org/mfg#MaintenanceAction",
+    "action_WO1106 actionType corrective",
+    "action_WO1106 addresses http://example.org/line/failure_INC206",
+    "action_WO1106 date 2026-03-20",
+    "action_WO1106 durationH 5.0",
+    "action_WO1106 onMachine http://example.org/line/machine_P2",
+    "action_WO1106 type http://example.org/mfg#MaintenanceAction",
+    "action_WO1107 actionType preventive",
+    "action_WO1107 date 2026-03-21",
+    "action_WO1107 durationH 2.0",
+    "action_WO1107 onMachine http://example.org/line/machine_I1",
+    "action_WO1107 type http://example.org/mfg#MaintenanceAction",
+    "action_WO1108 actionType corrective",
+    "action_WO1108 addresses http://example.org/line/failure_INC208",
+    "action_WO1108 date 2026-03-26",
+    "action_WO1108 durationH 2.5",
+    "action_WO1108 onMachine http://example.org/line/machine_A1",
+    "action_WO1108 type http://example.org/mfg#MaintenanceAction",
+    "buffer_B1 capacity 40.0",
+    "buffer_B1 feeds http://example.org/line/machine_P2",
+    "buffer_B1 label buffer b1",
+    "buffer_B2 capacity 30.0",
+    "buffer_B2 label buffer b2",
+    "buffer_B3 capacity 25.0",
+    "buffer_B3 label buffer b3",
+    "buffer_B4 capacity 20.0",
+    "buffer_B4 label buffer b4",
+    "buffer_B5 capacity 15.0",
+    "buffer_B5 label buffer b5",
+    "failure_INC201 date 2026-03-03",
+    "failure_INC201 downtimeH 4.5",
+    "failure_INC201 duringShift http://example.org/line/shift_NIGHT",
+    "failure_INC201 failureMode hydraulic leak",
+    "failure_INC201 onMachine http://example.org/line/machine_P2",
+    "failure_INC201 type http://example.org/mfg#Failure",
+    "failure_INC202 date 2026-03-05",
+    "failure_INC202 downtimeH 2.0",
+    "failure_INC202 duringShift http://example.org/line/shift_EARLY",
+    "failure_INC202 failureMode screwdriver torque fault",
+    "failure_INC202 onMachine http://example.org/line/machine_A1",
+    "failure_INC202 type http://example.org/mfg#Failure",
+    "failure_INC203 date 2026-03-09",
+    "failure_INC203 downtimeH 3.0",
+    "failure_INC203 duringShift http://example.org/line/shift_LATE",
+    "failure_INC203 failureMode die misalignment",
+    "failure_INC203 onMachine http://example.org/line/machine_P1",
+    "failure_INC203 type http://example.org/mfg#Failure",
+    "failure_INC204 date 2026-03-12",
+    "failure_INC204 downtimeH 1.5",
+    "failure_INC204 duringShift http://example.org/line/shift_NIGHT",
+    "failure_INC204 failureMode pump failure",
+    "failure_INC204 onMachine http://example.org/line/machine_W1",
+    "failure_INC204 type http://example.org/mfg#Failure",
+    "failure_INC205 date 2026-03-17",
+    "failure_INC205 downtimeH 1.0",
+    "failure_INC205 duringShift http://example.org/line/shift_LATE",
+    "failure_INC205 failureMode gripper sensor fault",
+    "failure_INC205 onMachine http://example.org/line/machine_A1",
+    "failure_INC205 type http://example.org/mfg#Failure",
+    "failure_INC206 date 2026-03-20",
+    "failure_INC206 downtimeH 5.0",
+    "failure_INC206 duringShift http://example.org/line/shift_NIGHT",
+    "failure_INC206 failureMode hydraulic leak",
+    "failure_INC206 onMachine http://example.org/line/machine_P2",
+    "failure_INC206 type http://example.org/mfg#Failure",
+    "failure_INC207 date 2026-03-24",
+    "failure_INC207 downtimeH 0.5",
+    "failure_INC207 duringShift http://example.org/line/shift_EARLY",
+    "failure_INC207 failureMode film jam",
+    "failure_INC207 onMachine http://example.org/line/machine_K1",
+    "failure_INC207 type http://example.org/mfg#Failure",
+    "failure_INC208 date 2026-03-26",
+    "failure_INC208 downtimeH 2.5",
+    "failure_INC208 duringShift http://example.org/line/shift_NIGHT",
+    "failure_INC208 failureMode screwdriver torque fault",
+    "failure_INC208 onMachine http://example.org/line/machine_A1",
+    "failure_INC208 type http://example.org/mfg#Failure",
+    "machine_A1 cycleTimeS 55.0",
+    "machine_A1 label assembly cell a1",
+    "machine_A1 machineType assembly",
+    "machine_A1 mtbfH 220.0",
+    "machine_A1 mttrH 2.0",
+    "machine_A1 powerKW 18.0",
+    "machine_I1 label inspection station i1",
+    "machine_I1 mttrH 0.75",
+    "machine_K1 label packer k1",
+    "machine_K1 machineType packing",
+    "machine_K1 mttrH 1.2",
+    "machine_P1 label press p1",
+    "machine_P1 machineType press",
+    "machine_P2 label press p2",
+    "machine_W1 label washer w1",
+    "shift_EARLY label early shift",
+    "shift_LATE label late shift",
+    "shift_NIGHT label night shift"
+  ],
+  "wrong_or_extra": [
+    "buffer_B1 feeds http://example.org/line/machine_P1",
+    "buffer_B10 feeds http://example.org/line/machine_A1",
+    "buffer_B10 feeds http://example.org/line/machine_I1",
+    "buffer_B10 feeds http://example.org/line/machine_P1",
+    "buffer_B10 feeds http://example.org/line/machine_P2",
+    "buffer_B10 type http://example.org/mfg#Buffer",
+    "line_A label line a",
+    "line_A type http://example.org/mfg#ProductionLine",
+    "line_LINEA finalMachine http://example.org/line/machine_A1",
+    "line_LINEA finalMachine http://example.org/line/machine_I1",
+    "line_LINEA finalMachine http://example.org/line/machine_M3",
+    "line_LINEA finalMachine http://example.org/line/machine_P1",
+    "line_LINEZ finalMachine http://example.org/line/machine_A1",
+    "line_LINEZ finalMachine http://example.org/line/machine_I1",
+    "line_LINEZ finalMachine http://example.org/line/machine_K1",
+    "line_LINEZ finalMachine http://example.org/line/machine_P1",
+    "line_LINEZ finalMachine http://example.org/line/machine_P2",
+    "line_LINEZ type http://example.org/mfg#ProductionLine",
+    "machine_A1 partOfLine http://example.org/line/line_LINEZ",
+    "machine_I1 mttrH 45.0",
+    "machine_K1 mttrH 12.0",
+    "machine_P2 feeds http://example.org/line/buffer_B1",
+    "machine_P2 partOfLine http://example.org/line/line_LINEZ",
+    "shift_EARLY startHour 0.0",
+    "shift_EARLY startHour 4.0",
+    "shift_LATE startHour 17.0",
+    "shift_LATE startHour 18.0",
+    "shift_LATE startHour 6.0",
+    "shift_NIGHT startHour 18.0",
+    "shift_NIGHT startHour 20.0"
+  ]
+}

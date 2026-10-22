@@ -1,0 +1,8 @@
+Maintenance report WO-1106
+
+Date: 20 March 2026
+Machine: Press P2
+Incident INC-206 happened during the Night shift. Failure mode: Hydraulic leak, this time at a hose fitting.
+This is the second hydraulic leak on P2 this month (the first was INC-201).
+Production downtime: 5 h.
+Corrective maintenance: hose fitting replaced. Work duration 5 h.

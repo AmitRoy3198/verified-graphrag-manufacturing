@@ -1,0 +1,85 @@
+{
+  "machines": [],
+  "buffers": [
+    {
+      "id": "B1",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": null,
+      "feeds_machine": "P1"
+    },
+    {
+      "id": "B1",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": "P2",
+      "feeds_machine": null
+    },
+    {
+      "id": "B2",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": null,
+      "feeds_machine": "W1"
+    },
+    {
+      "id": "B2",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": "P2",
+      "feeds_machine": null
+    },
+    {
+      "id": "B3",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": null,
+      "feeds_machine": "A1"
+    },
+    {
+      "id": "B3",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": "W1",
+      "feeds_machine": null
+    },
+    {
+      "id": "B4",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": null,
+      "feeds_machine": "I1"
+    },
+    {
+      "id": "B4",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": "A1",
+      "feeds_machine": null
+    },
+    {
+      "id": "B5",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": null,
+      "feeds_machine": "K1"
+    },
+    {
+      "id": "B5",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": "I1",
+      "feeds_machine": null
+    }
+  ],
+  "failures": [],
+  "maintenance_actions": [],
+  "shifts": [],
+  "lines": [
+    {
+      "id": "Line A",
+      "name": null,
+      "final_machine": "K1"
+    }
+  ]
+}

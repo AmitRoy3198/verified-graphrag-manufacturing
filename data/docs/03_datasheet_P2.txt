@@ -1,0 +1,10 @@
+Machine data sheet - Press P2
+
+Type: hydraulic deep-drawing press (Press)
+Installed on: Line A
+Cycle time: 48 s per part
+Rated power: 90 kW
+MTBF: 140 h
+MTTR: 4 h
+
+Notes: 630 t press with a main cylinder that was resealed in 2024.

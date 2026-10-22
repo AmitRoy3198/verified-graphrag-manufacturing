@@ -1,0 +1,15 @@
+Entity: {entity} (a {cls})
+
+Allowed properties for a {cls}:
+{allowed}
+
+Current facts:
+{facts}
+
+Problems found by the validator:
+{violations}
+
+Source documents:
+{documents}
+
+Return the corrected complete list of facts for {entity}.

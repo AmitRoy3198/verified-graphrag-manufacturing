@@ -1,0 +1,7 @@
+Maintenance report WO-1104
+
+Date: 12 March 2026
+Machine: Washer W1
+Incident INC-204 happened during the Night shift. Failure mode: Pump failure in the spray circuit.
+Production downtime: 90 minutes.
+Corrective maintenance: spray pump exchanged. Work duration 1.5 h.

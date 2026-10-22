@@ -1,0 +1,140 @@
+{
+  "failures": [],
+  "maintenance_actions": [],
+  "machines": [
+    {
+      "id": "P1",
+      "name": "Press",
+      "machine_type": "Press",
+      "line": "A",
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": "B1"
+    },
+    {
+      "id": "P2",
+      "name": "Press",
+      "machine_type": "Press",
+      "line": "A",
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": "B2"
+    },
+    {
+      "id": "W1",
+      "name": "Washer",
+      "machine_type": "Washer",
+      "line": "A",
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": "B3"
+    },
+    {
+      "id": "A1",
+      "name": "Assembly",
+      "machine_type": "Assembly",
+      "line": "A",
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": "B4"
+    },
+    {
+      "id": "I1",
+      "name": "Inspection",
+      "machine_type": "Inspection",
+      "line": "A",
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": "B5"
+    },
+    {
+      "id": "K1",
+      "name": "Packer",
+      "machine_type": "Packing",
+      "line": "A",
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": null
+    }
+  ],
+  "buffers": [
+    {
+      "id": "B1",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": "P1",
+      "feeds_machine": "P2"
+    },
+    {
+      "id": "B2",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": "P2",
+      "feeds_machine": "W1"
+    },
+    {
+      "id": "B3",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": "W1",
+      "feeds_machine": "A1"
+    },
+    {
+      "id": "B4",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": "A1",
+      "feeds_machine": "I1"
+    },
+    {
+      "id": "B5",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": "I1",
+      "feeds_machine": "K1"
+    },
+    {
+      "id": "B6",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": null,
+      "feeds_machine": null
+    }
+  ],
+  "shifts": [
+    {
+      "id": "Early",
+      "name": "Early",
+      "start_hour": 4
+    },
+    {
+      "id": "Late",
+      "name": "Late",
+      "start_hour": 10
+    },
+    {
+      "id": "Night",
+      "name": "Night",
+      "start_hour": 16
+    }
+  ],
+  "lines": [
+    {
+      "id": "A",
+      "name": "Line A",
+      "final_machine": "K1"
+    }
+  ]
+}

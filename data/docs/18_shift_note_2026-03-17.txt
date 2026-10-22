@@ -1,0 +1,5 @@
+Shift handover note - Late shift, 17 March 2026
+
+Output: 410 housings.
+INC-205: Gripper sensor fault on Assembly cell A1 during this Late shift. Downtime 1 h. The operator cleaned and reset the sensor; no work order was opened.
+Washer temperature stable all shift.

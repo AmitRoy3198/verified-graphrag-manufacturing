@@ -1,0 +1,81 @@
+{
+  "failures": [],
+  "maintenance_actions": [],
+  "machines": [
+    {
+      "id": "P2",
+      "name": "Press P2",
+      "machine_type": "Press",
+      "line": "A",
+      "cycle_time_s": null,
+      "power_kw": 90.0,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": null
+    },
+    {
+      "id": "P1",
+      "name": "Press P1",
+      "machine_type": "Press",
+      "line": "A",
+      "cycle_time_s": null,
+      "power_kw": 75.0,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": null
+    },
+    {
+      "id": "W1",
+      "name": "Washer W1",
+      "machine_type": "Washer",
+      "line": "A",
+      "cycle_time_s": null,
+      "power_kw": 45.0,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": null
+    },
+    {
+      "id": "A1",
+      "name": "Assembly cell A1",
+      "machine_type": "Assembly",
+      "line": "A",
+      "cycle_time_s": null,
+      "power_kw": 18.0,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": null
+    },
+    {
+      "id": "K1",
+      "name": "Packer K1",
+      "machine_type": "Packing",
+      "line": "A",
+      "cycle_time_s": null,
+      "power_kw": 12.0,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": null
+    },
+    {
+      "id": "I1",
+      "name": "Inspection station I1",
+      "machine_type": "Inspection",
+      "line": "A",
+      "cycle_time_s": null,
+      "power_kw": 6.0,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": null
+    }
+  ],
+  "buffers": [],
+  "shifts": [],
+  "lines": [
+    {
+      "id": "A",
+      "name": "Line A",
+      "final_machine": "I1"
+    }
+  ]
+}

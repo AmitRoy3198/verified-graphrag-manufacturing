@@ -1,0 +1,556 @@
+[
+  {
+    "id": "Q01",
+    "type": "1-hop",
+    "question": "What is the rated power of Press P2 in kW?",
+    "expected": 90,
+    "answer": "90",
+    "evidence": [
+      "03_datasheet_P2"
+    ],
+    "seconds": 31.2,
+    "exact": true,
+    "lenient": true,
+    "context_chars": 1236,
+    "retrieved_docs": [
+      "03_datasheet_P2",
+      "20_energy_audit",
+      "02_datasheet_P1",
+      "07_datasheet_K1"
+    ],
+    "doc_recall": 1.0
+  },
+  {
+    "id": "Q02",
+    "type": "1-hop",
+    "question": "What is the cycle time of Washer W1 in seconds?",
+    "expected": 35,
+    "answer": "35",
+    "evidence": [
+      "04_datasheet_W1"
+    ],
+    "seconds": 28.4,
+    "exact": true,
+    "lenient": true,
+    "context_chars": 1075,
+    "retrieved_docs": [
+      "04_datasheet_W1",
+      "13_report_WO-1104",
+      "02_datasheet_P1",
+      "14_report_WO-1105"
+    ],
+    "doc_recall": 1.0
+  },
+  {
+    "id": "Q03",
+    "type": "1-hop",
+    "question": "What is the mean time to repair (MTTR) of Inspection station I1 in hours?",
+    "expected": 0.75,
+    "answer": "0.75",
+    "evidence": [
+      "06_datasheet_I1",
+      "16_report_WO-1107"
+    ],
+    "seconds": 33.5,
+    "exact": true,
+    "lenient": true,
+    "context_chars": 1007,
+    "retrieved_docs": [
+      "16_report_WO-1107",
+      "06_datasheet_I1",
+      "12_report_WO-1103",
+      "13_report_WO-1104"
+    ],
+    "doc_recall": 1.0
+  },
+  {
+    "id": "Q04",
+    "type": "1-hop",
+    "question": "What is the capacity of buffer B3 in parts?",
+    "expected": 25,
+    "answer": "25",
+    "evidence": [
+      "01_line_overview"
+    ],
+    "seconds": 31.6,
+    "exact": true,
+    "lenient": true,
+    "context_chars": 1545,
+    "retrieved_docs": [
+      "08_buffer_layout",
+      "01_line_overview",
+      "03_datasheet_P2",
+      "07_datasheet_K1"
+    ],
+    "doc_recall": 1.0
+  },
+  {
+    "id": "Q05",
+    "type": "1-hop",
+    "question": "Which machine does buffer B4 feed?",
+    "expected": "I1",
+    "answer": "Assembly cell A1",
+    "evidence": [
+      "01_line_overview"
+    ],
+    "seconds": 33.5,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 1643,
+    "retrieved_docs": [
+      "08_buffer_layout",
+      "01_line_overview",
+      "19_shift_note_2026-03-24",
+      "03_datasheet_P2"
+    ],
+    "doc_recall": 1.0
+  },
+  {
+    "id": "Q06",
+    "type": "1-hop",
+    "question": "On which machine did incident INC-207 happen?",
+    "expected": "K1",
+    "answer": "unknown",
+    "evidence": [
+      "unknown"
+    ],
+    "seconds": 28.5,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 1217,
+    "retrieved_docs": [
+      "12_report_WO-1103",
+      "10_report_WO-1101",
+      "15_report_WO-1106",
+      "17_report_WO-1108"
+    ],
+    "doc_recall": 0.0
+  },
+  {
+    "id": "Q07",
+    "type": "1-hop",
+    "question": "What was the failure mode of incident INC-203?",
+    "expected": "Die misalignment",
+    "answer": "Die misalignment",
+    "evidence": [
+      "12_report_WO-1103"
+    ],
+    "seconds": 30.1,
+    "exact": true,
+    "lenient": true,
+    "context_chars": 1216,
+    "retrieved_docs": [
+      "12_report_WO-1103",
+      "15_report_WO-1106",
+      "10_report_WO-1101",
+      "11_report_WO-1102"
+    ],
+    "doc_recall": 1.0
+  },
+  {
+    "id": "Q08",
+    "type": "1-hop",
+    "question": "At what hour of the day does the Night shift start?",
+    "expected": 22,
+    "answer": "22:00",
+    "evidence": [
+      "09_shift_plan"
+    ],
+    "seconds": 29.1,
+    "exact": false,
+    "lenient": true,
+    "context_chars": 1124,
+    "retrieved_docs": [
+      "09_shift_plan",
+      "19_shift_note_2026-03-24",
+      "17_report_WO-1108",
+      "18_shift_note_2026-03-17"
+    ],
+    "doc_recall": 1.0
+  },
+  {
+    "id": "Q09",
+    "type": "1-hop",
+    "question": "Which incident was repaired by work order WO-1104?",
+    "expected": "INC-204",
+    "answer": "INC-204",
+    "evidence": [
+      "13_report_WO-1104"
+    ],
+    "seconds": 30.8,
+    "exact": true,
+    "lenient": true,
+    "context_chars": 1089,
+    "retrieved_docs": [
+      "12_report_WO-1103",
+      "10_report_WO-1101",
+      "14_report_WO-1105",
+      "13_report_WO-1104"
+    ],
+    "doc_recall": 1.0
+  },
+  {
+    "id": "Q10",
+    "type": "1-hop",
+    "question": "Which machine is the last station of Line A?",
+    "expected": "K1",
+    "answer": "Packer K1",
+    "evidence": [
+      "01_line_overview",
+      "06_datasheet_I1"
+    ],
+    "seconds": 31.7,
+    "exact": true,
+    "lenient": true,
+    "context_chars": 1382,
+    "retrieved_docs": [
+      "01_line_overview",
+      "06_datasheet_I1",
+      "12_report_WO-1103",
+      "03_datasheet_P2"
+    ],
+    "doc_recall": 1.0
+  },
+  {
+    "id": "Q11",
+    "type": "multi-hop",
+    "question": "Which machine downstream of the bottleneck machine (the machine with the longest cycle time) has the highest rated power?",
+    "expected": "K1",
+    "answer": "Press P2",
+    "evidence": [
+      "03_datasheet_P2",
+      "02_datasheet_P1",
+      "04_datasheet_W1",
+      "05_datasheet_A1"
+    ],
+    "seconds": 33.3,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 1070,
+    "retrieved_docs": [
+      "03_datasheet_P2",
+      "02_datasheet_P1",
+      "04_datasheet_W1",
+      "05_datasheet_A1"
+    ],
+    "doc_recall": 0.571
+  },
+  {
+    "id": "Q12",
+    "type": "multi-hop",
+    "question": "Which machine feeds the buffer that feeds Washer W1?",
+    "expected": "P2",
+    "answer": "Press P2",
+    "evidence": [
+      "01_line_overview",
+      "08_buffer_layout"
+    ],
+    "seconds": 34.5,
+    "exact": true,
+    "lenient": true,
+    "context_chars": 1630,
+    "retrieved_docs": [
+      "08_buffer_layout",
+      "01_line_overview",
+      "13_report_WO-1104",
+      "04_datasheet_W1"
+    ],
+    "doc_recall": 1.0
+  },
+  {
+    "id": "Q13",
+    "type": "multi-hop",
+    "question": "What is the rated power, in kW, of the machine that buffer B1 feeds?",
+    "expected": 90,
+    "answer": "45",
+    "evidence": [
+      "03_datasheet_P2",
+      "04_datasheet_W1"
+    ],
+    "seconds": 31.4,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 1258,
+    "retrieved_docs": [
+      "20_energy_audit",
+      "03_datasheet_P2",
+      "04_datasheet_W1",
+      "07_datasheet_K1"
+    ],
+    "doc_recall": 0.5
+  },
+  {
+    "id": "Q14",
+    "type": "multi-hop",
+    "question": "On which machine did the failure that was repaired by work order WO-1103 happen?",
+    "expected": "P1",
+    "answer": "Press P1",
+    "evidence": [
+      "10_report_WO-1101",
+      "12_report_WO-1103",
+      "13_report_WO-1104",
+      "14_report_WO-1105"
+    ],
+    "seconds": 35.2,
+    "exact": true,
+    "lenient": true,
+    "context_chars": 1089,
+    "retrieved_docs": [
+      "10_report_WO-1101",
+      "12_report_WO-1103",
+      "13_report_WO-1104",
+      "14_report_WO-1105"
+    ],
+    "doc_recall": 1.0
+  },
+  {
+    "id": "Q15",
+    "type": "multi-hop",
+    "question": "What is the capacity, in parts, of the buffer directly upstream of Assembly cell A1?",
+    "expected": 25,
+    "answer": "25",
+    "evidence": [
+      "08_buffer_layout",
+      "01_line_overview",
+      "05_datasheet_A1"
+    ],
+    "seconds": 38.3,
+    "exact": true,
+    "lenient": true,
+    "context_chars": 1641,
+    "retrieved_docs": [
+      "08_buffer_layout",
+      "05_datasheet_A1",
+      "01_line_overview",
+      "17_report_WO-1108"
+    ],
+    "doc_recall": 1.0
+  },
+  {
+    "id": "Q16",
+    "type": "multi-hop",
+    "question": "During which shift did the failure that was repaired by work order WO-1108 happen?",
+    "expected": "Night",
+    "answer": "Night",
+    "evidence": [
+      "17_report_WO-1108"
+    ],
+    "seconds": 38.5,
+    "exact": true,
+    "lenient": true,
+    "context_chars": 1151,
+    "retrieved_docs": [
+      "12_report_WO-1103",
+      "10_report_WO-1101",
+      "17_report_WO-1108",
+      "11_report_WO-1102"
+    ],
+    "doc_recall": 1.0
+  },
+  {
+    "id": "Q17",
+    "type": "multi-hop",
+    "question": "What is the MTTR, in hours, of the machine on which incident INC-204 happened?",
+    "expected": 1.5,
+    "answer": "0.25",
+    "evidence": [
+      "13_report_WO-1104"
+    ],
+    "seconds": 32.8,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 1205,
+    "retrieved_docs": [
+      "13_report_WO-1104",
+      "10_report_WO-1101",
+      "15_report_WO-1106",
+      "12_report_WO-1103"
+    ],
+    "doc_recall": 0.5
+  },
+  {
+    "id": "Q18",
+    "type": "multi-hop",
+    "question": "What is the cycle time, in seconds, of the machine that feeds the buffer in front of Packer K1?",
+    "expected": 30,
+    "answer": "25",
+    "evidence": [
+      "01_line_overview",
+      "07_datasheet_K1"
+    ],
+    "seconds": 39.6,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 1629,
+    "retrieved_docs": [
+      "08_buffer_layout",
+      "01_line_overview",
+      "19_shift_note_2026-03-24",
+      "07_datasheet_K1"
+    ],
+    "doc_recall": 0.5
+  },
+  {
+    "id": "Q19",
+    "type": "aggregation",
+    "question": "Which machine is the bottleneck of Line A, i.e. has the longest cycle time?",
+    "expected": "A1",
+    "answer": "Assembly cell A1",
+    "evidence": [
+      "01_line_overview",
+      "05_datasheet_A1"
+    ],
+    "seconds": 34.5,
+    "exact": true,
+    "lenient": true,
+    "context_chars": 1380,
+    "retrieved_docs": [
+      "02_datasheet_P1",
+      "03_datasheet_P2",
+      "01_line_overview",
+      "05_datasheet_A1"
+    ],
+    "doc_recall": 0.5
+  },
+  {
+    "id": "Q20",
+    "type": "aggregation",
+    "question": "How many failures happened during the Night shift?",
+    "expected": 4,
+    "answer": "Once",
+    "evidence": [
+      "12_report_WO-1103",
+      "17_report_WO-1108",
+      "10_report_WO-1101"
+    ],
+    "seconds": 55.6,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 1054,
+    "retrieved_docs": [
+      "09_shift_plan",
+      "12_report_WO-1103",
+      "17_report_WO-1108",
+      "10_report_WO-1101"
+    ],
+    "doc_recall": 0.5
+  },
+  {
+    "id": "Q21",
+    "type": "aggregation",
+    "question": "What is the total production downtime, in hours, caused by failures of Press P2?",
+    "expected": 9.5,
+    "answer": "10.5",
+    "evidence": [
+      "15_report_WO-1106",
+      "10_report_WO-1101"
+    ],
+    "seconds": 45.0,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 1167,
+    "retrieved_docs": [
+      "15_report_WO-1106",
+      "10_report_WO-1101",
+      "12_report_WO-1103",
+      "03_datasheet_P2"
+    ],
+    "doc_recall": 1.0
+  },
+  {
+    "id": "Q22",
+    "type": "aggregation",
+    "question": "Which machine had the most failures?",
+    "expected": "A1",
+    "answer": "Press P2",
+    "evidence": [
+      "10_report_WO-1101",
+      "12_report_WO-1103",
+      "15_report_WO-1106",
+      "13_report_WO-1104"
+    ],
+    "seconds": 41.7,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 1205,
+    "retrieved_docs": [
+      "10_report_WO-1101",
+      "12_report_WO-1103",
+      "15_report_WO-1106",
+      "13_report_WO-1104"
+    ],
+    "doc_recall": 0.0
+  },
+  {
+    "id": "Q23",
+    "type": "aggregation",
+    "question": "How many preventive maintenance actions were carried out?",
+    "expected": 2,
+    "answer": "3",
+    "evidence": [
+      "16_report_WO-1107",
+      "14_report_WO-1105",
+      "12_report_WO-1103",
+      "13_report_WO-1104"
+    ],
+    "seconds": 38.8,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 982,
+    "retrieved_docs": [
+      "16_report_WO-1107",
+      "14_report_WO-1105",
+      "12_report_WO-1103",
+      "13_report_WO-1104"
+    ],
+    "doc_recall": 1.0
+  },
+  {
+    "id": "Q24",
+    "type": "aggregation",
+    "question": "What is the total rated power, in kW, of all machines on Line A?",
+    "expected": 246,
+    "answer": "186",
+    "evidence": [
+      "02_energy_audit",
+      "04_datasheet_W1",
+      "05_datasheet_A1",
+      "07_datasheet_K1"
+    ],
+    "seconds": 38.7,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 1290,
+    "retrieved_docs": [
+      "20_energy_audit",
+      "07_datasheet_K1",
+      "04_datasheet_W1",
+      "05_datasheet_A1"
+    ],
+    "doc_recall": 1.0
+  },
+  {
+    "id": "Q25",
+    "type": "aggregation",
+    "question": "What is the total production downtime, in hours, of all failures?",
+    "expected": 20,
+    "answer": "bytes of information needed to calculate the total downtime, but not provided in the given documents.",
+    "evidence": [
+      "13_report_WO-1104",
+      "12_report_WO-1103",
+      "15_report_WO-1106",
+      "10_report_WO-1101"
+    ],
+    "seconds": 44.6,
+    "exact": false,
+    "lenient": false,
+    "context_chars": 1205,
+    "retrieved_docs": [
+      "13_report_WO-1104",
+      "12_report_WO-1103",
+      "15_report_WO-1106",
+      "10_report_WO-1101"
+    ],
+    "doc_recall": 0.5
+  }
+]

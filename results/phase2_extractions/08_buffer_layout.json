@@ -1,0 +1,133 @@
+{
+  "failures": [],
+  "maintenance_actions": [],
+  "machines": [
+    {
+      "id": "Press P1",
+      "name": "Press P1",
+      "machine_type": "Press",
+      "line": "Line A",
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": "Buffer B1"
+    },
+    {
+      "id": "Press P2",
+      "name": "Press P2",
+      "machine_type": "Press",
+      "line": "Line A",
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": "Buffer B2"
+    },
+    {
+      "id": "Washer W1",
+      "name": "Washer W1",
+      "machine_type": "Washer",
+      "line": "Line A",
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": "Buffer B2"
+    },
+    {
+      "id": "Assembly A1",
+      "name": "Assembly A1",
+      "machine_type": "Assembly",
+      "line": "Line A",
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": "Buffer B3"
+    },
+    {
+      "id": "Inspection I1",
+      "name": "Inspection I1",
+      "machine_type": "Inspection",
+      "line": "Line A",
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": "Buffer B4"
+    },
+    {
+      "id": "Packer K1",
+      "name": "Packer K1",
+      "machine_type": "Packing",
+      "line": "Line A",
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": "Buffer B5"
+    }
+  ],
+  "buffers": [
+    {
+      "id": "Buffer B1",
+      "name": "Buffer B1",
+      "capacity": 40.0,
+      "fed_by_machine": "Press P1",
+      "feeds_machine": "Press P2"
+    },
+    {
+      "id": "Buffer B2",
+      "name": "Buffer B2",
+      "capacity": 30.0,
+      "fed_by_machine": "Press P2",
+      "feeds_machine": "Washer W1"
+    },
+    {
+      "id": "Buffer B3",
+      "name": "Buffer B3",
+      "capacity": 25.0,
+      "fed_by_machine": "Washer W1",
+      "feeds_machine": "Assembly A1"
+    },
+    {
+      "id": "Buffer B4",
+      "name": "Buffer B4",
+      "capacity": 20.0,
+      "fed_by_machine": "Assembly A1",
+      "feeds_machine": "Inspection I1"
+    },
+    {
+      "id": "Buffer B5",
+      "name": "Buffer B5",
+      "capacity": 15.0,
+      "fed_by_machine": "Inspection I1",
+      "feeds_machine": "Packer K1"
+    }
+  ],
+  "shifts": [
+    {
+      "id": "Early",
+      "name": "Early",
+      "start_hour": 4
+    },
+    {
+      "id": "Late",
+      "name": "Late",
+      "start_hour": 16
+    },
+    {
+      "id": "Night",
+      "name": "Night",
+      "start_hour": 22
+    }
+  ],
+  "lines": [
+    {
+      "id": "Line A",
+      "name": "Line A",
+      "final_machine": "Packer K1"
+    }
+  ]
+}

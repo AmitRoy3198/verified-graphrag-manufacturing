@@ -1,0 +1,6 @@
+Maintenance report WO-1107
+
+Date: 2026-03-21
+Machine: Inspection station I1
+Preventive maintenance: camera calibration and lens cleaning.
+Work duration: 2 h.

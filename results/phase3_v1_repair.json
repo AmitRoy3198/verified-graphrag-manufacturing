@@ -1,0 +1,3684 @@
+{
+  "rounds": [
+    {
+      "round": 0,
+      "conforms": false,
+      "violations": 54,
+      "entities_with_violations": 26,
+      "triples": 274,
+      "precision": 0.613,
+      "recall": 0.939,
+      "f1": 0.742,
+      "correct": 168,
+      "extracted": 274,
+      "gold": 179
+    },
+    {
+      "round": 1,
+      "conforms": false,
+      "violations": 76,
+      "entities_with_violations": 16,
+      "triples": 226,
+      "precision": 0.588,
+      "recall": 0.743,
+      "f1": 0.657,
+      "correct": 133,
+      "extracted": 226,
+      "gold": 179
+    },
+    {
+      "round": 2,
+      "conforms": false,
+      "violations": 37,
+      "entities_with_violations": 15,
+      "triples": 218,
+      "precision": 0.647,
+      "recall": 0.788,
+      "f1": 0.71,
+      "correct": 141,
+      "extracted": 218,
+      "gold": 179
+    },
+    {
+      "round": 3,
+      "conforms": false,
+      "violations": 71,
+      "entities_with_violations": 13,
+      "triples": 225,
+      "precision": 0.591,
+      "recall": 0.743,
+      "f1": 0.658,
+      "correct": 133,
+      "extracted": 225,
+      "gold": 179
+    }
+  ],
+  "repairs": [
+    {
+      "round": 1,
+      "entity": "B3",
+      "violations": [
+        "A maintenance action must refer to exactly one Machine (onMachine)."
+      ],
+      "facts_before": [
+        [
+          "actionType",
+          "Corrective"
+        ],
+        [
+          "addresses",
+          "NEARMISS1"
+        ],
+        [
+          "date",
+          "2026-03-10"
+        ],
+        [
+          "durationH",
+          "0.5"
+        ]
+      ],
+      "seconds": 47.2,
+      "notes": [],
+      "facts_after": [
+        [
+          "actionType",
+          "Corrective"
+        ],
+        [
+          "date",
+          "2026-03-10"
+        ],
+        [
+          "durationH",
+          "0.5"
+        ],
+        [
+          "onMachine",
+          "B3"
+        ]
+      ]
+    },
+    {
+      "round": 1,
+      "entity": "WASHER",
+      "violations": [
+        "A maintenance action needs exactly one durationH: decimal hours > 0."
+      ],
+      "facts_before": [
+        [
+          "actionType",
+          "Preventive"
+        ],
+        [
+          "addresses",
+          "INC205"
+        ],
+        [
+          "date",
+          "2026-03-17"
+        ],
+        [
+          "onMachine",
+          "WASHER"
+        ]
+      ],
+      "seconds": 47.7,
+      "notes": [],
+      "facts_after": [
+        [
+          "actionType",
+          "Corrective"
+        ],
+        [
+          "addresses",
+          "INC205"
+        ],
+        [
+          "date",
+          "2026-03-17"
+        ],
+        [
+          "durationH",
+          "1.0"
+        ],
+        [
+          "onMachine",
+          "WASHER"
+        ]
+      ]
+    },
+    {
+      "round": 1,
+      "entity": "B2",
+      "violations": [
+        "A buffer must be fed by exactly one Machine (the previous station)."
+      ],
+      "facts_before": [
+        [
+          "capacity",
+          "30"
+        ],
+        [
+          "fedBy",
+          "P2"
+        ],
+        [
+          "fedBy",
+          "W1"
+        ],
+        [
+          "feeds",
+          "W1"
+        ],
+        [
+          "label",
+          "Buffer B2"
+        ]
+      ],
+      "seconds": 50.1,
+      "notes": [],
+      "facts_after": [
+        [
+          "capacity",
+          "30"
+        ],
+        [
+          "fedBy",
+          "P2"
+        ],
+        [
+          "feeds",
+          "W1"
+        ],
+        [
+          "label",
+          "Buffer B2"
+        ]
+      ]
+    },
+    {
+      "round": 1,
+      "entity": "B3",
+      "violations": [
+        "A buffer must be fed by exactly one Machine (the previous station).",
+        "A buffer needs exactly one name (rdfs:label)."
+      ],
+      "facts_before": [
+        [
+          "capacity",
+          "25"
+        ],
+        [
+          "fedBy",
+          "A1"
+        ],
+        [
+          "fedBy",
+          "W1"
+        ],
+        [
+          "feeds",
+          "A1"
+        ],
+        [
+          "label",
+          "B3"
+        ],
+        [
+          "label",
+          "Buffer B3"
+        ]
+      ],
+      "seconds": 49.2,
+      "notes": [],
+      "facts_after": [
+        [
+          "capacity",
+          "25"
+        ],
+        [
+          "fedBy",
+          "W1"
+        ],
+        [
+          "label",
+          "Buffer B3"
+        ]
+      ]
+    },
+    {
+      "round": 1,
+      "entity": "B4",
+      "violations": [
+        "A buffer must be fed by exactly one Machine (the previous station).",
+        "A buffer must feed exactly one Machine (the next station).",
+        "A buffer needs exactly one name (rdfs:label)."
+      ],
+      "facts_before": [
+        [
+          "capacity",
+          "20"
+        ],
+        [
+          "fedBy",
+          "A1"
+        ],
+        [
+          "fedBy",
+          "I1"
+        ],
+        [
+          "feeds",
+          "I1"
+        ],
+        [
+          "feeds",
+          "K1"
+        ],
+        [
+          "label",
+          "Buffer"
+        ],
+        [
+          "label",
+          "Buffer B4"
+        ]
+      ],
+      "seconds": 51.5,
+      "notes": [],
+      "facts_after": [
+        [
+          "capacity",
+          "20"
+        ],
+        [
+          "fedBy",
+          "A1"
+        ],
+        [
+          "label",
+          "Buffer B4"
+        ]
+      ]
+    },
+    {
+      "round": 1,
+      "entity": "B5",
+      "violations": [
+        "A buffer must be fed by exactly one Machine (the previous station)."
+      ],
+      "facts_before": [
+        [
+          "capacity",
+          "15"
+        ],
+        [
+          "fedBy",
+          "I1"
+        ],
+        [
+          "fedBy",
+          "K1"
+        ],
+        [
+          "feeds",
+          "K1"
+        ],
+        [
+          "label",
+          "Buffer B5"
+        ]
+      ],
+      "seconds": 49.7,
+      "notes": [],
+      "facts_after": [
+        [
+          "capacity",
+          "value:15"
+        ],
+        [
+          "fedBy",
+          "I1"
+        ],
+        [
+          "feeds",
+          "K1"
+        ],
+        [
+          "label",
+          "Buffer B5"
+        ]
+      ]
+    },
+    {
+      "round": 1,
+      "entity": "B6",
+      "violations": [
+        "A buffer needs exactly one capacity: a whole number of parts > 0.",
+        "A buffer must be fed by exactly one Machine (the previous station).",
+        "A buffer must feed exactly one Machine (the next station).",
+        "A buffer needs exactly one name (rdfs:label)."
+      ],
+      "facts_before": [],
+      "seconds": 43.5,
+      "notes": [
+        "ignored unknown property 'mfg:label'",
+        "ignored unknown property 'mfg:fedBy'",
+        "ignored unknown property 'mfg:feeds'"
+      ],
+      "facts_after": []
+    },
+    {
+      "round": 1,
+      "entity": "NULL",
+      "violations": [
+        "A buffer needs exactly one capacity: a whole number of parts > 0.",
+        "A buffer must be fed by exactly one Machine (the previous station).",
+        "A buffer must feed exactly one Machine (the next station).",
+        "A buffer needs exactly one name (rdfs:label)."
+      ],
+      "facts_before": [],
+      "seconds": 45.2,
+      "notes": [
+        "entity deleted"
+      ],
+      "facts_after": []
+    },
+    {
+      "round": 1,
+      "entity": "REDBOX",
+      "violations": [
+        "A buffer needs exactly one capacity: a whole number of parts > 0.",
+        "A buffer must feed exactly one Machine (the next station)."
+      ],
+      "facts_before": [
+        [
+          "fedBy",
+          "I1"
+        ],
+        [
+          "label",
+          "red box"
+        ]
+      ],
+      "seconds": 38.2,
+      "notes": [],
+      "facts_after": [
+        [
+          "capacity",
+          "time_based"
+        ],
+        [
+          "fedBy",
+          "I1"
+        ],
+        [
+          "label",
+          "red box"
+        ]
+      ]
+    },
+    {
+      "round": 1,
+      "entity": "INSPECTIONSTATIONREJECTEDPARTS",
+      "violations": [
+        "A failure needs exactly one date in YYYY-MM-DD format."
+      ],
+      "facts_before": [
+        [
+          "downtimeH",
+          "0.75"
+        ],
+        [
+          "failureMode",
+          "Rejected parts"
+        ],
+        [
+          "onMachine",
+          "I1"
+        ]
+      ],
+      "seconds": 43.9,
+      "notes": [],
+      "facts_after": [
+        [
+          "date",
+          "2023-04-01"
+        ],
+        [
+          "downtimeH",
+          "0.75"
+        ],
+        [
+          "failureMode",
+          "Rejected parts"
+        ],
+        [
+          "onMachine",
+          "I1"
+        ]
+      ]
+    },
+    {
+      "round": 1,
+      "entity": "NEARMISS1",
+      "violations": [
+        "A failure needs exactly one downtimeH: decimal hours > 0.",
+        "A failure must refer to exactly one Machine (onMachine)."
+      ],
+      "facts_before": [
+        [
+          "date",
+          "2026-03-10"
+        ],
+        [
+          "failureMode",
+          "near_miss"
+        ]
+      ],
+      "seconds": 27.3,
+      "notes": [
+        "entity deleted"
+      ],
+      "facts_after": []
+    },
+    {
+      "round": 1,
+      "entity": "NEARMISS2",
+      "violations": [
+        "A failure needs exactly one downtimeH: decimal hours > 0.",
+        "A failure must refer to exactly one Machine (onMachine)."
+      ],
+      "facts_before": [
+        [
+          "date",
+          "2026-03-10"
+        ],
+        [
+          "failureMode",
+          "near_miss"
+        ]
+      ],
+      "seconds": 27.5,
+      "notes": [
+        "entity deleted"
+      ],
+      "facts_after": []
+    },
+    {
+      "round": 1,
+      "entity": "A",
+      "violations": [
+        "A production line must name exactly one finalMachine."
+      ],
+      "facts_before": [
+        [
+          "finalMachine",
+          "A1"
+        ],
+        [
+          "finalMachine",
+          "I1"
+        ],
+        [
+          "finalMachine",
+          "K1"
+        ],
+        [
+          "label",
+          "Line A"
+        ]
+      ],
+      "seconds": 43.9,
+      "notes": [],
+      "facts_after": [
+        [
+          "finalMachine",
+          "A1"
+        ],
+        [
+          "label",
+          "Line A"
+        ]
+      ]
+    },
+    {
+      "round": 1,
+      "entity": "LINEA",
+      "violations": [
+        "A production line must name exactly one finalMachine."
+      ],
+      "facts_before": [
+        [
+          "finalMachine",
+          "I1"
+        ],
+        [
+          "finalMachine",
+          "K1"
+        ],
+        [
+          "finalMachine",
+          "P1"
+        ],
+        [
+          "finalMachine",
+          "P2"
+        ],
+        [
+          "finalMachine",
+          "W1"
+        ],
+        [
+          "label",
+          "Line A"
+        ]
+      ],
+      "seconds": 56.2,
+      "notes": [],
+      "facts_after": [
+        [
+          "finalMachine",
+          "P1"
+        ],
+        [
+          "label",
+          "Line A"
+        ]
+      ]
+    },
+    {
+      "round": 1,
+      "entity": "NULL",
+      "violations": [
+        "A production line must name exactly one finalMachine.",
+        "A production line needs exactly one name (rdfs:label)."
+      ],
+      "facts_before": [],
+      "seconds": 39.3,
+      "notes": [
+        "entity deleted"
+      ],
+      "facts_after": []
+    },
+    {
+      "round": 1,
+      "entity": "A1",
+      "violations": [
+        "A machine can feed at most one thing, and it must be a Buffer (never a machine directly).",
+        "A machine needs exactly one name (rdfs:label).",
+        "A machine must belong to exactly one ProductionLine (partOfLine)."
+      ],
+      "facts_before": [
+        [
+          "cycleTimeS",
+          "55.0"
+        ],
+        [
+          "feeds",
+          "B4"
+        ],
+        [
+          "label",
+          "Assembly"
+        ],
+        [
+          "label",
+          "Assembly A1"
+        ],
+        [
+          "label",
+          "Assembly cell A1"
+        ],
+        [
+          "machineType",
+          "Assembly"
+        ],
+        [
+          "mtbfH",
+          "220.0"
+        ],
+        [
+          "mttrH",
+          "2.0"
+        ],
+        [
+          "partOfLine",
+          "A"
+        ],
+        [
+          "partOfLine",
+          "LINEA"
+        ],
+        [
+          "powerKW",
+          "18.0"
+        ]
+      ],
+      "seconds": 66.1,
+      "notes": [],
+      "facts_after": [
+        [
+          "cycleTimeS",
+          ""
+        ],
+        [
+          "feeds",
+          "B3"
+        ],
+        [
+          "machineType",
+          "Assembly"
+        ],
+        [
+          "mtbfH",
+          "220.0"
+        ],
+        [
+          "mttrH",
+          "2.0"
+        ],
+        [
+          "partOfLine",
+          "A"
+        ],
+        [
+          "powerKW",
+          "18.0"
+        ]
+      ]
+    },
+    {
+      "round": 1,
+      "entity": "I1",
+      "violations": [
+        "A machine can feed at most one thing, and it must be a Buffer (never a machine directly).",
+        "A machine needs exactly one name (rdfs:label).",
+        "A machine must belong to exactly one ProductionLine (partOfLine)."
+      ],
+      "facts_before": [
+        [
+          "cycleTimeS",
+          "30.0"
+        ],
+        [
+          "feeds",
+          "B5"
+        ],
+        [
+          "feeds",
+          "REDBOX"
+        ],
+        [
+          "label",
+          "Inspection"
+        ],
+        [
+          "label",
+          "Inspection I1"
+        ],
+        [
+          "label",
+          "Inspection station I1"
+        ],
+        [
+          "machineType",
+          "Inspection"
+        ],
+        [
+          "mtbfH",
+          "600.0"
+        ],
+        [
+          "mttrH",
+          "45.0"
+        ],
+        [
+          "partOfLine",
+          "A"
+        ],
+        [
+          "partOfLine",
+          "LINEA"
+        ],
+        [
+          "powerKW",
+          "6.0"
+        ]
+      ],
+      "seconds": 65.5,
+      "notes": [],
+      "facts_after": [
+        [
+          "cycleTimeS",
+          "/30"
+        ],
+        [
+          "feeds",
+          "B5"
+        ],
+        [
+          "label",
+          "Inspection station I1"
+        ],
+        [
+          "machineType",
+          "Inspection"
+        ],
+        [
+          "mtbfH",
+          "/600"
+        ],
+        [
+          "mttrH",
+          "/45"
+        ],
+        [
+          "partOfLine",
+          "A"
+        ],
+        [
+          "powerKW",
+          "/6"
+        ]
+      ]
+    },
+    {
+      "round": 1,
+      "entity": "K1",
+      "violations": [
+        "A machine needs exactly one name (rdfs:label).",
+        "A machine must belong to exactly one ProductionLine (partOfLine)."
+      ],
+      "facts_before": [
+        [
+          "cycleTimeS",
+          "25.0"
+        ],
+        [
+          "label",
+          "Packer"
+        ],
+        [
+          "label",
+          "Packer K1"
+        ],
+        [
+          "machineType",
+          "Packing"
+        ],
+        [
+          "mtbfH",
+          "350.0"
+        ],
+        [
+          "mttrH",
+          "12.0"
+        ],
+        [
+          "partOfLine",
+          "A"
+        ],
+        [
+          "partOfLine",
+          "LINEA"
+        ],
+        [
+          "powerKW",
+          "12.0"
+        ]
+      ],
+      "seconds": 60.5,
+      "notes": [],
+      "facts_after": [
+        [
+          "cycleTimeS",
+          "/60"
+        ],
+        [
+          "label",
+          "Packer K1"
+        ],
+        [
+          "machineType",
+          "Packing"
+        ],
+        [
+          "mtbfH",
+          "/24"
+        ],
+        [
+          "mttrH",
+          "/24"
+        ],
+        [
+          "partOfLine",
+          "LINEA"
+        ],
+        [
+          "powerKW",
+          "/1000"
+        ]
+      ]
+    },
+    {
+      "round": 1,
+      "entity": "P1",
+      "violations": [
+        "A machine needs exactly one name (rdfs:label).",
+        "A machine must belong to exactly one ProductionLine (partOfLine)."
+      ],
+      "facts_before": [
+        [
+          "cycleTimeS",
+          "42.0"
+        ],
+        [
+          "feeds",
+          "B1"
+        ],
+        [
+          "label",
+          "Press"
+        ],
+        [
+          "label",
+          "Press P1"
+        ],
+        [
+          "machineType",
+          "Press"
+        ],
+        [
+          "mtbfH",
+          "160.0"
+        ],
+        [
+          "mttrH",
+          "3.5"
+        ],
+        [
+          "partOfLine",
+          "A"
+        ],
+        [
+          "partOfLine",
+          "LINEA"
+        ],
+        [
+          "powerKW",
+          "75.0"
+        ]
+      ],
+      "seconds": 47.6,
+      "notes": [],
+      "facts_after": [
+        [
+          "cycleTimeS",
+          ""
+        ],
+        [
+          "label",
+          "Press"
+        ],
+        [
+          "machineType",
+          "Press"
+        ]
+      ]
+    },
+    {
+      "round": 1,
+      "entity": "P2",
+      "violations": [
+        "A machine needs exactly one name (rdfs:label).",
+        "A machine must belong to exactly one ProductionLine (partOfLine)."
+      ],
+      "facts_before": [
+        [
+          "cycleTimeS",
+          "48.0"
+        ],
+        [
+          "feeds",
+          "B2"
+        ],
+        [
+          "label",
+          "Press"
+        ],
+        [
+          "label",
+          "Press P2"
+        ],
+        [
+          "machineType",
+          "Press"
+        ],
+        [
+          "mtbfH",
+          "140.0"
+        ],
+        [
+          "mttrH",
+          "4.0"
+        ],
+        [
+          "partOfLine",
+          "A"
+        ],
+        [
+          "partOfLine",
+          "LINEA"
+        ],
+        [
+          "powerKW",
+          "90.0"
+        ]
+      ],
+      "seconds": 61.3,
+      "notes": [],
+      "facts_after": [
+        [
+          "cycleTimeS",
+          "bytes"
+        ],
+        [
+          "label",
+          "Press P2"
+        ],
+        [
+          "machineType",
+          "Press"
+        ],
+        [
+          "mtbfH",
+          "bytes"
+        ],
+        [
+          "mttrH",
+          "bytes"
+        ],
+        [
+          "partOfLine",
+          "LINEA"
+        ],
+        [
+          "powerKW",
+          "bytes"
+        ]
+      ]
+    },
+    {
+      "round": 1,
+      "entity": "W1",
+      "violations": [
+        "A machine can feed at most one thing, and it must be a Buffer (never a machine directly).",
+        "A machine needs exactly one name (rdfs:label).",
+        "A machine must belong to exactly one ProductionLine (partOfLine)."
+      ],
+      "facts_before": [
+        [
+          "cycleTimeS",
+          "35.0"
+        ],
+        [
+          "feeds",
+          "B3"
+        ],
+        [
+          "label",
+          "Washer"
+        ],
+        [
+          "label",
+          "Washer W1"
+        ],
+        [
+          "machineType",
+          "Washer"
+        ],
+        [
+          "mtbfH",
+          "400.0"
+        ],
+        [
+          "mttrH",
+          "1.5"
+        ],
+        [
+          "partOfLine",
+          "A"
+        ],
+        [
+          "partOfLine",
+          "LINEA"
+        ],
+        [
+          "powerKW",
+          "45.0"
+        ]
+      ],
+      "seconds": 64.9,
+      "notes": [],
+      "facts_after": [
+        [
+          "cycleTimeS",
+          "/3.5"
+        ],
+        [
+          "feeds",
+          "B2"
+        ],
+        [
+          "label",
+          "Washer W1"
+        ],
+        [
+          "machineType",
+          "Washer"
+        ],
+        [
+          "mtbfH",
+          "/400"
+        ],
+        [
+          "mttrH",
+          "/1.5"
+        ],
+        [
+          "partOfLine",
+          "A"
+        ],
+        [
+          "powerKW",
+          "/45"
+        ]
+      ]
+    },
+    {
+      "round": 1,
+      "entity": "WASHER",
+      "violations": [
+        "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0.",
+        "A machine needs exactly one mtbfH: a decimal number of hours > 0.",
+        "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH.",
+        "A machine must belong to exactly one ProductionLine (partOfLine).",
+        "A machine needs exactly one powerKW: a decimal number of kW > 0.",
+        "This machine is not the line's final machine, so it must feed a Buffer."
+      ],
+      "facts_before": [
+        [
+          "label",
+          "Washer"
+        ],
+        [
+          "machineType",
+          "Washer"
+        ]
+      ],
+      "seconds": 54.7,
+      "notes": [],
+      "facts_after": [
+        [
+          "cycleTimeS",
+          "http://example.org/cycle/120"
+        ],
+        [
+          "label",
+          "Washer"
+        ],
+        [
+          "machineType",
+          "Washer"
+        ],
+        [
+          "mtbfH",
+          "http://example.org/mtbf/2000"
+        ],
+        [
+          "mttrH",
+          "http://example.org/mttr/100"
+        ],
+        [
+          "partOfLine",
+          "HTTPEXAMPLEORGLINEMACHINEWASHER"
+        ],
+        [
+          "powerKW",
+          "http://example.org/power/10"
+        ]
+      ]
+    },
+    {
+      "round": 1,
+      "entity": "EARLY",
+      "violations": [
+        "A shift needs exactly one startHour: a whole number from 0 to 23."
+      ],
+      "facts_before": [
+        [
+          "label",
+          "Early"
+        ],
+        [
+          "startHour",
+          "0"
+        ],
+        [
+          "startHour",
+          "4"
+        ],
+        [
+          "startHour",
+          "6"
+        ]
+      ],
+      "seconds": 41.9,
+      "notes": [],
+      "facts_after": [
+        [
+          "label",
+          "Early"
+        ],
+        [
+          "startHour",
+          "testing"
+        ]
+      ]
+    },
+    {
+      "round": 1,
+      "entity": "LATE",
+      "violations": [
+        "A shift needs exactly one startHour: a whole number from 0 to 23."
+      ],
+      "facts_before": [
+        [
+          "label",
+          "Late"
+        ],
+        [
+          "startHour",
+          "10"
+        ],
+        [
+          "startHour",
+          "12"
+        ],
+        [
+          "startHour",
+          "14"
+        ],
+        [
+          "startHour",
+          "16"
+        ],
+        [
+          "startHour",
+          "18"
+        ],
+        [
+          "startHour",
+          "20"
+        ]
+      ],
+      "seconds": 39.3,
+      "notes": [],
+      "facts_after": [
+        [
+          "label",
+          "Late"
+        ],
+        [
+          "startHour",
+          "bytes"
+        ]
+      ]
+    },
+    {
+      "round": 1,
+      "entity": "NIGHT",
+      "violations": [
+        "A shift needs exactly one startHour: a whole number from 0 to 23."
+      ],
+      "facts_before": [
+        [
+          "label",
+          "Night"
+        ],
+        [
+          "startHour",
+          "16"
+        ],
+        [
+          "startHour",
+          "20"
+        ],
+        [
+          "startHour",
+          "22"
+        ]
+      ],
+      "seconds": 42.2,
+      "notes": [],
+      "facts_after": [
+        [
+          "label",
+          "Night"
+        ],
+        [
+          "startHour",
+          "22"
+        ]
+      ]
+    },
+    {
+      "round": 1,
+      "entity": "NULL",
+      "violations": [
+        "A shift needs exactly one name (rdfs:label).",
+        "A shift needs exactly one startHour: a whole number from 0 to 23."
+      ],
+      "facts_before": [],
+      "seconds": 17.6,
+      "notes": [
+        "entity deleted"
+      ],
+      "facts_after": []
+    },
+    {
+      "round": 2,
+      "entity": "B3",
+      "violations": [
+        "A maintenance action must refer to exactly one Machine (onMachine)."
+      ],
+      "facts_before": [
+        [
+          "actionType",
+          "Corrective"
+        ],
+        [
+          "date",
+          "2026-03-10"
+        ],
+        [
+          "durationH",
+          "0.5"
+        ],
+        [
+          "onMachine",
+          "B3"
+        ]
+      ],
+      "seconds": 33.8,
+      "notes": [],
+      "facts_after": [
+        [
+          "actionType",
+          "Corrective"
+        ],
+        [
+          "date",
+          "2026-03-10"
+        ],
+        [
+          "durationH",
+          "0.5"
+        ],
+        [
+          "onMachine",
+          "B3"
+        ]
+      ]
+    },
+    {
+      "round": 2,
+      "entity": "B1",
+      "violations": [
+        "A buffer must be fed by exactly one Machine (the previous station)."
+      ],
+      "facts_before": [
+        [
+          "capacity",
+          "40"
+        ],
+        [
+          "feeds",
+          "P2"
+        ],
+        [
+          "label",
+          "Buffer B1"
+        ]
+      ],
+      "seconds": 37.6,
+      "notes": [],
+      "facts_after": [
+        [
+          "capacity",
+          "time:0.6666666666666666"
+        ],
+        [
+          "feeds",
+          "P2"
+        ],
+        [
+          "label",
+          "Buffer B1"
+        ]
+      ]
+    },
+    {
+      "round": 2,
+      "entity": "B3",
+      "violations": [
+        "A buffer must feed exactly one Machine (the next station)."
+      ],
+      "facts_before": [
+        [
+          "capacity",
+          "25"
+        ],
+        [
+          "fedBy",
+          "A1"
+        ],
+        [
+          "label",
+          "Buffer B3"
+        ]
+      ],
+      "seconds": 37.3,
+      "notes": [],
+      "facts_after": [
+        [
+          "capacity",
+          ">(25 parts)</value> <!-- From source document [08_buffer_layout] -->"
+        ],
+        [
+          "fedBy",
+          "W1"
+        ],
+        [
+          "feeds",
+          "A1"
+        ]
+      ]
+    },
+    {
+      "round": 2,
+      "entity": "B4",
+      "violations": [
+        "A buffer must be fed by exactly one Machine (the previous station).",
+        "A buffer must feed exactly one Machine (the next station)."
+      ],
+      "facts_before": [
+        [
+          "capacity",
+          "20"
+        ],
+        [
+          "label",
+          "Buffer B4"
+        ]
+      ],
+      "seconds": 33.3,
+      "notes": [],
+      "facts_after": [
+        [
+          "capacity",
+          "20"
+        ]
+      ]
+    },
+    {
+      "round": 2,
+      "entity": "B5",
+      "violations": [
+        "A buffer needs exactly one capacity: a whole number of parts > 0.",
+        "A buffer needs exactly one capacity: a whole number of parts > 0."
+      ],
+      "facts_before": [
+        [
+          "capacity",
+          "value:15"
+        ],
+        [
+          "fedBy",
+          "I1"
+        ],
+        [
+          "feeds",
+          "K1"
+        ],
+        [
+          "label",
+          "Buffer B5"
+        ]
+      ],
+      "seconds": 36.3,
+      "notes": [],
+      "facts_after": [
+        [
+          "capacity",
+          "value:15"
+        ],
+        [
+          "fedBy",
+          "I1"
+        ],
+        [
+          "feeds",
+          "K1"
+        ],
+        [
+          "label",
+          "Buffer B5"
+        ]
+      ]
+    },
+    {
+      "round": 2,
+      "entity": "B6",
+      "violations": [
+        "A buffer needs exactly one capacity: a whole number of parts > 0.",
+        "A buffer must be fed by exactly one Machine (the previous station).",
+        "A buffer must feed exactly one Machine (the next station).",
+        "A buffer needs exactly one name (rdfs:label)."
+      ],
+      "facts_before": [],
+      "seconds": 38.5,
+      "notes": [
+        "ignored unknown property 'mfg:label'",
+        "ignored unknown property 'mfg:fedBy'",
+        "ignored unknown property 'mfg:feeds'"
+      ],
+      "facts_after": []
+    },
+    {
+      "round": 2,
+      "entity": "REDBOX",
+      "violations": [
+        "A buffer needs exactly one capacity: a whole number of parts > 0.",
+        "A buffer needs exactly one capacity: a whole number of parts > 0.",
+        "A buffer must be fed by exactly one Machine (the previous station).",
+        "A buffer must feed exactly one Machine (the next station)."
+      ],
+      "facts_before": [
+        [
+          "capacity",
+          "time_based"
+        ],
+        [
+          "label",
+          "red box"
+        ]
+      ],
+      "seconds": 38.5,
+      "notes": [],
+      "facts_after": [
+        [
+          "fedBy",
+          "I1"
+        ],
+        [
+          "feeds",
+          "I2"
+        ]
+      ]
+    },
+    {
+      "round": 2,
+      "entity": "A1",
+      "violations": [
+        "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0.",
+        "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0.",
+        "A machine needs exactly one name (rdfs:label)."
+      ],
+      "facts_before": [
+        [
+          "cycleTimeS",
+          ""
+        ],
+        [
+          "machineType",
+          "Assembly"
+        ],
+        [
+          "mtbfH",
+          "220.0"
+        ],
+        [
+          "mttrH",
+          "2.0"
+        ],
+        [
+          "partOfLine",
+          "A"
+        ],
+        [
+          "powerKW",
+          "18.0"
+        ]
+      ],
+      "seconds": 69.4,
+      "notes": [],
+      "facts_after": [
+        [
+          "cycleTimeS",
+          "55.0"
+        ],
+        [
+          "machineType",
+          "Assembly"
+        ],
+        [
+          "mtbfH",
+          "220.0"
+        ],
+        [
+          "mttrH",
+          "2.0"
+        ],
+        [
+          "partOfLine",
+          "A"
+        ],
+        [
+          "powerKW",
+          "18.0"
+        ]
+      ]
+    },
+    {
+      "round": 2,
+      "entity": "I1",
+      "violations": [
+        "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0.",
+        "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0.",
+        "A machine needs exactly one mtbfH: a decimal number of hours > 0.",
+        "A machine needs exactly one mtbfH: a decimal number of hours > 0.",
+        "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH.",
+        "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH.",
+        "A machine needs exactly one powerKW: a decimal number of kW > 0.",
+        "A machine needs exactly one powerKW: a decimal number of kW > 0."
+      ],
+      "facts_before": [
+        [
+          "cycleTimeS",
+          "/30"
+        ],
+        [
+          "feeds",
+          "B5"
+        ],
+        [
+          "feeds",
+          "REDBOX"
+        ],
+        [
+          "label",
+          "Inspection station I1"
+        ],
+        [
+          "machineType",
+          "Inspection"
+        ],
+        [
+          "mtbfH",
+          "/600"
+        ],
+        [
+          "mttrH",
+          "/45"
+        ],
+        [
+          "partOfLine",
+          "A"
+        ],
+        [
+          "powerKW",
+          "/6"
+        ]
+      ],
+      "seconds": 66.5,
+      "notes": [],
+      "facts_after": [
+        [
+          "cycleTimeS",
+          "0.5"
+        ],
+        [
+          "mtbfH",
+          "600.0"
+        ],
+        [
+          "mttrH",
+          "0.75"
+        ],
+        [
+          "partOfLine",
+          "A"
+        ],
+        [
+          "powerKW",
+          "6.0"
+        ]
+      ]
+    },
+    {
+      "round": 2,
+      "entity": "K1",
+      "violations": [
+        "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0.",
+        "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0.",
+        "A machine needs exactly one mtbfH: a decimal number of hours > 0.",
+        "A machine needs exactly one mtbfH: a decimal number of hours > 0.",
+        "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH.",
+        "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH.",
+        "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH.",
+        "A machine needs exactly one powerKW: a decimal number of kW > 0.",
+        "A machine needs exactly one powerKW: a decimal number of kW > 0."
+      ],
+      "facts_before": [
+        [
+          "cycleTimeS",
+          "/60"
+        ],
+        [
+          "label",
+          "Packer K1"
+        ],
+        [
+          "machineType",
+          "Packing"
+        ],
+        [
+          "mtbfH",
+          "/24"
+        ],
+        [
+          "mttrH",
+          "/24"
+        ],
+        [
+          "partOfLine",
+          "LINEA"
+        ],
+        [
+          "powerKW",
+          "/1000"
+        ]
+      ],
+      "seconds": 69.2,
+      "notes": [],
+      "facts_after": [
+        [
+          "cycleTimeS",
+          "2.0833"
+        ],
+        [
+          "machineType",
+          "Packing"
+        ],
+        [
+          "mtbfH",
+          "35.0"
+        ],
+        [
+          "mttrH",
+          "1.2"
+        ],
+        [
+          "partOfLine",
+          "LINEA"
+        ],
+        [
+          "powerKW",
+          "12.0"
+        ]
+      ]
+    },
+    {
+      "round": 2,
+      "entity": "P1",
+      "violations": [
+        "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0.",
+        "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0.",
+        "A machine needs exactly one mtbfH: a decimal number of hours > 0.",
+        "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH.",
+        "A machine must belong to exactly one ProductionLine (partOfLine).",
+        "A machine needs exactly one powerKW: a decimal number of kW > 0."
+      ],
+      "facts_before": [
+        [
+          "cycleTimeS",
+          ""
+        ],
+        [
+          "label",
+          "Press"
+        ],
+        [
+          "machineType",
+          "Press"
+        ]
+      ],
+      "seconds": 62.3,
+      "notes": [],
+      "facts_after": [
+        [
+          "cycleTimeS",
+          "0.7"
+        ],
+        [
+          "machineType",
+          "Press"
+        ],
+        [
+          "mtbfH",
+          "160.0"
+        ],
+        [
+          "mttrH",
+          "3.5"
+        ],
+        [
+          "partOfLine",
+          "LINEA"
+        ],
+        [
+          "powerKW",
+          "75.0"
+        ]
+      ]
+    },
+    {
+      "round": 2,
+      "entity": "P2",
+      "violations": [
+        "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0.",
+        "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0.",
+        "A machine needs exactly one mtbfH: a decimal number of hours > 0.",
+        "A machine needs exactly one mtbfH: a decimal number of hours > 0.",
+        "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH.",
+        "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH.",
+        "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH.",
+        "A machine needs exactly one powerKW: a decimal number of kW > 0.",
+        "A machine needs exactly one powerKW: a decimal number of kW > 0.",
+        "This machine is not the line's final machine, so it must feed a Buffer."
+      ],
+      "facts_before": [
+        [
+          "cycleTimeS",
+          "bytes"
+        ],
+        [
+          "label",
+          "Press P2"
+        ],
+        [
+          "machineType",
+          "Press"
+        ],
+        [
+          "mtbfH",
+          "bytes"
+        ],
+        [
+          "mttrH",
+          "bytes"
+        ],
+        [
+          "partOfLine",
+          "LINEA"
+        ],
+        [
+          "powerKW",
+          "bytes"
+        ]
+      ],
+      "seconds": 78.5,
+      "notes": [],
+      "facts_after": [
+        [
+          "cycleTimeS",
+          "48.0"
+        ],
+        [
+          "machineType",
+          "Press"
+        ],
+        [
+          "mtbfH",
+          "140.0"
+        ],
+        [
+          "mttrH",
+          "4.0"
+        ],
+        [
+          "partOfLine",
+          "HTTPEXAMPLEORGLINELINEA"
+        ],
+        [
+          "powerKW",
+          "90.0"
+        ]
+      ]
+    },
+    {
+      "round": 2,
+      "entity": "W1",
+      "violations": [
+        "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0.",
+        "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0.",
+        "A machine needs exactly one mtbfH: a decimal number of hours > 0.",
+        "A machine needs exactly one mtbfH: a decimal number of hours > 0.",
+        "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH.",
+        "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH.",
+        "A machine needs exactly one powerKW: a decimal number of kW > 0.",
+        "A machine needs exactly one powerKW: a decimal number of kW > 0."
+      ],
+      "facts_before": [
+        [
+          "cycleTimeS",
+          "/3.5"
+        ],
+        [
+          "feeds",
+          "B2"
+        ],
+        [
+          "feeds",
+          "B3"
+        ],
+        [
+          "label",
+          "Washer W1"
+        ],
+        [
+          "machineType",
+          "Washer"
+        ],
+        [
+          "mtbfH",
+          "/400"
+        ],
+        [
+          "mttrH",
+          "/1.5"
+        ],
+        [
+          "partOfLine",
+          "A"
+        ],
+        [
+          "powerKW",
+          "/45"
+        ]
+      ],
+      "seconds": 71.1,
+      "notes": [],
+      "facts_after": [
+        [
+          "cycleTimeS",
+          "0.5833"
+        ],
+        [
+          "mtbfH",
+          "400.0"
+        ],
+        [
+          "mttrH",
+          "1.5"
+        ],
+        [
+          "partOfLine",
+          "A"
+        ],
+        [
+          "powerKW",
+          "45.0"
+        ]
+      ]
+    },
+    {
+      "round": 2,
+      "entity": "WASHER",
+      "violations": [
+        "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0.",
+        "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0.",
+        "A machine needs exactly one mtbfH: a decimal number of hours > 0.",
+        "A machine needs exactly one mtbfH: a decimal number of hours > 0.",
+        "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH.",
+        "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH.",
+        "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH.",
+        "A machine must belong to exactly one ProductionLine (partOfLine).",
+        "A machine needs exactly one powerKW: a decimal number of kW > 0.",
+        "A machine needs exactly one powerKW: a decimal number of kW > 0.",
+        "This machine is not the line's final machine, so it must feed a Buffer."
+      ],
+      "facts_before": [
+        [
+          "cycleTimeS",
+          "http://example.org/cycle/120"
+        ],
+        [
+          "label",
+          "Washer"
+        ],
+        [
+          "machineType",
+          "Washer"
+        ],
+        [
+          "mtbfH",
+          "http://example.org/mtbf/2000"
+        ],
+        [
+          "mttrH",
+          "http://example.org/mttr/100"
+        ],
+        [
+          "partOfLine",
+          "HTTPEXAMPLEORGLINEMACHINEWASHER"
+        ],
+        [
+          "powerKW",
+          "http://example.org/power/10"
+        ]
+      ],
+      "seconds": 59.9,
+      "notes": [],
+      "facts_after": [
+        [
+          "cycleTimeS",
+          "2.0"
+        ],
+        [
+          "label",
+          "Washer"
+        ],
+        [
+          "machineType",
+          "Washer"
+        ],
+        [
+          "mtbfH",
+          "2000.0"
+        ],
+        [
+          "mttrH",
+          "100.0"
+        ],
+        [
+          "partOfLine",
+          "HTTPEXAMPLEORGLINEMACHINEWASHER"
+        ],
+        [
+          "powerKW",
+          "10.0"
+        ]
+      ]
+    },
+    {
+      "round": 2,
+      "entity": "EARLY",
+      "violations": [
+        "A shift needs exactly one startHour: a whole number from 0 to 23.",
+        "A shift needs exactly one startHour: a whole number from 0 to 23.",
+        "A shift needs exactly one startHour: a whole number from 0 to 23."
+      ],
+      "facts_before": [
+        [
+          "label",
+          "Early"
+        ],
+        [
+          "startHour",
+          "testing"
+        ]
+      ],
+      "seconds": 42.7,
+      "notes": [],
+      "facts_after": [
+        [
+          "label",
+          "Early"
+        ],
+        [
+          "startHour",
+          "6"
+        ]
+      ]
+    },
+    {
+      "round": 2,
+      "entity": "LATE",
+      "violations": [
+        "A shift needs exactly one startHour: a whole number from 0 to 23.",
+        "A shift needs exactly one startHour: a whole number from 0 to 23.",
+        "A shift needs exactly one startHour: a whole number from 0 to 23."
+      ],
+      "facts_before": [
+        [
+          "label",
+          "Late"
+        ],
+        [
+          "startHour",
+          "bytes"
+        ]
+      ],
+      "seconds": 45.4,
+      "notes": [],
+      "facts_after": [
+        [
+          "label",
+          "Late"
+        ],
+        [
+          "startHour",
+          "14"
+        ]
+      ]
+    },
+    {
+      "round": 3,
+      "entity": "B3",
+      "violations": [
+        "A maintenance action must refer to exactly one Machine (onMachine)."
+      ],
+      "facts_before": [
+        [
+          "actionType",
+          "Corrective"
+        ],
+        [
+          "date",
+          "2026-03-10"
+        ],
+        [
+          "durationH",
+          "0.5"
+        ],
+        [
+          "onMachine",
+          "B3"
+        ]
+      ],
+      "seconds": 34.5,
+      "notes": [],
+      "facts_after": [
+        [
+          "actionType",
+          "Corrective"
+        ],
+        [
+          "date",
+          "2026-03-10"
+        ],
+        [
+          "durationH",
+          "0.5"
+        ],
+        [
+          "onMachine",
+          "B3"
+        ]
+      ]
+    },
+    {
+      "round": 3,
+      "entity": "B1",
+      "violations": [
+        "A buffer needs exactly one capacity: a whole number of parts > 0.",
+        "A buffer needs exactly one capacity: a whole number of parts > 0.",
+        "A buffer must be fed by exactly one Machine (the previous station)."
+      ],
+      "facts_before": [
+        [
+          "capacity",
+          "time:0.6666666666666666"
+        ],
+        [
+          "feeds",
+          "P2"
+        ],
+        [
+          "label",
+          "Buffer B1"
+        ]
+      ],
+      "seconds": 36.6,
+      "notes": [],
+      "facts_after": [
+        [
+          "capacity",
+          "40"
+        ],
+        [
+          "feeds",
+          "P2"
+        ],
+        [
+          "label",
+          "Buffer B1"
+        ]
+      ]
+    },
+    {
+      "round": 3,
+      "entity": "B2",
+      "violations": [
+        "A buffer must be fed by exactly one Machine (the previous station)."
+      ],
+      "facts_before": [
+        [
+          "capacity",
+          "30"
+        ],
+        [
+          "feeds",
+          "W1"
+        ],
+        [
+          "label",
+          "Buffer B2"
+        ]
+      ],
+      "seconds": 32.3,
+      "notes": [],
+      "facts_after": [
+        [
+          "capacity",
+          "30"
+        ],
+        [
+          "feeds",
+          "W1"
+        ],
+        [
+          "label",
+          "Buffer B2"
+        ]
+      ]
+    },
+    {
+      "round": 3,
+      "entity": "B3",
+      "violations": [
+        "A buffer needs exactly one capacity: a whole number of parts > 0.",
+        "A buffer needs exactly one capacity: a whole number of parts > 0.",
+        "A buffer must be fed by exactly one Machine (the previous station).",
+        "A buffer needs exactly one name (rdfs:label)."
+      ],
+      "facts_before": [
+        [
+          "capacity",
+          ">(25 parts)</value> <!-- From source document [08_buffer_layout] -->"
+        ],
+        [
+          "feeds",
+          "A1"
+        ]
+      ],
+      "seconds": 36.7,
+      "notes": [],
+      "facts_after": [
+        [
+          "capacity",
+          "25"
+        ],
+        [
+          "feeds",
+          "A1"
+        ],
+        [
+          "label",
+          "Buffer B3"
+        ]
+      ]
+    },
+    {
+      "round": 3,
+      "entity": "B4",
+      "violations": [
+        "A buffer must be fed by exactly one Machine (the previous station).",
+        "A buffer must feed exactly one Machine (the next station).",
+        "A buffer needs exactly one name (rdfs:label)."
+      ],
+      "facts_before": [
+        [
+          "capacity",
+          "20"
+        ]
+      ],
+      "seconds": 39.4,
+      "notes": [],
+      "facts_after": [
+        [
+          "capacity",
+          "20"
+        ],
+        [
+          "fedBy",
+          "B3"
+        ],
+        [
+          "feeds",
+          "A1"
+        ],
+        [
+          "label",
+          "Buffer B4"
+        ]
+      ]
+    },
+    {
+      "round": 3,
+      "entity": "B5",
+      "violations": [
+        "A buffer needs exactly one capacity: a whole number of parts > 0.",
+        "A buffer needs exactly one capacity: a whole number of parts > 0.",
+        "A buffer must be fed by exactly one Machine (the previous station)."
+      ],
+      "facts_before": [
+        [
+          "capacity",
+          "value:15"
+        ],
+        [
+          "feeds",
+          "K1"
+        ],
+        [
+          "label",
+          "Buffer B5"
+        ]
+      ],
+      "seconds": 34.4,
+      "notes": [],
+      "facts_after": [
+        [
+          "capacity",
+          "value:15"
+        ],
+        [
+          "feeds",
+          "K1"
+        ],
+        [
+          "label",
+          "Buffer B5"
+        ]
+      ]
+    },
+    {
+      "round": 3,
+      "entity": "B6",
+      "violations": [
+        "A buffer needs exactly one capacity: a whole number of parts > 0.",
+        "A buffer must be fed by exactly one Machine (the previous station).",
+        "A buffer must feed exactly one Machine (the next station).",
+        "A buffer needs exactly one name (rdfs:label)."
+      ],
+      "facts_before": [],
+      "seconds": 31.9,
+      "notes": [
+        "ignored unknown property 'mfg:label'",
+        "ignored unknown property 'mfg:fedBy'",
+        "ignored unknown property 'mfg:feeds'"
+      ],
+      "facts_after": []
+    },
+    {
+      "round": 3,
+      "entity": "REDBOX",
+      "violations": [
+        "A buffer needs exactly one capacity: a whole number of parts > 0.",
+        "A buffer must be fed by exactly one Machine (the previous station).",
+        "A buffer must feed exactly one Machine (the next station).",
+        "A buffer needs exactly one name (rdfs:label)."
+      ],
+      "facts_before": [
+        [
+          "feeds",
+          "I2"
+        ]
+      ],
+      "seconds": 29.7,
+      "notes": [],
+      "facts_after": [
+        [
+          "capacity",
+          "0"
+        ],
+        [
+          "feeds",
+          "I2"
+        ],
+        [
+          "label",
+          "REDBOX"
+        ]
+      ]
+    },
+    {
+      "round": 3,
+      "entity": "A1",
+      "violations": [
+        "A machine needs exactly one name (rdfs:label)."
+      ],
+      "facts_before": [
+        [
+          "cycleTimeS",
+          "55.0"
+        ],
+        [
+          "machineType",
+          "Assembly"
+        ],
+        [
+          "mtbfH",
+          "220.0"
+        ],
+        [
+          "mttrH",
+          "2.0"
+        ],
+        [
+          "partOfLine",
+          "A"
+        ],
+        [
+          "powerKW",
+          "18.0"
+        ]
+      ],
+      "seconds": 61.7,
+      "notes": [],
+      "facts_after": [
+        [
+          "cycleTimeS",
+          "defaulted"
+        ],
+        [
+          "label",
+          "Assembly cell A1"
+        ],
+        [
+          "machineType",
+          "Assembly"
+        ],
+        [
+          "mtbfH",
+          "defaulted"
+        ],
+        [
+          "mttrH",
+          "defaulted"
+        ],
+        [
+          "partOfLine",
+          "A"
+        ],
+        [
+          "powerKW",
+          "defaulted"
+        ]
+      ]
+    },
+    {
+      "round": 3,
+      "entity": "I1",
+      "violations": [
+        "A machine needs exactly one name (rdfs:label).",
+        "machineType must be exactly one of: Press, Washer, Assembly, Inspection, Packing.",
+        "This machine is not the line's final machine, so it must feed a Buffer."
+      ],
+      "facts_before": [
+        [
+          "cycleTimeS",
+          "0.5"
+        ],
+        [
+          "mtbfH",
+          "600.0"
+        ],
+        [
+          "mttrH",
+          "0.75"
+        ],
+        [
+          "partOfLine",
+          "A"
+        ],
+        [
+          "powerKW",
+          "6.0"
+        ]
+      ],
+      "seconds": 62.9,
+      "notes": [],
+      "facts_after": [
+        [
+          "cycleTimeS",
+          "]0.3"
+        ],
+        [
+          "feeds",
+          "B3"
+        ],
+        [
+          "label",
+          "Inspection station I1"
+        ],
+        [
+          "machineType",
+          "Inspection"
+        ],
+        [
+          "mtbfH",
+          "]600.0"
+        ],
+        [
+          "mttrH",
+          "]1.0"
+        ],
+        [
+          "partOfLine",
+          "A"
+        ],
+        [
+          "powerKW",
+          "]6.0"
+        ]
+      ]
+    },
+    {
+      "round": 3,
+      "entity": "K1",
+      "violations": [
+        "A machine needs exactly one name (rdfs:label)."
+      ],
+      "facts_before": [
+        [
+          "cycleTimeS",
+          "2.0833"
+        ],
+        [
+          "machineType",
+          "Packing"
+        ],
+        [
+          "mtbfH",
+          "35.0"
+        ],
+        [
+          "mttrH",
+          "1.2"
+        ],
+        [
+          "partOfLine",
+          "LINEA"
+        ],
+        [
+          "powerKW",
+          "12.0"
+        ]
+      ],
+      "seconds": 57.5,
+      "notes": [],
+      "facts_after": [
+        [
+          "cycleTimeS",
+          "/25 s"
+        ],
+        [
+          "label",
+          "Packer K1"
+        ],
+        [
+          "machineType",
+          "Packing"
+        ],
+        [
+          "mtbfH",
+          "/350 h"
+        ],
+        [
+          "mttrH",
+          "/72 min"
+        ],
+        [
+          "partOfLine",
+          "LINEA"
+        ],
+        [
+          "powerKW",
+          "/12 kW"
+        ]
+      ]
+    },
+    {
+      "round": 3,
+      "entity": "P1",
+      "violations": [
+        "A machine needs exactly one name (rdfs:label)."
+      ],
+      "facts_before": [
+        [
+          "cycleTimeS",
+          "0.7"
+        ],
+        [
+          "machineType",
+          "Press"
+        ],
+        [
+          "mtbfH",
+          "160.0"
+        ],
+        [
+          "mttrH",
+          "3.5"
+        ],
+        [
+          "partOfLine",
+          "LINEA"
+        ],
+        [
+          "powerKW",
+          "75.0"
+        ]
+      ],
+      "seconds": 52.3,
+      "notes": [],
+      "facts_after": [
+        [
+          "cycleTimeS",
+          ""
+        ],
+        [
+          "label",
+          "Press P1"
+        ],
+        [
+          "machineType",
+          "Press"
+        ],
+        [
+          "mtbfH",
+          ""
+        ],
+        [
+          "mttrH",
+          ""
+        ],
+        [
+          "powerKW",
+          ""
+        ]
+      ]
+    },
+    {
+      "round": 3,
+      "entity": "P2",
+      "violations": [
+        "A machine needs exactly one name (rdfs:label).",
+        "A machine must belong to exactly one ProductionLine (partOfLine).",
+        "This machine is not the line's final machine, so it must feed a Buffer."
+      ],
+      "facts_before": [
+        [
+          "cycleTimeS",
+          "48.0"
+        ],
+        [
+          "machineType",
+          "Press"
+        ],
+        [
+          "mtbfH",
+          "140.0"
+        ],
+        [
+          "mttrH",
+          "4.0"
+        ],
+        [
+          "partOfLine",
+          "HTTPEXAMPLEORGLINELINEA"
+        ],
+        [
+          "powerKW",
+          "90.0"
+        ]
+      ],
+      "seconds": 79.3,
+      "notes": [],
+      "facts_after": [
+        [
+          "cycleTimeS",
+          "time_unit(48)"
+        ],
+        [
+          "feeds",
+          "P2"
+        ],
+        [
+          "label",
+          "Press P2"
+        ],
+        [
+          "machineType",
+          "Press"
+        ],
+        [
+          "mtbfH",
+          "time_unit(140)"
+        ],
+        [
+          "mttrH",
+          "time_unit(4)"
+        ],
+        [
+          "partOfLine",
+          "HTTPEXAMPLEORGLINELINEHTTPEXAMPLEORGLINELINEA"
+        ],
+        [
+          "powerKW",
+          "time_unit(90)"
+        ]
+      ]
+    },
+    {
+      "round": 3,
+      "entity": "W1",
+      "violations": [
+        "A machine needs exactly one name (rdfs:label).",
+        "machineType must be exactly one of: Press, Washer, Assembly, Inspection, Packing.",
+        "This machine is not the line's final machine, so it must feed a Buffer."
+      ],
+      "facts_before": [
+        [
+          "cycleTimeS",
+          "0.5833"
+        ],
+        [
+          "mtbfH",
+          "400.0"
+        ],
+        [
+          "mttrH",
+          "1.5"
+        ],
+        [
+          "partOfLine",
+          "A"
+        ],
+        [
+          "powerKW",
+          "45.0"
+        ]
+      ],
+      "seconds": 64.0,
+      "notes": [],
+      "facts_after": [
+        [
+          "cycleTimeS",
+          "defaulted"
+        ],
+        [
+          "feeds",
+          "B2"
+        ],
+        [
+          "label",
+          "Washer W1"
+        ],
+        [
+          "machineType",
+          "Washer"
+        ],
+        [
+          "mtbfH",
+          "defaulted"
+        ],
+        [
+          "mttrH",
+          "defaulted"
+        ],
+        [
+          "partOfLine",
+          "A"
+        ],
+        [
+          "powerKW",
+          "defaulted"
+        ]
+      ]
+    },
+    {
+      "round": 3,
+      "entity": "WASHER",
+      "violations": [
+        "A machine must belong to exactly one ProductionLine (partOfLine).",
+        "This machine is not the line's final machine, so it must feed a Buffer."
+      ],
+      "facts_before": [
+        [
+          "cycleTimeS",
+          "2.0"
+        ],
+        [
+          "label",
+          "Washer"
+        ],
+        [
+          "machineType",
+          "Washer"
+        ],
+        [
+          "mtbfH",
+          "2000.0"
+        ],
+        [
+          "mttrH",
+          "100.0"
+        ],
+        [
+          "partOfLine",
+          "HTTPEXAMPLEORGLINEMACHINEWASHER"
+        ],
+        [
+          "powerKW",
+          "10.0"
+        ]
+      ],
+      "seconds": 25.3,
+      "notes": [
+        "entity deleted"
+      ],
+      "facts_after": []
+    }
+  ],
+  "final_per_predicate": {
+    "actionType": {
+      "precision": 0.615,
+      "recall": 1.0,
+      "f1": 0.762,
+      "correct": 8,
+      "extracted": 13,
+      "gold": 8
+    },
+    "addresses": {
+      "precision": 0.667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "correct": 6,
+      "extracted": 9,
+      "gold": 6
+    },
+    "capacity": {
+      "precision": 0.667,
+      "recall": 0.8,
+      "f1": 0.727,
+      "correct": 4,
+      "extracted": 6,
+      "gold": 5
+    },
+    "cycleTimeS": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "correct": 0,
+      "extracted": 6,
+      "gold": 6
+    },
+    "date": {
+      "precision": 0.609,
+      "recall": 0.875,
+      "f1": 0.718,
+      "correct": 14,
+      "extracted": 23,
+      "gold": 16
+    },
+    "downtimeH": {
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.889,
+      "correct": 8,
+      "extracted": 10,
+      "gold": 8
+    },
+    "durationH": {
+      "precision": 0.615,
+      "recall": 1.0,
+      "f1": 0.762,
+      "correct": 8,
+      "extracted": 13,
+      "gold": 8
+    },
+    "duringShift": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "correct": 8,
+      "extracted": 8,
+      "gold": 8
+    },
+    "failureMode": {
+      "precision": 0.4,
+      "recall": 0.5,
+      "f1": 0.444,
+      "correct": 4,
+      "extracted": 10,
+      "gold": 8
+    },
+    "feeds": {
+      "precision": 0.4,
+      "recall": 0.4,
+      "f1": 0.4,
+      "correct": 4,
+      "extracted": 10,
+      "gold": 10
+    },
+    "finalMachine": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "correct": 0,
+      "extracted": 3,
+      "gold": 1
+    },
+    "label": {
+      "precision": 0.667,
+      "recall": 0.8,
+      "f1": 0.727,
+      "correct": 12,
+      "extracted": 18,
+      "gold": 15
+    },
+    "machineType": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "correct": 6,
+      "extracted": 6,
+      "gold": 6
+    },
+    "mtbfH": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "correct": 0,
+      "extracted": 6,
+      "gold": 6
+    },
+    "mttrH": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "correct": 0,
+      "extracted": 6,
+      "gold": 6
+    },
+    "onMachine": {
+      "precision": 0.727,
+      "recall": 1.0,
+      "f1": 0.842,
+      "correct": 16,
+      "extracted": 22,
+      "gold": 16
+    },
+    "partOfLine": {
+      "precision": 0.2,
+      "recall": 0.167,
+      "f1": 0.182,
+      "correct": 1,
+      "extracted": 5,
+      "gold": 6
+    },
+    "powerKW": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "correct": 0,
+      "extracted": 6,
+      "gold": 6
+    },
+    "startHour": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "correct": 3,
+      "extracted": 3,
+      "gold": 3
+    },
+    "type": {
+      "precision": 0.738,
+      "recall": 1.0,
+      "f1": 0.849,
+      "correct": 31,
+      "extracted": 42,
+      "gold": 31
+    }
+  },
+  "final_missing": [
+    "action_WO1106 date 2026-03-20",
+    "buffer_B4 feeds http://example.org/line/machine_I1",
+    "buffer_B5 capacity 15.0",
+    "failure_INC201 failureMode hydraulic leak",
+    "failure_INC204 failureMode pump failure",
+    "failure_INC205 failureMode gripper sensor fault",
+    "failure_INC206 date 2026-03-20",
+    "failure_INC208 failureMode screwdriver torque fault",
+    "line_LINEA finalMachine http://example.org/line/machine_K1",
+    "machine_A1 cycleTimeS 55.0",
+    "machine_A1 feeds http://example.org/line/buffer_B4",
+    "machine_A1 mtbfH 220.0",
+    "machine_A1 mttrH 2.0",
+    "machine_A1 partOfLine http://example.org/line/line_LINEA",
+    "machine_A1 powerKW 18.0",
+    "machine_I1 cycleTimeS 30.0",
+    "machine_I1 feeds http://example.org/line/buffer_B5",
+    "machine_I1 mtbfH 600.0",
+    "machine_I1 mttrH 0.75",
+    "machine_I1 partOfLine http://example.org/line/line_LINEA",
+    "machine_I1 powerKW 6.0",
+    "machine_K1 cycleTimeS 25.0",
+    "machine_K1 mtbfH 350.0",
+    "machine_K1 mttrH 1.2",
+    "machine_K1 powerKW 12.0",
+    "machine_P1 cycleTimeS 42.0",
+    "machine_P1 feeds http://example.org/line/buffer_B1",
+    "machine_P1 mtbfH 160.0",
+    "machine_P1 mttrH 3.5",
+    "machine_P1 partOfLine http://example.org/line/line_LINEA",
+    "machine_P1 powerKW 75.0",
+    "machine_P2 cycleTimeS 48.0",
+    "machine_P2 feeds http://example.org/line/buffer_B2",
+    "machine_P2 mtbfH 140.0",
+    "machine_P2 mttrH 4.0",
+    "machine_P2 partOfLine http://example.org/line/line_LINEA",
+    "machine_P2 powerKW 90.0",
+    "machine_W1 cycleTimeS 35.0",
+    "machine_W1 feeds http://example.org/line/buffer_B3",
+    "machine_W1 mtbfH 400.0",
+    "machine_W1 mttrH 1.5",
+    "machine_W1 partOfLine http://example.org/line/line_LINEA",
+    "machine_W1 powerKW 45.0",
+    "shift_EARLY label early shift",
+    "shift_LATE label late shift",
+    "shift_NIGHT label night shift"
+  ],
+  "final_wrong_or_extra": [
+    "action_B3 actionType corrective",
+    "action_B3 date 2026-03-10",
+    "action_B3 durationH 0.5",
+    "action_B3 onMachine http://example.org/line/machine_B3",
+    "action_B3 type http://example.org/mfg#MaintenanceAction",
+    "action_INC207 actionType corrective",
+    "action_INC207 addresses http://example.org/line/failure_INC207",
+    "action_INC207 date 2026-03-24",
+    "action_INC207 durationH 0.083",
+    "action_INC207 onMachine http://example.org/line/machine_I1",
+    "action_INC207 type http://example.org/mfg#MaintenanceAction",
+    "action_P2 actionType preventive",
+    "action_P2 date 2026-03-10",
+    "action_P2 durationH 0.25",
+    "action_P2 onMachine http://example.org/line/machine_P2",
+    "action_P2 type http://example.org/mfg#MaintenanceAction",
+    "action_W1 actionType preventive",
+    "action_W1 date 2026-03-10",
+    "action_W1 durationH 0.25",
+    "action_W1 onMachine http://example.org/line/machine_W1",
+    "action_W1 type http://example.org/mfg#MaintenanceAction",
+    "action_WASHER actionType corrective",
+    "action_WASHER addresses http://example.org/line/failure_INC205",
+    "action_WASHER date 2026-03-17",
+    "action_WASHER durationH 1.0",
+    "action_WASHER type http://example.org/mfg#MaintenanceAction",
+    "action_WO1106 date 2026-03-01",
+    "action_WO1107 addresses http://example.org/line/failure_FAILURE1107",
+    "buffer_B4 feeds http://example.org/line/machine_A1",
+    "buffer_B5 capacity value:15",
+    "buffer_B6 type http://example.org/mfg#Buffer",
+    "buffer_REDBOX capacity 0.0",
+    "buffer_REDBOX feeds http://example.org/line/machine_I2",
+    "buffer_REDBOX label redbox",
+    "buffer_REDBOX type http://example.org/mfg#Buffer",
+    "failure_FAILURE1107 date 2026-03-21",
+    "failure_FAILURE1107 downtimeH 2.0",
+    "failure_FAILURE1107 failureMode camera calibration and lens cleaning",
+    "failure_FAILURE1107 onMachine http://example.org/line/machine_I1",
+    "failure_FAILURE1107 type http://example.org/mfg#Failure",
+    "failure_INC201 failureMode hydraulic leak at the main cylinder seal",
+    "failure_INC204 failureMode pump failure in the spray circuit",
+    "failure_INC205 failureMode sensor fault",
+    "failure_INC206 date 2026-03-01",
+    "failure_INC208 failureMode screwdriver torque fault on screwdriver 1",
+    "failure_INSPECTIONSTATIONREJECTEDPARTS date 2023-04-01",
+    "failure_INSPECTIONSTATIONREJECTEDPARTS downtimeH 0.75",
+    "failure_INSPECTIONSTATIONREJECTEDPARTS failureMode rejected parts",
+    "failure_INSPECTIONSTATIONREJECTEDPARTS onMachine http://example.org/line/machine_I1",
+    "failure_INSPECTIONSTATIONREJECTEDPARTS type http://example.org/mfg#Failure",
+    "line_A finalMachine http://example.org/line/machine_A1",
+    "line_A label line a",
+    "line_A type http://example.org/mfg#ProductionLine",
+    "line_LINE1 finalMachine http://example.org/line/machine_K1",
+    "line_LINE1 label line 1",
+    "line_LINE1 type http://example.org/mfg#ProductionLine",
+    "line_LINEA finalMachine http://example.org/line/machine_P1",
+    "machine_A1 cycleTimeS defaulted",
+    "machine_A1 mtbfH defaulted",
+    "machine_A1 mttrH defaulted",
+    "machine_A1 partOfLine http://example.org/line/line_A",
+    "machine_A1 powerKW defaulted",
+    "machine_B3 feeds http://example.org/line/buffer_B4",
+    "machine_I1 cycleTimeS ]0.3",
+    "machine_I1 feeds http://example.org/line/buffer_B3",
+    "machine_I1 mtbfH ]600.0",
+    "machine_I1 mttrH ]1.0",
+    "machine_I1 partOfLine http://example.org/line/line_A",
+    "machine_I1 powerKW ]6.0",
+    "machine_K1 cycleTimeS /25 s",
+    "machine_K1 mtbfH /350 h",
+    "machine_K1 mttrH /72 min",
+    "machine_K1 powerKW /12 kw",
+    "machine_P1 cycleTimeS ",
+    "machine_P1 mtbfH ",
+    "machine_P1 mttrH ",
+    "machine_P1 powerKW ",
+    "machine_P2 cycleTimeS time_unit(48)",
+    "machine_P2 feeds http://example.org/line/buffer_P2",
+    "machine_P2 mtbfH time_unit(140)",
+    "machine_P2 mttrH time_unit(4)",
+    "machine_P2 partOfLine http://example.org/line/line_HTTPEXAMPLEORGLINELINEHTTPEXAMPLEORGLINELINEA",
+    "machine_P2 powerKW time_unit(90)",
+    "machine_W1 cycleTimeS defaulted",
+    "machine_W1 feeds http://example.org/line/buffer_B2",
+    "machine_W1 mtbfH defaulted",
+    "machine_W1 mttrH defaulted",
+    "machine_W1 partOfLine http://example.org/line/line_A",
+    "machine_W1 powerKW defaulted",
+    "shift_EARLY label early",
+    "shift_LATE label late",
+    "shift_NIGHT label night"
+  ],
+  "remaining_violations": [
+    {
+      "focus": "ex:action_B3",
+      "path": "mfg:onMachine",
+      "value": "http://example.org/line/machine_B3",
+      "shape": "shp:Maintenance-onMachine",
+      "component": "Class",
+      "message": "A maintenance action must refer to exactly one Machine (onMachine)."
+    },
+    {
+      "focus": "ex:action_WASHER",
+      "path": "mfg:onMachine",
+      "value": "",
+      "shape": "shp:Maintenance-onMachine",
+      "component": "MinCount",
+      "message": "A maintenance action must refer to exactly one Machine (onMachine)."
+    },
+    {
+      "focus": "ex:buffer_B1",
+      "path": "^mfg:feeds",
+      "value": "",
+      "shape": "shp:Buffer-fedBy",
+      "component": "MinCount",
+      "message": "A buffer must be fed by exactly one Machine (the previous station)."
+    },
+    {
+      "focus": "ex:buffer_B4",
+      "path": "^mfg:feeds",
+      "value": "http://example.org/line/machine_B3",
+      "shape": "shp:Buffer-fedBy",
+      "component": "Class",
+      "message": "A buffer must be fed by exactly one Machine (the previous station)."
+    },
+    {
+      "focus": "ex:buffer_B5",
+      "path": "mfg:capacity",
+      "value": "value:15",
+      "shape": "shp:Buffer-capacity",
+      "component": "Datatype",
+      "message": "A buffer needs exactly one capacity: a whole number of parts > 0."
+    },
+    {
+      "focus": "ex:buffer_B5",
+      "path": "mfg:capacity",
+      "value": "value:15",
+      "shape": "shp:Buffer-capacity",
+      "component": "MinExclusive",
+      "message": "A buffer needs exactly one capacity: a whole number of parts > 0."
+    },
+    {
+      "focus": "ex:buffer_B5",
+      "path": "^mfg:feeds",
+      "value": "",
+      "shape": "shp:Buffer-fedBy",
+      "component": "MinCount",
+      "message": "A buffer must be fed by exactly one Machine (the previous station)."
+    },
+    {
+      "focus": "ex:buffer_B6",
+      "path": "mfg:capacity",
+      "value": "",
+      "shape": "shp:Buffer-capacity",
+      "component": "MinCount",
+      "message": "A buffer needs exactly one capacity: a whole number of parts > 0."
+    },
+    {
+      "focus": "ex:buffer_B6",
+      "path": "^mfg:feeds",
+      "value": "",
+      "shape": "shp:Buffer-fedBy",
+      "component": "MinCount",
+      "message": "A buffer must be fed by exactly one Machine (the previous station)."
+    },
+    {
+      "focus": "ex:buffer_B6",
+      "path": "mfg:feeds",
+      "value": "",
+      "shape": "shp:Buffer-feeds",
+      "component": "MinCount",
+      "message": "A buffer must feed exactly one Machine (the next station)."
+    },
+    {
+      "focus": "ex:buffer_B6",
+      "path": "rdfs:label",
+      "value": "",
+      "shape": "shp:Buffer-label",
+      "component": "MinCount",
+      "message": "A buffer needs exactly one name (rdfs:label)."
+    },
+    {
+      "focus": "ex:buffer_REDBOX",
+      "path": "mfg:capacity",
+      "value": "",
+      "shape": "shp:Buffer-capacity",
+      "component": "MinExclusive",
+      "message": "A buffer needs exactly one capacity: a whole number of parts > 0."
+    },
+    {
+      "focus": "ex:buffer_REDBOX",
+      "path": "^mfg:feeds",
+      "value": "",
+      "shape": "shp:Buffer-fedBy",
+      "component": "MinCount",
+      "message": "A buffer must be fed by exactly one Machine (the previous station)."
+    },
+    {
+      "focus": "ex:buffer_REDBOX",
+      "path": "mfg:feeds",
+      "value": "http://example.org/line/machine_I2",
+      "shape": "shp:Buffer-feeds",
+      "component": "Class",
+      "message": "A buffer must feed exactly one Machine (the next station)."
+    },
+    {
+      "focus": "ex:machine_A1",
+      "path": "mfg:cycleTimeS",
+      "value": "defaulted",
+      "shape": "shp:Machine-cycleTime",
+      "component": "Datatype",
+      "message": "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0."
+    },
+    {
+      "focus": "ex:machine_A1",
+      "path": "mfg:cycleTimeS",
+      "value": "defaulted",
+      "shape": "shp:Machine-cycleTime",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0."
+    },
+    {
+      "focus": "ex:machine_A1",
+      "path": "mfg:mtbfH",
+      "value": "defaulted",
+      "shape": "shp:Machine-mtbf",
+      "component": "Datatype",
+      "message": "A machine needs exactly one mtbfH: a decimal number of hours > 0."
+    },
+    {
+      "focus": "ex:machine_A1",
+      "path": "mfg:mtbfH",
+      "value": "defaulted",
+      "shape": "shp:Machine-mtbf",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one mtbfH: a decimal number of hours > 0."
+    },
+    {
+      "focus": "ex:machine_A1",
+      "path": "mfg:mttrH",
+      "value": "defaulted",
+      "shape": "shp:Machine-mttr",
+      "component": "Datatype",
+      "message": "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH."
+    },
+    {
+      "focus": "ex:machine_A1",
+      "path": "mfg:mttrH",
+      "value": "defaulted",
+      "shape": "shp:Machine-mttr",
+      "component": "LessThan",
+      "message": "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH."
+    },
+    {
+      "focus": "ex:machine_A1",
+      "path": "mfg:mttrH",
+      "value": "defaulted",
+      "shape": "shp:Machine-mttr",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH."
+    },
+    {
+      "focus": "ex:machine_A1",
+      "path": "mfg:powerKW",
+      "value": "defaulted",
+      "shape": "shp:Machine-power",
+      "component": "Datatype",
+      "message": "A machine needs exactly one powerKW: a decimal number of kW > 0."
+    },
+    {
+      "focus": "ex:machine_A1",
+      "path": "mfg:powerKW",
+      "value": "defaulted",
+      "shape": "shp:Machine-power",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one powerKW: a decimal number of kW > 0."
+    },
+    {
+      "focus": "ex:machine_I1",
+      "path": "mfg:cycleTimeS",
+      "value": "]0.3",
+      "shape": "shp:Machine-cycleTime",
+      "component": "Datatype",
+      "message": "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0."
+    },
+    {
+      "focus": "ex:machine_I1",
+      "path": "mfg:cycleTimeS",
+      "value": "]0.3",
+      "shape": "shp:Machine-cycleTime",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0."
+    },
+    {
+      "focus": "ex:machine_I1",
+      "path": "mfg:mtbfH",
+      "value": "]600.0",
+      "shape": "shp:Machine-mtbf",
+      "component": "Datatype",
+      "message": "A machine needs exactly one mtbfH: a decimal number of hours > 0."
+    },
+    {
+      "focus": "ex:machine_I1",
+      "path": "mfg:mtbfH",
+      "value": "]600.0",
+      "shape": "shp:Machine-mtbf",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one mtbfH: a decimal number of hours > 0."
+    },
+    {
+      "focus": "ex:machine_I1",
+      "path": "mfg:mttrH",
+      "value": "]1.0",
+      "shape": "shp:Machine-mttr",
+      "component": "Datatype",
+      "message": "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH."
+    },
+    {
+      "focus": "ex:machine_I1",
+      "path": "mfg:mttrH",
+      "value": "]1.0",
+      "shape": "shp:Machine-mttr",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH."
+    },
+    {
+      "focus": "ex:machine_I1",
+      "path": "mfg:powerKW",
+      "value": "]6.0",
+      "shape": "shp:Machine-power",
+      "component": "Datatype",
+      "message": "A machine needs exactly one powerKW: a decimal number of kW > 0."
+    },
+    {
+      "focus": "ex:machine_I1",
+      "path": "mfg:powerKW",
+      "value": "]6.0",
+      "shape": "shp:Machine-power",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one powerKW: a decimal number of kW > 0."
+    },
+    {
+      "focus": "ex:machine_K1",
+      "path": "mfg:cycleTimeS",
+      "value": "/25 s",
+      "shape": "shp:Machine-cycleTime",
+      "component": "Datatype",
+      "message": "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0."
+    },
+    {
+      "focus": "ex:machine_K1",
+      "path": "mfg:cycleTimeS",
+      "value": "/25 s",
+      "shape": "shp:Machine-cycleTime",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0."
+    },
+    {
+      "focus": "ex:machine_K1",
+      "path": "mfg:mtbfH",
+      "value": "/350 h",
+      "shape": "shp:Machine-mtbf",
+      "component": "Datatype",
+      "message": "A machine needs exactly one mtbfH: a decimal number of hours > 0."
+    },
+    {
+      "focus": "ex:machine_K1",
+      "path": "mfg:mtbfH",
+      "value": "/350 h",
+      "shape": "shp:Machine-mtbf",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one mtbfH: a decimal number of hours > 0."
+    },
+    {
+      "focus": "ex:machine_K1",
+      "path": "mfg:mttrH",
+      "value": "/72 min",
+      "shape": "shp:Machine-mttr",
+      "component": "Datatype",
+      "message": "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH."
+    },
+    {
+      "focus": "ex:machine_K1",
+      "path": "mfg:mttrH",
+      "value": "/72 min",
+      "shape": "shp:Machine-mttr",
+      "component": "LessThan",
+      "message": "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH."
+    },
+    {
+      "focus": "ex:machine_K1",
+      "path": "mfg:mttrH",
+      "value": "/72 min",
+      "shape": "shp:Machine-mttr",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH."
+    },
+    {
+      "focus": "ex:machine_K1",
+      "path": "mfg:powerKW",
+      "value": "/12 kW",
+      "shape": "shp:Machine-power",
+      "component": "Datatype",
+      "message": "A machine needs exactly one powerKW: a decimal number of kW > 0."
+    },
+    {
+      "focus": "ex:machine_K1",
+      "path": "mfg:powerKW",
+      "value": "/12 kW",
+      "shape": "shp:Machine-power",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one powerKW: a decimal number of kW > 0."
+    },
+    {
+      "focus": "ex:machine_P1",
+      "path": "mfg:cycleTimeS",
+      "value": "",
+      "shape": "shp:Machine-cycleTime",
+      "component": "Datatype",
+      "message": "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0."
+    },
+    {
+      "focus": "ex:machine_P1",
+      "path": "mfg:cycleTimeS",
+      "value": "",
+      "shape": "shp:Machine-cycleTime",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0."
+    },
+    {
+      "focus": "ex:machine_P1",
+      "path": "mfg:mtbfH",
+      "value": "",
+      "shape": "shp:Machine-mtbf",
+      "component": "Datatype",
+      "message": "A machine needs exactly one mtbfH: a decimal number of hours > 0."
+    },
+    {
+      "focus": "ex:machine_P1",
+      "path": "mfg:mtbfH",
+      "value": "",
+      "shape": "shp:Machine-mtbf",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one mtbfH: a decimal number of hours > 0."
+    },
+    {
+      "focus": "ex:machine_P1",
+      "path": "mfg:mttrH",
+      "value": "",
+      "shape": "shp:Machine-mttr",
+      "component": "Datatype",
+      "message": "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH."
+    },
+    {
+      "focus": "ex:machine_P1",
+      "path": "mfg:mttrH",
+      "value": "",
+      "shape": "shp:Machine-mttr",
+      "component": "LessThan",
+      "message": "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH."
+    },
+    {
+      "focus": "ex:machine_P1",
+      "path": "mfg:mttrH",
+      "value": "",
+      "shape": "shp:Machine-mttr",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH."
+    },
+    {
+      "focus": "ex:machine_P1",
+      "path": "mfg:partOfLine",
+      "value": "",
+      "shape": "shp:Machine-partOfLine",
+      "component": "MinCount",
+      "message": "A machine must belong to exactly one ProductionLine (partOfLine)."
+    },
+    {
+      "focus": "ex:machine_P1",
+      "path": "mfg:powerKW",
+      "value": "",
+      "shape": "shp:Machine-power",
+      "component": "Datatype",
+      "message": "A machine needs exactly one powerKW: a decimal number of kW > 0."
+    },
+    {
+      "focus": "ex:machine_P1",
+      "path": "mfg:powerKW",
+      "value": "",
+      "shape": "shp:Machine-power",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one powerKW: a decimal number of kW > 0."
+    },
+    {
+      "focus": "ex:machine_P2",
+      "path": "mfg:cycleTimeS",
+      "value": "time_unit(48)",
+      "shape": "shp:Machine-cycleTime",
+      "component": "Datatype",
+      "message": "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0."
+    },
+    {
+      "focus": "ex:machine_P2",
+      "path": "mfg:cycleTimeS",
+      "value": "time_unit(48)",
+      "shape": "shp:Machine-cycleTime",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0."
+    },
+    {
+      "focus": "ex:machine_P2",
+      "path": "mfg:feeds",
+      "value": "http://example.org/line/buffer_P2",
+      "shape": "shp:Machine-feeds",
+      "component": "Class",
+      "message": "A machine can feed at most one thing, and it must be a Buffer (never a machine directly)."
+    },
+    {
+      "focus": "ex:machine_P2",
+      "path": "mfg:mtbfH",
+      "value": "time_unit(140)",
+      "shape": "shp:Machine-mtbf",
+      "component": "Datatype",
+      "message": "A machine needs exactly one mtbfH: a decimal number of hours > 0."
+    },
+    {
+      "focus": "ex:machine_P2",
+      "path": "mfg:mtbfH",
+      "value": "time_unit(140)",
+      "shape": "shp:Machine-mtbf",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one mtbfH: a decimal number of hours > 0."
+    },
+    {
+      "focus": "ex:machine_P2",
+      "path": "mfg:mttrH",
+      "value": "time_unit(4)",
+      "shape": "shp:Machine-mttr",
+      "component": "Datatype",
+      "message": "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH."
+    },
+    {
+      "focus": "ex:machine_P2",
+      "path": "mfg:mttrH",
+      "value": "time_unit(4)",
+      "shape": "shp:Machine-mttr",
+      "component": "LessThan",
+      "message": "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH."
+    },
+    {
+      "focus": "ex:machine_P2",
+      "path": "mfg:mttrH",
+      "value": "time_unit(4)",
+      "shape": "shp:Machine-mttr",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH."
+    },
+    {
+      "focus": "ex:machine_P2",
+      "path": "mfg:partOfLine",
+      "value": "http://example.org/line/line_HTTPEXAMPLEORGLINELINEHTTPEXAMPLEORGLINELINEA",
+      "shape": "shp:Machine-partOfLine",
+      "component": "Class",
+      "message": "A machine must belong to exactly one ProductionLine (partOfLine)."
+    },
+    {
+      "focus": "ex:machine_P2",
+      "path": "mfg:powerKW",
+      "value": "time_unit(90)",
+      "shape": "shp:Machine-power",
+      "component": "Datatype",
+      "message": "A machine needs exactly one powerKW: a decimal number of kW > 0."
+    },
+    {
+      "focus": "ex:machine_P2",
+      "path": "mfg:powerKW",
+      "value": "time_unit(90)",
+      "shape": "shp:Machine-power",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one powerKW: a decimal number of kW > 0."
+    },
+    {
+      "focus": "ex:machine_P2",
+      "path": "",
+      "value": "http://example.org/line/machine_P2",
+      "shape": "shp:MachineTopologyShape",
+      "component": "SPARQL",
+      "message": "This machine is not the line's final machine, so it must feed a Buffer."
+    },
+    {
+      "focus": "ex:machine_W1",
+      "path": "mfg:cycleTimeS",
+      "value": "defaulted",
+      "shape": "shp:Machine-cycleTime",
+      "component": "Datatype",
+      "message": "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0."
+    },
+    {
+      "focus": "ex:machine_W1",
+      "path": "mfg:cycleTimeS",
+      "value": "defaulted",
+      "shape": "shp:Machine-cycleTime",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one cycleTimeS: a decimal number of seconds > 0."
+    },
+    {
+      "focus": "ex:machine_W1",
+      "path": "mfg:mtbfH",
+      "value": "defaulted",
+      "shape": "shp:Machine-mtbf",
+      "component": "Datatype",
+      "message": "A machine needs exactly one mtbfH: a decimal number of hours > 0."
+    },
+    {
+      "focus": "ex:machine_W1",
+      "path": "mfg:mtbfH",
+      "value": "defaulted",
+      "shape": "shp:Machine-mtbf",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one mtbfH: a decimal number of hours > 0."
+    },
+    {
+      "focus": "ex:machine_W1",
+      "path": "mfg:mttrH",
+      "value": "defaulted",
+      "shape": "shp:Machine-mttr",
+      "component": "Datatype",
+      "message": "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH."
+    },
+    {
+      "focus": "ex:machine_W1",
+      "path": "mfg:mttrH",
+      "value": "defaulted",
+      "shape": "shp:Machine-mttr",
+      "component": "LessThan",
+      "message": "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH."
+    },
+    {
+      "focus": "ex:machine_W1",
+      "path": "mfg:mttrH",
+      "value": "defaulted",
+      "shape": "shp:Machine-mttr",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one mttrH: decimal hours > 0 and smaller than its mtbfH."
+    },
+    {
+      "focus": "ex:machine_W1",
+      "path": "mfg:powerKW",
+      "value": "defaulted",
+      "shape": "shp:Machine-power",
+      "component": "Datatype",
+      "message": "A machine needs exactly one powerKW: a decimal number of kW > 0."
+    },
+    {
+      "focus": "ex:machine_W1",
+      "path": "mfg:powerKW",
+      "value": "defaulted",
+      "shape": "shp:Machine-power",
+      "component": "MinExclusive",
+      "message": "A machine needs exactly one powerKW: a decimal number of kW > 0."
+    }
+  ]
+}

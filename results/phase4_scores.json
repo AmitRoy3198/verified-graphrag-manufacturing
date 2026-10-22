@@ -1,0 +1,123 @@
+{
+  "vector_rag": {
+    "n": 25,
+    "exact": 0.48,
+    "lenient": 0.52,
+    "per_type": {
+      "1-hop": {
+        "n": 10,
+        "exact": 0.7,
+        "lenient": 0.8
+      },
+      "multi-hop": {
+        "n": 8,
+        "exact": 0.5,
+        "lenient": 0.5
+      },
+      "aggregation": {
+        "n": 7,
+        "exact": 0.143,
+        "lenient": 0.143
+      }
+    },
+    "answered_unknown": 1,
+    "parse_errors": 0,
+    "mean_doc_recall": 0.783,
+    "questions_with_all_docs_retrieved": 16
+  },
+  "graphrag_unrepaired": {
+    "n": 25,
+    "exact": 0.2,
+    "lenient": 0.36,
+    "per_type": {
+      "1-hop": {
+        "n": 10,
+        "exact": 0.4,
+        "lenient": 0.6
+      },
+      "multi-hop": {
+        "n": 8,
+        "exact": 0.125,
+        "lenient": 0.375
+      },
+      "aggregation": {
+        "n": 7,
+        "exact": 0.0,
+        "lenient": 0.0
+      }
+    },
+    "answered_unknown": 1,
+    "parse_errors": 1
+  },
+  "graphrag_repaired": {
+    "n": 25,
+    "exact": 0.2,
+    "lenient": 0.4,
+    "per_type": {
+      "1-hop": {
+        "n": 10,
+        "exact": 0.3,
+        "lenient": 0.6
+      },
+      "multi-hop": {
+        "n": 8,
+        "exact": 0.25,
+        "lenient": 0.5
+      },
+      "aggregation": {
+        "n": 7,
+        "exact": 0.0,
+        "lenient": 0.0
+      }
+    },
+    "answered_unknown": 1,
+    "parse_errors": 0
+  },
+  "graphrag_gold": {
+    "n": 25,
+    "exact": 0.4,
+    "lenient": 0.64,
+    "per_type": {
+      "1-hop": {
+        "n": 10,
+        "exact": 0.6,
+        "lenient": 1.0
+      },
+      "multi-hop": {
+        "n": 8,
+        "exact": 0.375,
+        "lenient": 0.625
+      },
+      "aggregation": {
+        "n": 7,
+        "exact": 0.143,
+        "lenient": 0.143
+      }
+    },
+    "answered_unknown": 0,
+    "parse_errors": 0
+  },
+  "paired_comparisons_lenient": {
+    "vector_rag vs graphrag_repaired": {
+      "both_right": 6,
+      "only_vector_rag": 7,
+      "only_graphrag_repaired": 4,
+      "both_wrong": 8,
+      "sign_test_p": 0.549
+    },
+    "graphrag_unrepaired vs graphrag_repaired": {
+      "both_right": 9,
+      "only_graphrag_unrepaired": 0,
+      "only_graphrag_repaired": 1,
+      "both_wrong": 15,
+      "sign_test_p": 1.0
+    },
+    "vector_rag vs graphrag_gold": {
+      "both_right": 11,
+      "only_vector_rag": 2,
+      "only_graphrag_gold": 5,
+      "both_wrong": 7,
+      "sign_test_p": 0.453
+    }
+  }
+}

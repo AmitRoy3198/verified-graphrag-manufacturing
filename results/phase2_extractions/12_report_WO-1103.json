@@ -1,0 +1,58 @@
+{
+  "failures": [
+    {
+      "id": "INC-203",
+      "machine": "Press P1",
+      "failure_mode": "Die misalignment",
+      "downtime_h": 3.0,
+      "date": "2026-03-09",
+      "shift": "Late"
+    }
+  ],
+  "maintenance_actions": [
+    {
+      "id": "WO-1103",
+      "machine": "Press P1",
+      "action_type": "Corrective",
+      "date": "2026-03-09",
+      "duration_h": 3.0,
+      "addresses_failure": "INC-203"
+    }
+  ],
+  "machines": [
+    {
+      "id": "Press P1",
+      "name": "Press",
+      "machine_type": "Press",
+      "line": null,
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": null
+    }
+  ],
+  "buffers": [
+    {
+      "id": "null",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": null,
+      "feeds_machine": null
+    }
+  ],
+  "shifts": [
+    {
+      "id": "Late",
+      "name": "Late",
+      "start_hour": 18
+    }
+  ],
+  "lines": [
+    {
+      "id": "null",
+      "name": null,
+      "final_machine": null
+    }
+  ]
+}

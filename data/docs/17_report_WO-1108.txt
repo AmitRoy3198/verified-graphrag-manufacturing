@@ -1,0 +1,7 @@
+Maintenance report WO-1108
+
+Date: 26 March 2026
+Machine: Assembly cell A1
+Incident INC-208 happened during the Night shift. Failure mode: Screwdriver torque fault on screwdriver 1.
+Production downtime: 2.5 h.
+Corrective maintenance: screwdriver 1 replaced. Work duration 2.5 h.

@@ -1,0 +1,10 @@
+Machine data sheet - Press P1
+
+Type: hydraulic blanking press (Press)
+Installed on: Line A
+Cycle time: 42 s per part
+Rated power: 75 kW
+MTBF: 160 h
+MTTR: 3.5 h
+
+Notes: 400 t press, commissioned in 2019. A tool change takes about 25 minutes.

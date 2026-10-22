@@ -1,0 +1,5 @@
+Shift handover note - Early shift, 24 March 2026
+
+Output: 455 housings.
+INC-207: Film jam on Packer K1 during this Early shift. Downtime 30 minutes. Cleared by the operator; no work order.
+Buffer B4 was full twice because Inspection station I1 was waiting for a camera restart (less than 5 minutes each).

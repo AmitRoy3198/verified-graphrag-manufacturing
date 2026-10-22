@@ -1,0 +1,202 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 2060.09it/s]
+vector_rag Q01: '' (expected 90) exact=False lenient=False 27.0 s
+vector_rag Q02: ']35' (expected 35) exact=False lenient=True 25.1 s
+vector_rag Q03: '/></span>45, ' (expected 0.75) exact=False lenient=False 27.6 s
+vector_rag Q04: '>(25)</' (expected 25) exact=False lenient=True 28.5 s
+vector_rag Q05: 'Assembly cell A1' (expected I1) exact=False lenient=False 30.0 s
+vector_rag Q06: 'unknown' (expected K1) exact=False lenient=False 32.1 s
+vector_rag Q07: 'Die misalignment' (expected Die misalignment) exact=True lenient=True 27.5 s
+vector_rag Q08: '>(22:00)' (expected 22) exact=False lenient=True 27.4 s
+vector_rag Q09: 'INC-204' (expected INC-204) exact=True lenient=True 27.5 s
+vector_rag Q10: 'Packer K1' (expected K1) exact=True lenient=True 31.1 s
+vector_rag Q11: 'Press P2' (expected K1) exact=False lenient=False 29.8 s
+vector_rag Q12: 'Press P2' (expected P2) exact=True lenient=True 29.6 s
+vector_rag Q13: 'Well unknown' (expected 90) exact=False lenient=False 31.5 s
+vector_rag Q14: 'Press P1' (expected P1) exact=True lenient=True 27.0 s
+vector_rag Q15: 'bytes' (expected 25) exact=False lenient=False 30.6 s
+vector_rag Q16: 'Night' (expected Night) exact=True lenient=True 28.5 s
+vector_rag Q17: '' (expected 1.5) exact=False lenient=False 264.9 s
+vector_rag Q18: ':[{' (expected 30) exact=False lenient=False 30.3 s
+vector_rag Q19: 'Press P2' (expected A1) exact=False lenient=False 30.3 s
+vector_rag Q20: ']2' (expected 4) exact=False lenient=False 28.5 s
+vector_rag Q21: 'Our total production downtime for Press P2 is 9.5 hours. This is calculated by summing the downtime from the incidents reported in the maintenance reports: INC-201 (4.5 hours) and INC-206 (5 hours).' (expected 9.5) exact=False lenient=True 38.6 s
+vector_rag Q22: 'Press P2' (expected A1) exact=False lenient=False 31.1 s
+vector_rag Q23: 'sync' (expected 2) exact=False lenient=False 28.0 s
+vector_rag Q24: 'Some' (expected 246) exact=False lenient=False 32.8 s
+vector_rag Q25: '>{{18}} , ' (expected 20) exact=False lenient=False 34.6 s
+graphrag_unrepaired Q01: '>(machine_P2 powerKW 90.0)' (expected 90) exact=False lenient=True 56.0 s
+graphrag_unrepaired Q02: '>(machine_W1 cycleTimeS 35.0)' (expected 35) exact=False lenient=True 46.9 s
+graphrag_unrepaired Q03: '' (expected 0.75) exact=False lenient=False 295.5 s
+graphrag_unrepaired Q04: '>(buffer_B3 capacity 25)' (expected 25) exact=False lenient=True 73.1 s
+graphrag_unrepaired Q05: 'machine_I1' (expected I1) exact=False lenient=True 65.9 s
+graphrag_unrepaired Q06: 'machine_K1' (expected K1) exact=False lenient=True 45.0 s
+graphrag_unrepaired Q07: 'Die misalignment' (expected Die misalignment) exact=True lenient=True 30.5 s
+graphrag_unrepaired Q08: 'context' (expected 22) exact=False lenient=False 49.0 s
+graphrag_unrepaired Q09: 'failure_INC204' (expected INC-204) exact=False lenient=True 37.2 s
+graphrag_unrepaired Q10: 'machine_I1' (expected K1) exact=False lenient=False 93.1 s
+graphrag_unrepaired Q11: 'Press P2' (expected K1) exact=False lenient=False 56.6 s
+graphrag_unrepaired Q12: 'machine_W1' (expected P2) exact=False lenient=False 78.2 s
+graphrag_unrepaired Q13: '>(machine_P2 powerKW 90.0)' (expected 90) exact=False lenient=True 102.8 s
+graphrag_unrepaired Q14: 'machine_P1' (expected P1) exact=False lenient=True 35.7 s
+graphrag_unrepaired Q15: 'bytes, ' (expected 25) exact=False lenient=False 86.7 s
+graphrag_unrepaired Q16: 'shift_NIGHT' (expected Night) exact=False lenient=True 52.9 s
+graphrag_unrepaired Q17: '>1' (expected 1.5) exact=False lenient=False 33.7 s
+graphrag_unrepaired Q18: 'strings' (expected 30) exact=False lenient=False 59.0 s
+graphrag_unrepaired Q19: 'machine_P2' (expected A1) exact=False lenient=False 90.8 s
+graphrag_unrepaired Q20: '>=3' (expected 4) exact=False lenient=False 75.7 s
+graphrag_unrepaired Q21: 'context' (expected 9.5) exact=False lenient=False 82.1 s
+graphrag_unrepaired Q22: 'machine_P2' (expected A1) exact=False lenient=False 61.9 s
+graphrag_unrepaired Q23: '>= 4, used evidence: action_P2 onMachine machine_P2, action_W1 onMachine machine_W1, action_WASHER onMachine machine_WASHER, action_WO1105 onMachine machine_P2' (expected 2) exact=False lenient=False 58.9 s
+graphrag_unrepaired Q24: ': 233.0, used evidence: machine_P1 powerKW 75.0, machine_P2 powerKW 90.0, machine_W1 powerKW 45.0, machine_A1 powerKW 18.0, machine_I1 powerKW 6.0, machine_K1 powerKW 12.0' (expected 246) exact=False lenient=False 119.3 s
+graphrag_unrepaired Q25: 'Nowhere in the provided facts is the production downtime for all failures given. ' (expected 20) exact=False lenient=False 40.3 s
+graphrag_repaired Q01: '>(machine_P2 powerKW 90.0)' (expected 90) exact=False lenient=True 47.5 s
+graphrag_repaired Q02: '>35.0' (expected 35) exact=False lenient=True 42.5 s
+graphrag_repaired Q03: '><?=machine_I1->mttrH; ?>, ' (expected 0.75) exact=False lenient=False 41.3 s
+graphrag_repaired Q04: '>(buffer_B3 capacity 25)' (expected 25) exact=False lenient=True 51.2 s
+graphrag_repaired Q05: 'machine_I1' (expected I1) exact=False lenient=True 52.4 s
+graphrag_repaired Q06: 'machine_K1' (expected K1) exact=False lenient=True 42.0 s
+graphrag_repaired Q07: 'Die misalignment' (expected Die misalignment) exact=True lenient=True 29.3 s
+graphrag_repaired Q08: 'context' (expected 22) exact=False lenient=False 48.2 s
+graphrag_repaired Q09: 'failure_INC204' (expected INC-204) exact=False lenient=True 34.9 s
+graphrag_repaired Q10: 'machine_K1' (expected K1) exact=False lenient=True 90.2 s
+graphrag_repaired Q11: 'Press P2' (expected K1) exact=False lenient=False 65.7 s
+graphrag_repaired Q12: 'machine_P2' (expected P2) exact=False lenient=True 42.5 s
+graphrag_repaired Q13: '' (expected 90) exact=False lenient=False 47.3 s
+graphrag_repaired Q14: 'machine_P1' (expected P1) exact=False lenient=True 32.6 s
+graphrag_repaired Q15: 'bytes' (expected 25) exact=False lenient=False 63.4 s
+graphrag_repaired Q16: 'shift_NIGHT' (expected Night) exact=False lenient=True 39.6 s
+graphrag_repaired Q17: '/>1.5, <used_facts>failure_INC204 failureMode Pump failure in machine_W1, failure_INC204 mttrH 1.5</used_facts> ' (expected 1.5) exact=False lenient=True 45.9 s
+graphrag_repaired Q18: 'time not provided' (expected 30) exact=False lenient=False 36.8 s
+graphrag_repaired Q19: 'machine_P2' (expected A1) exact=False lenient=False 91.6 s
+graphrag_repaired Q20: '>=3' (expected 4) exact=False lenient=False 67.1 s
+graphrag_repaired Q21: 'At least 10.5' (expected 9.5) exact=False lenient=False 69.3 s
+graphrag_repaired Q22: 'machine_P2' (expected A1) exact=False lenient=False 62.0 s
+graphrag_repaired Q23: '>= 4, used evidence: action_P2 onMachine machine_P2, action_W1 onMachine machine_W1, action_WASHER onMachine machine_WASHER, action_WO1105 onMachine machine_P2' (expected 2) exact=False lenient=False 60.3 s
+graphrag_repaired Q24: '>= 420' (expected 246) exact=False lenient=False 109.9 s
+graphrag_repaired Q25: 'Nowhere in the provided facts is the production downtime for all failures given. ' (expected 20) exact=False lenient=False 94.1 s
+graphrag_gold Q01: '>(machine_P2 powerKW 90.0)' (expected 90) exact=False lenient=True 53.7 s
+graphrag_gold Q02: '>35' (expected 35) exact=False lenient=True 42.3 s
+graphrag_gold Q03: '.75' (expected 0.75) exact=False lenient=False 37.5 s
+graphrag_gold Q04: '>(buffer_B3 capacity 25)' (expected 25) exact=False lenient=True 45.7 s
+graphrag_gold Q05: 'machine_I1' (expected I1) exact=False lenient=True 67.2 s
+graphrag_gold Q06: 'machine_K1' (expected K1) exact=False lenient=True 31.4 s
+graphrag_gold Q07: 'Die misalignment' (expected Die misalignment) exact=True lenient=True 39.5 s
+graphrag_gold Q08: '>(shift_NIGHT startHour 22)' (expected 22) exact=False lenient=True 56.1 s
+graphrag_gold Q09: 'failure_INC204' (expected INC-204) exact=False lenient=True 40.3 s
+graphrag_gold Q10: 'machine_K1' (expected K1) exact=False lenient=True 102.9 s
+graphrag_gold Q11: 'Press P2' (expected K1) exact=False lenient=False 89.0 s
+graphrag_gold Q12: 'machine_P2' (expected P2) exact=False lenient=True 46.3 s
+graphrag_gold Q13: '' (expected 90) exact=False lenient=False 57.3 s
+graphrag_gold Q14: 'machine_P1' (expected P1) exact=False lenient=True 40.9 s
+graphrag_gold Q15: 'bytes' (expected 25) exact=False lenient=False 403.9 s
+graphrag_gold Q16: 'shift_NIGHT' (expected Night) exact=False lenient=True 50.6 s
+graphrag_gold Q17: '/>1.5, <used_facts>action_WO1104 actionType Corrective action_WO1104 addresses failure_INC204 action_WO1104 date 2026-03-12 action_WO1104 durationH 1.5 action_WO1104 onMachine machine_W1 failure_INC204 date 2026-03-12 failure_INC204 downtimeH 1.5 failure_INC204 duringShift shift_NIGHT failure_INC204 failureMode Pump failure failure_INC204 onMachine machine_W1' (expected 1.5) exact=False lenient=True 57.9 s
+graphrag_gold Q18: 'time not provided' (expected 30) exact=False lenient=False 33.2 s
+graphrag_gold Q19: 'machine_P2' (expected A1) exact=False lenient=False 85.8 s
+graphrag_gold Q20: '>=3' (expected 4) exact=False lenient=False 62.7 s
+graphrag_gold Q21: 'context' (expected 9.5) exact=False lenient=False 64.1 s
+graphrag_gold Q22: 'machine_P2' (expected A1) exact=False lenient=False 53.4 s
+graphrag_gold Q23: '>= 2' (expected 2) exact=False lenient=True 39.8 s
+graphrag_gold Q24: '>= 450.0' (expected 246) exact=False lenient=False 100.6 s
+graphrag_gold Q25: '>= 15.0' (expected 20) exact=False lenient=False 50.6 s
+{
+  "vector_rag": {
+    "n": 25,
+    "exact": 0.24,
+    "lenient": 0.4,
+    "per_type": {
+      "1-hop": {
+        "n": 10,
+        "exact": 0.3,
+        "lenient": 0.6
+      },
+      "multi-hop": {
+        "n": 8,
+        "exact": 0.375,
+        "lenient": 0.375
+      },
+      "aggregation": {
+        "n": 7,
+        "exact": 0.0,
+        "lenient": 0.143
+      }
+    },
+    "answered_unknown": 1,
+    "parse_errors": 1,
+    "mean_doc_recall": 0.783,
+    "questions_with_all_docs_retrieved": 16
+  },
+  "graphrag_unrepaired": {
+    "n": 25,
+    "exact": 0.04,
+    "lenient": 0.4,
+    "per_type": {
+      "1-hop": {
+        "n": 10,
+        "exact": 0.1,
+        "lenient": 0.7
+      },
+      "multi-hop": {
+        "n": 8,
+        "exact": 0.0,
+        "lenient": 0.375
+      },
+      "aggregation": {
+        "n": 7,
+        "exact": 0.0,
+        "lenient": 0.0
+      }
+    },
+    "answered_unknown": 0,
+    "parse_errors": 1
+  },
+  "graphrag_repaired": {
+    "n": 25,
+    "exact": 0.04,
+    "lenient": 0.48,
+    "per_type": {
+      "1-hop": {
+        "n": 10,
+        "exact": 0.1,
+        "lenient": 0.8
+      },
+      "multi-hop": {
+        "n": 8,
+        "exact": 0.0,
+        "lenient": 0.5
+      },
+      "aggregation": {
+        "n": 7,
+        "exact": 0.0,
+        "lenient": 0.0
+      }
+    },
+    "answered_unknown": 0,
+    "parse_errors": 0
+  },
+  "graphrag_gold": {
+    "n": 25,
+    "exact": 0.04,
+    "lenient": 0.56,
+    "per_type": {
+      "1-hop": {
+        "n": 10,
+        "exact": 0.1,
+        "lenient": 0.9
+      },
+      "multi-hop": {
+        "n": 8,
+        "exact": 0.0,
+        "lenient": 0.5
+      },
+      "aggregation": {
+        "n": 7,
+        "exact": 0.0,
+        "lenient": 0.143
+      }
+    },
+    "answered_unknown": 0,
+    "parse_errors": 0
+  }
+}

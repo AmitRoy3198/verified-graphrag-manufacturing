@@ -1,0 +1,266 @@
+@prefix ex: <http://example.org/line/> .
+@prefix mfg: <http://example.org/mfg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:action_B3 a mfg:MaintenanceAction ;
+    mfg:actionType "Corrective" ;
+    mfg:date "2026-03-10"^^xsd:date ;
+    mfg:durationH 0.5 ;
+    mfg:onMachine ex:machine_B3 .
+
+ex:action_INC207 a mfg:MaintenanceAction ;
+    mfg:actionType "Corrective" ;
+    mfg:addresses ex:failure_INC207 ;
+    mfg:date "2026-03-24"^^xsd:date ;
+    mfg:durationH 0.0833333333333333 ;
+    mfg:onMachine ex:machine_I1 .
+
+ex:action_P2 a mfg:MaintenanceAction ;
+    mfg:actionType "Preventive" ;
+    mfg:date "2026-03-10"^^xsd:date ;
+    mfg:durationH 0.25 ;
+    mfg:onMachine ex:machine_P2 .
+
+ex:action_W1 a mfg:MaintenanceAction ;
+    mfg:actionType "Preventive" ;
+    mfg:date "2026-03-10"^^xsd:date ;
+    mfg:durationH 0.25 ;
+    mfg:onMachine ex:machine_W1 .
+
+ex:action_WASHER a mfg:MaintenanceAction ;
+    mfg:actionType "Corrective" ;
+    mfg:addresses ex:failure_INC205 ;
+    mfg:date "2026-03-17"^^xsd:date ;
+    mfg:durationH 1.0 ;
+    mfg:onMachine ex:machine_WASHER .
+
+ex:action_WO1101 a mfg:MaintenanceAction ;
+    mfg:actionType "Corrective" ;
+    mfg:addresses ex:failure_INC201 ;
+    mfg:date "2026-03-03"^^xsd:date ;
+    mfg:durationH 4.5 ;
+    mfg:onMachine ex:machine_P2 .
+
+ex:action_WO1102 a mfg:MaintenanceAction ;
+    mfg:actionType "Corrective" ;
+    mfg:addresses ex:failure_INC202 ;
+    mfg:date "2026-03-05"^^xsd:date ;
+    mfg:durationH 2.0 ;
+    mfg:onMachine ex:machine_A1 .
+
+ex:action_WO1103 a mfg:MaintenanceAction ;
+    mfg:actionType "Corrective" ;
+    mfg:addresses ex:failure_INC203 ;
+    mfg:date "2026-03-09"^^xsd:date ;
+    mfg:durationH 3.0 ;
+    mfg:onMachine ex:machine_P1 .
+
+ex:action_WO1104 a mfg:MaintenanceAction ;
+    mfg:actionType "Corrective" ;
+    mfg:addresses ex:failure_INC204 ;
+    mfg:date "2026-03-12"^^xsd:date ;
+    mfg:durationH 1.5 ;
+    mfg:onMachine ex:machine_W1 .
+
+ex:action_WO1105 a mfg:MaintenanceAction ;
+    mfg:actionType "Preventive" ;
+    mfg:date "2026-03-14"^^xsd:date ;
+    mfg:durationH 6.0 ;
+    mfg:onMachine ex:machine_P2 .
+
+ex:action_WO1106 a mfg:MaintenanceAction ;
+    mfg:actionType "Corrective" ;
+    mfg:addresses ex:failure_INC206 ;
+    mfg:date "2026-03-01"^^xsd:date ;
+    mfg:durationH 5.0 ;
+    mfg:onMachine ex:machine_P2 .
+
+ex:action_WO1107 a mfg:MaintenanceAction ;
+    mfg:actionType "Preventive" ;
+    mfg:addresses ex:failure_FAILURE1107 ;
+    mfg:date "2026-03-21"^^xsd:date ;
+    mfg:durationH 2.0 ;
+    mfg:onMachine ex:machine_I1 .
+
+ex:action_WO1108 a mfg:MaintenanceAction ;
+    mfg:actionType "Corrective" ;
+    mfg:addresses ex:failure_INC208 ;
+    mfg:date "2026-03-26"^^xsd:date ;
+    mfg:durationH 2.5 ;
+    mfg:onMachine ex:machine_A1 .
+
+ex:buffer_B1 a mfg:Buffer ;
+    rdfs:label "Buffer B1" ;
+    mfg:capacity "time:0.6666666666666666" ;
+    mfg:feeds ex:machine_P2 .
+
+ex:buffer_B2 a mfg:Buffer ;
+    rdfs:label "Buffer B2" ;
+    mfg:capacity 30 ;
+    mfg:feeds ex:machine_W1 .
+
+ex:buffer_B3 a mfg:Buffer ;
+    mfg:capacity ">(25 parts)</value> <!-- From source document [08_buffer_layout] -->" ;
+    mfg:feeds ex:machine_A1 .
+
+ex:buffer_B4 a mfg:Buffer ;
+    mfg:capacity 20 .
+
+ex:buffer_B5 a mfg:Buffer ;
+    rdfs:label "Buffer B5" ;
+    mfg:capacity "value:15" ;
+    mfg:feeds ex:machine_K1 .
+
+ex:buffer_B6 a mfg:Buffer .
+
+ex:buffer_REDBOX a mfg:Buffer ;
+    mfg:feeds ex:machine_I2 .
+
+ex:failure_INSPECTIONSTATIONREJECTEDPARTS a mfg:Failure ;
+    mfg:date "2023-04-01"^^xsd:date ;
+    mfg:downtimeH 0.75 ;
+    mfg:failureMode "Rejected parts" ;
+    mfg:onMachine ex:machine_I1 .
+
+ex:line_LINE1 a mfg:ProductionLine ;
+    rdfs:label "Line 1" ;
+    mfg:finalMachine ex:machine_K1 .
+
+ex:failure_FAILURE1107 a mfg:Failure ;
+    mfg:date "2026-03-21"^^xsd:date ;
+    mfg:downtimeH 2.0 ;
+    mfg:failureMode "camera calibration and lens cleaning" ;
+    mfg:onMachine ex:machine_I1 .
+
+ex:failure_INC201 a mfg:Failure ;
+    mfg:date "2026-03-03"^^xsd:date ;
+    mfg:downtimeH 4.5 ;
+    mfg:duringShift ex:shift_NIGHT ;
+    mfg:failureMode "Hydraulic leak at the main cylinder seal" ;
+    mfg:onMachine ex:machine_P2 .
+
+ex:failure_INC202 a mfg:Failure ;
+    mfg:date "2026-03-05"^^xsd:date ;
+    mfg:downtimeH 2.0 ;
+    mfg:duringShift ex:shift_EARLY ;
+    mfg:failureMode "Screwdriver torque fault" ;
+    mfg:onMachine ex:machine_A1 .
+
+ex:failure_INC203 a mfg:Failure ;
+    mfg:date "2026-03-09"^^xsd:date ;
+    mfg:downtimeH 3.0 ;
+    mfg:duringShift ex:shift_LATE ;
+    mfg:failureMode "Die misalignment" ;
+    mfg:onMachine ex:machine_P1 .
+
+ex:failure_INC204 a mfg:Failure ;
+    mfg:date "2026-03-12"^^xsd:date ;
+    mfg:downtimeH 1.5 ;
+    mfg:duringShift ex:shift_NIGHT ;
+    mfg:failureMode "Pump failure in the spray circuit" ;
+    mfg:onMachine ex:machine_W1 .
+
+ex:failure_INC205 a mfg:Failure ;
+    mfg:date "2026-03-17"^^xsd:date ;
+    mfg:downtimeH 1.0 ;
+    mfg:duringShift ex:shift_LATE ;
+    mfg:failureMode "sensor fault" ;
+    mfg:onMachine ex:machine_A1 .
+
+ex:failure_INC206 a mfg:Failure ;
+    mfg:date "2026-03-01"^^xsd:date ;
+    mfg:downtimeH 5.0 ;
+    mfg:duringShift ex:shift_NIGHT ;
+    mfg:failureMode "Hydraulic leak" ;
+    mfg:onMachine ex:machine_P2 .
+
+ex:failure_INC207 a mfg:Failure ;
+    mfg:date "2026-03-24"^^xsd:date ;
+    mfg:downtimeH 0.5 ;
+    mfg:duringShift ex:shift_EARLY ;
+    mfg:failureMode "Film jam" ;
+    mfg:onMachine ex:machine_K1 .
+
+ex:failure_INC208 a mfg:Failure ;
+    mfg:date "2026-03-26"^^xsd:date ;
+    mfg:downtimeH 2.5 ;
+    mfg:duringShift ex:shift_NIGHT ;
+    mfg:failureMode "Screwdriver torque fault on screwdriver 1" ;
+    mfg:onMachine ex:machine_A1 .
+
+ex:machine_WASHER a mfg:Machine ;
+    rdfs:label "Washer" ;
+    mfg:cycleTimeS 2.0 ;
+    mfg:machineType "Washer" ;
+    mfg:mtbfH 2000.0 ;
+    mfg:mttrH 100.0 ;
+    mfg:partOfLine ex:line_HTTPEXAMPLEORGLINEMACHINEWASHER ;
+    mfg:powerKW 10.0 .
+
+ex:line_LINEA a mfg:ProductionLine ;
+    rdfs:label "Line A" ;
+    mfg:finalMachine ex:machine_P1 .
+
+ex:shift_EARLY a mfg:Shift ;
+    rdfs:label "Early" ;
+    mfg:startHour 6 .
+
+ex:shift_LATE a mfg:Shift ;
+    rdfs:label "Late" ;
+    mfg:startHour 14 .
+
+ex:line_A a mfg:ProductionLine ;
+    rdfs:label "Line A" ;
+    mfg:finalMachine ex:machine_A1 .
+
+ex:machine_K1 a mfg:Machine ;
+    mfg:cycleTimeS 2.0833 ;
+    mfg:machineType "Packing" ;
+    mfg:mtbfH 35.0 ;
+    mfg:mttrH 1.2 ;
+    mfg:partOfLine ex:line_LINEA ;
+    mfg:powerKW 12.0 .
+
+ex:machine_P1 a mfg:Machine ;
+    mfg:cycleTimeS 0.7 ;
+    mfg:machineType "Press" ;
+    mfg:mtbfH 160.0 ;
+    mfg:mttrH 3.5 ;
+    mfg:partOfLine ex:line_LINEA ;
+    mfg:powerKW 75.0 .
+
+ex:machine_I1 a mfg:Machine ;
+    mfg:cycleTimeS 0.5 ;
+    mfg:mtbfH 600.0 ;
+    mfg:mttrH 0.75 ;
+    mfg:partOfLine ex:line_A ;
+    mfg:powerKW 6.0 .
+
+ex:machine_W1 a mfg:Machine ;
+    mfg:cycleTimeS 0.5833 ;
+    mfg:mtbfH 400.0 ;
+    mfg:mttrH 1.5 ;
+    mfg:partOfLine ex:line_A ;
+    mfg:powerKW 45.0 .
+
+ex:shift_NIGHT a mfg:Shift ;
+    rdfs:label "Night" ;
+    mfg:startHour 22 .
+
+ex:machine_A1 a mfg:Machine ;
+    mfg:cycleTimeS 55.0 ;
+    mfg:machineType "Assembly" ;
+    mfg:mtbfH 220.0 ;
+    mfg:mttrH 2.0 ;
+    mfg:partOfLine ex:line_A ;
+    mfg:powerKW 18.0 .
+
+ex:machine_P2 a mfg:Machine ;
+    mfg:cycleTimeS 48.0 ;
+    mfg:machineType "Press" ;
+    mfg:mtbfH 140.0 ;
+    mfg:mttrH 4.0 ;
+    mfg:partOfLine ex:line_HTTPEXAMPLEORGLINELINEA ;
+    mfg:powerKW 90.0 .
+

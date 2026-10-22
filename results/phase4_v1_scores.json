@@ -1,0 +1,100 @@
+{
+  "vector_rag": {
+    "n": 25,
+    "exact": 0.24,
+    "lenient": 0.4,
+    "per_type": {
+      "1-hop": {
+        "n": 10,
+        "exact": 0.3,
+        "lenient": 0.6
+      },
+      "multi-hop": {
+        "n": 8,
+        "exact": 0.375,
+        "lenient": 0.375
+      },
+      "aggregation": {
+        "n": 7,
+        "exact": 0.0,
+        "lenient": 0.143
+      }
+    },
+    "answered_unknown": 1,
+    "parse_errors": 1,
+    "mean_doc_recall": 0.783,
+    "questions_with_all_docs_retrieved": 16
+  },
+  "graphrag_unrepaired": {
+    "n": 25,
+    "exact": 0.04,
+    "lenient": 0.4,
+    "per_type": {
+      "1-hop": {
+        "n": 10,
+        "exact": 0.1,
+        "lenient": 0.7
+      },
+      "multi-hop": {
+        "n": 8,
+        "exact": 0.0,
+        "lenient": 0.375
+      },
+      "aggregation": {
+        "n": 7,
+        "exact": 0.0,
+        "lenient": 0.0
+      }
+    },
+    "answered_unknown": 0,
+    "parse_errors": 1
+  },
+  "graphrag_repaired": {
+    "n": 25,
+    "exact": 0.04,
+    "lenient": 0.48,
+    "per_type": {
+      "1-hop": {
+        "n": 10,
+        "exact": 0.1,
+        "lenient": 0.8
+      },
+      "multi-hop": {
+        "n": 8,
+        "exact": 0.0,
+        "lenient": 0.5
+      },
+      "aggregation": {
+        "n": 7,
+        "exact": 0.0,
+        "lenient": 0.0
+      }
+    },
+    "answered_unknown": 0,
+    "parse_errors": 0
+  },
+  "graphrag_gold": {
+    "n": 25,
+    "exact": 0.04,
+    "lenient": 0.56,
+    "per_type": {
+      "1-hop": {
+        "n": 10,
+        "exact": 0.1,
+        "lenient": 0.9
+      },
+      "multi-hop": {
+        "n": 8,
+        "exact": 0.0,
+        "lenient": 0.5
+      },
+      "aggregation": {
+        "n": 7,
+        "exact": 0.0,
+        "lenient": 0.143
+      }
+    },
+    "answered_unknown": 0,
+    "parse_errors": 0
+  }
+}

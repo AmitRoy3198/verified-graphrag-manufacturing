@@ -1,0 +1,10 @@
+Machine data sheet - Assembly cell A1
+
+Type: semi-automatic assembly cell (Assembly)
+Installed on: Line A
+Cycle time: 55 s per part
+Rated power: 18 kW
+MTBF: 220 h
+MTTR: 2 h
+
+Notes: two operators per shift, four electric screwdrivers, one pick-and-place gripper.

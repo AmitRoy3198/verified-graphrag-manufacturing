@@ -1,0 +1,40 @@
+{
+  "machines": [
+    {
+      "id": "I1",
+      "name": null,
+      "machine_type": "Inspection",
+      "line": null,
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": null
+    }
+  ],
+  "buffers": [
+    {
+      "id": "B10",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": null,
+      "feeds_machine": "I1"
+    }
+  ],
+  "failures": [],
+  "maintenance_actions": [],
+  "shifts": [
+    {
+      "id": "Night",
+      "name": null,
+      "start_hour": 22
+    }
+  ],
+  "lines": [
+    {
+      "id": "Line Z",
+      "name": null,
+      "final_machine": "I1"
+    }
+  ]
+}

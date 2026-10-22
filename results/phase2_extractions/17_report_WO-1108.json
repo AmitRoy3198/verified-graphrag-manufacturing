@@ -1,0 +1,58 @@
+{
+  "failures": [
+    {
+      "id": "INC-208",
+      "machine": "Assembly cell A1",
+      "failure_mode": "Screwdriver torque fault on screwdriver 1",
+      "downtime_h": 2.5,
+      "date": "2026-03-26",
+      "shift": "Night"
+    }
+  ],
+  "maintenance_actions": [
+    {
+      "id": "WO-1108",
+      "machine": "Assembly cell A1",
+      "action_type": "Corrective",
+      "date": "2026-03-26",
+      "duration_h": 2.5,
+      "addresses_failure": "INC-208"
+    }
+  ],
+  "machines": [
+    {
+      "id": "Assembly cell A1",
+      "name": "Assembly cell A1",
+      "machine_type": "Assembly",
+      "line": null,
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": null
+    }
+  ],
+  "buffers": [
+    {
+      "id": "null",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": null,
+      "feeds_machine": null
+    }
+  ],
+  "shifts": [
+    {
+      "id": "Night",
+      "name": "Night",
+      "start_hour": 20
+    }
+  ],
+  "lines": [
+    {
+      "id": "null",
+      "name": null,
+      "final_machine": null
+    }
+  ]
+}

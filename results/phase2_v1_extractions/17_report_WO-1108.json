@@ -1,0 +1,40 @@
+{
+  "machines": [
+    {
+      "id": "A1",
+      "name": null,
+      "machine_type": null,
+      "line": "Line A",
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": null
+    }
+  ],
+  "buffers": [
+    {
+      "id": "B10",
+      "name": null,
+      "capacity": null,
+      "fed_by_machine": null,
+      "feeds_machine": "A1"
+    }
+  ],
+  "failures": [],
+  "maintenance_actions": [],
+  "shifts": [
+    {
+      "id": "Night",
+      "name": null,
+      "start_hour": 20
+    }
+  ],
+  "lines": [
+    {
+      "id": "Line A",
+      "name": null,
+      "final_machine": "A1"
+    }
+  ]
+}

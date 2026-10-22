@@ -1,0 +1,43 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.0, pytest-9.1.1, pluggy-1.7.0 -- F:\Project Olama\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: F:\Project Olama
+plugins: anyio-4.15.1, langsmith-0.14.11
+collecting ... collected 34 items
+
+tests/test_shapes.py::test_valid_fixture_conforms PASSED                 [  2%]
+tests/test_shapes.py::test_shape_can_fail[machine_missing_label] PASSED  [  5%]
+tests/test_shapes.py::test_shape_can_fail[machine_type_not_allowed] PASSED [  8%]
+tests/test_shapes.py::test_shape_can_fail[cycle_time_zero] PASSED        [ 11%]
+tests/test_shapes.py::test_shape_can_fail[cycle_time_two_values] PASSED  [ 14%]
+tests/test_shapes.py::test_shape_can_fail[power_negative] PASSED         [ 17%]
+tests/test_shapes.py::test_shape_can_fail[power_missing] PASSED          [ 20%]
+tests/test_shapes.py::test_shape_can_fail[power_as_text] PASSED          [ 23%]
+tests/test_shapes.py::test_shape_can_fail[mtbf_missing] PASSED           [ 26%]
+tests/test_shapes.py::test_shape_can_fail[mttr_not_less_than_mtbf] PASSED [ 29%]
+tests/test_shapes.py::test_shape_can_fail[part_of_line_wrong_class] PASSED [ 32%]
+tests/test_shapes.py::test_shape_can_fail[machine_feeds_machine] PASSED  [ 35%]
+tests/test_shapes.py::test_shape_can_fail[topology_machine_feeds_nothing] PASSED [ 38%]
+tests/test_shapes.py::test_shape_can_fail[buffer_missing_label] PASSED   [ 41%]
+tests/test_shapes.py::test_shape_can_fail[buffer_capacity_zero] PASSED   [ 44%]
+tests/test_shapes.py::test_shape_can_fail[buffer_capacity_decimal] PASSED [ 47%]
+tests/test_shapes.py::test_shape_can_fail[buffer_feeds_nothing] PASSED   [ 50%]
+tests/test_shapes.py::test_shape_can_fail[buffer_fed_by_two_machines] PASSED [ 52%]
+tests/test_shapes.py::test_shape_can_fail[failure_on_non_machine] PASSED [ 55%]
+tests/test_shapes.py::test_shape_can_fail[failure_missing_mode] PASSED   [ 58%]
+tests/test_shapes.py::test_shape_can_fail[failure_downtime_negative] PASSED [ 61%]
+tests/test_shapes.py::test_shape_can_fail[failure_date_as_text] PASSED   [ 64%]
+tests/test_shapes.py::test_shape_can_fail[failure_shift_wrong_class] PASSED [ 67%]
+tests/test_shapes.py::test_shape_can_fail[action_missing_machine] PASSED [ 70%]
+tests/test_shapes.py::test_shape_can_fail[action_type_unknown] PASSED    [ 73%]
+tests/test_shapes.py::test_shape_can_fail[action_missing_date] PASSED    [ 76%]
+tests/test_shapes.py::test_shape_can_fail[action_duration_zero] PASSED   [ 79%]
+tests/test_shapes.py::test_shape_can_fail[action_addresses_machine] PASSED [ 82%]
+tests/test_shapes.py::test_shape_can_fail[shift_missing_label] PASSED    [ 85%]
+tests/test_shapes.py::test_shape_can_fail[shift_start_hour_25] PASSED    [ 88%]
+tests/test_shapes.py::test_shape_can_fail[line_two_labels] PASSED        [ 91%]
+tests/test_shapes.py::test_shape_can_fail[line_missing_final_machine] PASSED [ 94%]
+tests/test_shapes.py::test_every_shape_has_a_failing_case PASSED         [ 97%]
+tests/test_shapes.py::test_shapes_only_use_ontology_terms PASSED         [100%]
+
+============================= 34 passed in 1.50s ==============================

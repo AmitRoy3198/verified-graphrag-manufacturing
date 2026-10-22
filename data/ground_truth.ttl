@@ -1,0 +1,84 @@
+# Ground truth: every fact stated in data/docs/*.txt, written by hand.
+# IRIs follow the same rule as the extractor: ex:<kind>_<CODE>  (see src/to_rdf.py)
+# Units: seconds, kW, hours (minutes converted), dates as xsd:date.
+
+@prefix ex:   <http://example.org/line/> .
+@prefix mfg:  <http://example.org/mfg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# ---------- Line (doc 01) ----------
+ex:line_LINEA a mfg:ProductionLine ; rdfs:label "Line A" ; mfg:finalMachine ex:machine_K1 .
+
+# ---------- Machines (docs 01-07, 20) ----------
+ex:machine_P1 a mfg:Machine ; rdfs:label "Press P1" ; mfg:machineType "Press" ;
+    mfg:cycleTimeS 42.0 ; mfg:powerKW 75.0 ; mfg:mtbfH 160.0 ; mfg:mttrH 3.5 ;
+    mfg:partOfLine ex:line_LINEA ; mfg:feeds ex:buffer_B1 .
+
+ex:machine_P2 a mfg:Machine ; rdfs:label "Press P2" ; mfg:machineType "Press" ;
+    mfg:cycleTimeS 48.0 ; mfg:powerKW 90.0 ; mfg:mtbfH 140.0 ; mfg:mttrH 4.0 ;
+    mfg:partOfLine ex:line_LINEA ; mfg:feeds ex:buffer_B2 .
+
+ex:machine_W1 a mfg:Machine ; rdfs:label "Washer W1" ; mfg:machineType "Washer" ;
+    mfg:cycleTimeS 35.0 ; mfg:powerKW 45.0 ; mfg:mtbfH 400.0 ; mfg:mttrH 1.5 ;
+    mfg:partOfLine ex:line_LINEA ; mfg:feeds ex:buffer_B3 .
+
+ex:machine_A1 a mfg:Machine ; rdfs:label "Assembly cell A1" ; mfg:machineType "Assembly" ;
+    mfg:cycleTimeS 55.0 ; mfg:powerKW 18.0 ; mfg:mtbfH 220.0 ; mfg:mttrH 2.0 ;
+    mfg:partOfLine ex:line_LINEA ; mfg:feeds ex:buffer_B4 .
+
+ex:machine_I1 a mfg:Machine ; rdfs:label "Inspection station I1" ; mfg:machineType "Inspection" ;
+    mfg:cycleTimeS 30.0 ; mfg:powerKW 6.0 ; mfg:mtbfH 600.0 ; mfg:mttrH 0.75 ;
+    mfg:partOfLine ex:line_LINEA ; mfg:feeds ex:buffer_B5 .
+
+ex:machine_K1 a mfg:Machine ; rdfs:label "Packer K1" ; mfg:machineType "Packing" ;
+    mfg:cycleTimeS 25.0 ; mfg:powerKW 12.0 ; mfg:mtbfH 350.0 ; mfg:mttrH 1.2 ;
+    mfg:partOfLine ex:line_LINEA .
+
+# ---------- Buffers (docs 01, 08) ----------
+ex:buffer_B1 a mfg:Buffer ; rdfs:label "Buffer B1" ; mfg:capacity 40 ; mfg:feeds ex:machine_P2 .
+ex:buffer_B2 a mfg:Buffer ; rdfs:label "Buffer B2" ; mfg:capacity 30 ; mfg:feeds ex:machine_W1 .
+ex:buffer_B3 a mfg:Buffer ; rdfs:label "Buffer B3" ; mfg:capacity 25 ; mfg:feeds ex:machine_A1 .
+ex:buffer_B4 a mfg:Buffer ; rdfs:label "Buffer B4" ; mfg:capacity 20 ; mfg:feeds ex:machine_I1 .
+ex:buffer_B5 a mfg:Buffer ; rdfs:label "Buffer B5" ; mfg:capacity 15 ; mfg:feeds ex:machine_K1 .
+
+# ---------- Shifts (doc 09) ----------
+ex:shift_EARLY a mfg:Shift ; rdfs:label "Early shift" ; mfg:startHour 6 .
+ex:shift_LATE  a mfg:Shift ; rdfs:label "Late shift"  ; mfg:startHour 14 .
+ex:shift_NIGHT a mfg:Shift ; rdfs:label "Night shift" ; mfg:startHour 22 .
+
+# ---------- Failures (docs 10-19) ----------
+ex:failure_INC201 a mfg:Failure ; mfg:onMachine ex:machine_P2 ; mfg:failureMode "Hydraulic leak" ;
+    mfg:downtimeH 4.5 ; mfg:date "2026-03-03"^^xsd:date ; mfg:duringShift ex:shift_NIGHT .
+ex:failure_INC202 a mfg:Failure ; mfg:onMachine ex:machine_A1 ; mfg:failureMode "Screwdriver torque fault" ;
+    mfg:downtimeH 2.0 ; mfg:date "2026-03-05"^^xsd:date ; mfg:duringShift ex:shift_EARLY .
+ex:failure_INC203 a mfg:Failure ; mfg:onMachine ex:machine_P1 ; mfg:failureMode "Die misalignment" ;
+    mfg:downtimeH 3.0 ; mfg:date "2026-03-09"^^xsd:date ; mfg:duringShift ex:shift_LATE .
+ex:failure_INC204 a mfg:Failure ; mfg:onMachine ex:machine_W1 ; mfg:failureMode "Pump failure" ;
+    mfg:downtimeH 1.5 ; mfg:date "2026-03-12"^^xsd:date ; mfg:duringShift ex:shift_NIGHT .
+ex:failure_INC205 a mfg:Failure ; mfg:onMachine ex:machine_A1 ; mfg:failureMode "Gripper sensor fault" ;
+    mfg:downtimeH 1.0 ; mfg:date "2026-03-17"^^xsd:date ; mfg:duringShift ex:shift_LATE .
+ex:failure_INC206 a mfg:Failure ; mfg:onMachine ex:machine_P2 ; mfg:failureMode "Hydraulic leak" ;
+    mfg:downtimeH 5.0 ; mfg:date "2026-03-20"^^xsd:date ; mfg:duringShift ex:shift_NIGHT .
+ex:failure_INC207 a mfg:Failure ; mfg:onMachine ex:machine_K1 ; mfg:failureMode "Film jam" ;
+    mfg:downtimeH 0.5 ; mfg:date "2026-03-24"^^xsd:date ; mfg:duringShift ex:shift_EARLY .
+ex:failure_INC208 a mfg:Failure ; mfg:onMachine ex:machine_A1 ; mfg:failureMode "Screwdriver torque fault" ;
+    mfg:downtimeH 2.5 ; mfg:date "2026-03-26"^^xsd:date ; mfg:duringShift ex:shift_NIGHT .
+
+# ---------- Maintenance actions (docs 10-17) ----------
+ex:action_WO1101 a mfg:MaintenanceAction ; mfg:onMachine ex:machine_P2 ; mfg:actionType "Corrective" ;
+    mfg:date "2026-03-03"^^xsd:date ; mfg:durationH 4.5 ; mfg:addresses ex:failure_INC201 .
+ex:action_WO1102 a mfg:MaintenanceAction ; mfg:onMachine ex:machine_A1 ; mfg:actionType "Corrective" ;
+    mfg:date "2026-03-05"^^xsd:date ; mfg:durationH 2.0 ; mfg:addresses ex:failure_INC202 .
+ex:action_WO1103 a mfg:MaintenanceAction ; mfg:onMachine ex:machine_P1 ; mfg:actionType "Corrective" ;
+    mfg:date "2026-03-09"^^xsd:date ; mfg:durationH 3.0 ; mfg:addresses ex:failure_INC203 .
+ex:action_WO1104 a mfg:MaintenanceAction ; mfg:onMachine ex:machine_W1 ; mfg:actionType "Corrective" ;
+    mfg:date "2026-03-12"^^xsd:date ; mfg:durationH 1.5 ; mfg:addresses ex:failure_INC204 .
+ex:action_WO1105 a mfg:MaintenanceAction ; mfg:onMachine ex:machine_P2 ; mfg:actionType "Preventive" ;
+    mfg:date "2026-03-14"^^xsd:date ; mfg:durationH 6.0 .
+ex:action_WO1106 a mfg:MaintenanceAction ; mfg:onMachine ex:machine_P2 ; mfg:actionType "Corrective" ;
+    mfg:date "2026-03-20"^^xsd:date ; mfg:durationH 5.0 ; mfg:addresses ex:failure_INC206 .
+ex:action_WO1107 a mfg:MaintenanceAction ; mfg:onMachine ex:machine_I1 ; mfg:actionType "Preventive" ;
+    mfg:date "2026-03-21"^^xsd:date ; mfg:durationH 2.0 .
+ex:action_WO1108 a mfg:MaintenanceAction ; mfg:onMachine ex:machine_A1 ; mfg:actionType "Corrective" ;
+    mfg:date "2026-03-26"^^xsd:date ; mfg:durationH 2.5 ; mfg:addresses ex:failure_INC208 .

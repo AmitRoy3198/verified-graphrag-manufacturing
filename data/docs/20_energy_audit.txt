@@ -1,0 +1,6 @@
+Energy audit note, Line A, March 2026 (external auditor)
+
+Rated power of the main consumers on Line A: Press P2 90 kW, Press P1 75 kW, Washer W1 45 kW (of which 30 kW is tank heating), Assembly cell A1 18 kW, Packer K1 12 kW, Inspection station I1 6 kW.
+The two presses account for most of the electrical demand of the line.
+Compressed-air leaks are estimated at an extra 8 kW equivalent.
+Recommendation: heat recovery on the washer and a leak-detection round every quarter.

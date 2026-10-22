@@ -1,0 +1,422 @@
+{
+  "runs": [
+    {
+      "doc": "01_line_overview.txt",
+      "seconds": 149.1,
+      "parse_error": null,
+      "triples": 52
+    },
+    {
+      "doc": "02_datasheet_P1.txt",
+      "seconds": 45.7,
+      "parse_error": null,
+      "triples": 11
+    },
+    {
+      "doc": "03_datasheet_P2.txt",
+      "seconds": 43.7,
+      "parse_error": null,
+      "triples": 11
+    },
+    {
+      "doc": "04_datasheet_W1.txt",
+      "seconds": 44.4,
+      "parse_error": null,
+      "triples": 11
+    },
+    {
+      "doc": "05_datasheet_A1.txt",
+      "seconds": 44.2,
+      "parse_error": null,
+      "triples": 11
+    },
+    {
+      "doc": "06_datasheet_I1.txt",
+      "seconds": 73.0,
+      "parse_error": null,
+      "triples": 27
+    },
+    {
+      "doc": "07_datasheet_K1.txt",
+      "seconds": 45.9,
+      "parse_error": null,
+      "triples": 11
+    },
+    {
+      "doc": "08_buffer_layout.txt",
+      "seconds": 165.8,
+      "parse_error": null,
+      "triples": 65
+    },
+    {
+      "doc": "09_shift_plan.txt",
+      "seconds": 44.2,
+      "parse_error": null,
+      "triples": 11
+    },
+    {
+      "doc": "10_report_WO-1101.txt",
+      "seconds": 76.6,
+      "parse_error": null,
+      "triples": 20
+    },
+    {
+      "doc": "11_report_WO-1102.txt",
+      "seconds": 76.9,
+      "parse_error": null,
+      "triples": 20
+    },
+    {
+      "doc": "12_report_WO-1103.txt",
+      "seconds": 75.7,
+      "parse_error": null,
+      "triples": 20
+    },
+    {
+      "doc": "13_report_WO-1104.txt",
+      "seconds": 76.2,
+      "parse_error": null,
+      "triples": 20
+    },
+    {
+      "doc": "14_report_WO-1105.txt",
+      "seconds": 44.1,
+      "parse_error": null,
+      "triples": 8
+    },
+    {
+      "doc": "15_report_WO-1106.txt",
+      "seconds": 76.0,
+      "parse_error": null,
+      "triples": 20
+    },
+    {
+      "doc": "16_report_WO-1107.txt",
+      "seconds": 74.7,
+      "parse_error": null,
+      "triples": 17
+    },
+    {
+      "doc": "17_report_WO-1108.txt",
+      "seconds": 77.6,
+      "parse_error": null,
+      "triples": 20
+    },
+    {
+      "doc": "18_shift_note_2026-03-17.txt",
+      "seconds": 75.1,
+      "parse_error": null,
+      "triples": 20
+    },
+    {
+      "doc": "19_shift_note_2026-03-24.txt",
+      "seconds": 93.6,
+      "parse_error": null,
+      "triples": 28
+    },
+    {
+      "doc": "20_energy_audit.txt",
+      "seconds": 97.5,
+      "parse_error": null,
+      "triples": 33
+    },
+    {
+      "doc": "21_safety_walk.txt",
+      "seconds": 128.2,
+      "parse_error": null,
+      "triples": 41
+    }
+  ],
+  "total_seconds": 1628.2,
+  "overall": {
+    "precision": 0.613,
+    "recall": 0.939,
+    "f1": 0.742,
+    "correct": 168,
+    "extracted": 274,
+    "gold": 179
+  },
+  "per_predicate": {
+    "actionType": {
+      "precision": 0.615,
+      "recall": 1.0,
+      "f1": 0.762,
+      "correct": 8,
+      "extracted": 13,
+      "gold": 8
+    },
+    "addresses": {
+      "precision": 0.545,
+      "recall": 1.0,
+      "f1": 0.706,
+      "correct": 6,
+      "extracted": 11,
+      "gold": 6
+    },
+    "capacity": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "correct": 5,
+      "extracted": 5,
+      "gold": 5
+    },
+    "cycleTimeS": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "correct": 6,
+      "extracted": 6,
+      "gold": 6
+    },
+    "date": {
+      "precision": 0.583,
+      "recall": 0.875,
+      "f1": 0.7,
+      "correct": 14,
+      "extracted": 24,
+      "gold": 16
+    },
+    "downtimeH": {
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.889,
+      "correct": 8,
+      "extracted": 10,
+      "gold": 8
+    },
+    "durationH": {
+      "precision": 0.667,
+      "recall": 1.0,
+      "f1": 0.8,
+      "correct": 8,
+      "extracted": 12,
+      "gold": 8
+    },
+    "duringShift": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "correct": 8,
+      "extracted": 8,
+      "gold": 8
+    },
+    "failureMode": {
+      "precision": 0.333,
+      "recall": 0.5,
+      "f1": 0.4,
+      "correct": 4,
+      "extracted": 12,
+      "gold": 8
+    },
+    "feeds": {
+      "precision": 0.625,
+      "recall": 1.0,
+      "f1": 0.769,
+      "correct": 10,
+      "extracted": 16,
+      "gold": 10
+    },
+    "finalMachine": {
+      "precision": 0.111,
+      "recall": 1.0,
+      "f1": 0.2,
+      "correct": 1,
+      "extracted": 9,
+      "gold": 1
+    },
+    "label": {
+      "precision": 0.414,
+      "recall": 0.8,
+      "f1": 0.545,
+      "correct": 12,
+      "extracted": 29,
+      "gold": 15
+    },
+    "machineType": {
+      "precision": 0.857,
+      "recall": 1.0,
+      "f1": 0.923,
+      "correct": 6,
+      "extracted": 7,
+      "gold": 6
+    },
+    "mtbfH": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "correct": 6,
+      "extracted": 6,
+      "gold": 6
+    },
+    "mttrH": {
+      "precision": 0.667,
+      "recall": 0.667,
+      "f1": 0.667,
+      "correct": 4,
+      "extracted": 6,
+      "gold": 6
+    },
+    "onMachine": {
+      "precision": 0.727,
+      "recall": 1.0,
+      "f1": 0.842,
+      "correct": 16,
+      "extracted": 22,
+      "gold": 16
+    },
+    "partOfLine": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.667,
+      "correct": 6,
+      "extracted": 12,
+      "gold": 6
+    },
+    "powerKW": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "correct": 6,
+      "extracted": 6,
+      "gold": 6
+    },
+    "startHour": {
+      "precision": 0.25,
+      "recall": 1.0,
+      "f1": 0.4,
+      "correct": 3,
+      "extracted": 12,
+      "gold": 3
+    },
+    "type": {
+      "precision": 0.646,
+      "recall": 1.0,
+      "f1": 0.785,
+      "correct": 31,
+      "extracted": 48,
+      "gold": 31
+    }
+  },
+  "missing": [
+    "action_WO1106 date 2026-03-20",
+    "failure_INC201 failureMode hydraulic leak",
+    "failure_INC204 failureMode pump failure",
+    "failure_INC205 failureMode gripper sensor fault",
+    "failure_INC206 date 2026-03-20",
+    "failure_INC208 failureMode screwdriver torque fault",
+    "machine_I1 mttrH 0.75",
+    "machine_K1 mttrH 1.2",
+    "shift_EARLY label early shift",
+    "shift_LATE label late shift",
+    "shift_NIGHT label night shift"
+  ],
+  "wrong_or_extra": [
+    "action_B3 actionType corrective",
+    "action_B3 addresses http://example.org/line/failure_NEARMISS1",
+    "action_B3 date 2026-03-10",
+    "action_B3 durationH 0.5",
+    "action_B3 type http://example.org/mfg#MaintenanceAction",
+    "action_INC207 actionType corrective",
+    "action_INC207 addresses http://example.org/line/failure_INC207",
+    "action_INC207 date 2026-03-24",
+    "action_INC207 durationH 0.083",
+    "action_INC207 onMachine http://example.org/line/machine_I1",
+    "action_INC207 type http://example.org/mfg#MaintenanceAction",
+    "action_P2 actionType preventive",
+    "action_P2 addresses http://example.org/line/failure_NEARMISS1",
+    "action_P2 date 2026-03-10",
+    "action_P2 durationH 0.25",
+    "action_P2 onMachine http://example.org/line/machine_P2",
+    "action_P2 type http://example.org/mfg#MaintenanceAction",
+    "action_W1 actionType preventive",
+    "action_W1 date 2026-03-10",
+    "action_W1 durationH 0.25",
+    "action_W1 onMachine http://example.org/line/machine_W1",
+    "action_W1 type http://example.org/mfg#MaintenanceAction",
+    "action_WASHER actionType preventive",
+    "action_WASHER addresses http://example.org/line/failure_INC205",
+    "action_WASHER date 2026-03-17",
+    "action_WASHER onMachine http://example.org/line/machine_WASHER",
+    "action_WASHER type http://example.org/mfg#MaintenanceAction",
+    "action_WO1106 date 2026-03-01",
+    "action_WO1107 addresses http://example.org/line/failure_FAILURE1107",
+    "buffer_B3 label b3",
+    "buffer_B4 feeds http://example.org/line/machine_K1",
+    "buffer_B4 label buffer",
+    "buffer_B6 type http://example.org/mfg#Buffer",
+    "buffer_NULL type http://example.org/mfg#Buffer",
+    "buffer_REDBOX label red box",
+    "buffer_REDBOX type http://example.org/mfg#Buffer",
+    "failure_FAILURE1107 date 2026-03-21",
+    "failure_FAILURE1107 downtimeH 2.0",
+    "failure_FAILURE1107 failureMode camera calibration and lens cleaning",
+    "failure_FAILURE1107 onMachine http://example.org/line/machine_I1",
+    "failure_FAILURE1107 type http://example.org/mfg#Failure",
+    "failure_INC201 failureMode hydraulic leak at the main cylinder seal",
+    "failure_INC204 failureMode pump failure in the spray circuit",
+    "failure_INC205 failureMode sensor fault",
+    "failure_INC206 date 2026-03-01",
+    "failure_INC208 failureMode screwdriver torque fault on screwdriver 1",
+    "failure_INSPECTIONSTATIONREJECTEDPARTS downtimeH 0.75",
+    "failure_INSPECTIONSTATIONREJECTEDPARTS failureMode rejected parts",
+    "failure_INSPECTIONSTATIONREJECTEDPARTS onMachine http://example.org/line/machine_I1",
+    "failure_INSPECTIONSTATIONREJECTEDPARTS type http://example.org/mfg#Failure",
+    "failure_NEARMISS1 date 2026-03-10",
+    "failure_NEARMISS1 failureMode near_miss",
+    "failure_NEARMISS1 type http://example.org/mfg#Failure",
+    "failure_NEARMISS2 date 2026-03-10",
+    "failure_NEARMISS2 failureMode near_miss",
+    "failure_NEARMISS2 type http://example.org/mfg#Failure",
+    "line_A finalMachine http://example.org/line/machine_A1",
+    "line_A finalMachine http://example.org/line/machine_I1",
+    "line_A finalMachine http://example.org/line/machine_K1",
+    "line_A label line a",
+    "line_A type http://example.org/mfg#ProductionLine",
+    "line_LINE1 finalMachine http://example.org/line/machine_K1",
+    "line_LINE1 label line 1",
+    "line_LINE1 type http://example.org/mfg#ProductionLine",
+    "line_LINEA finalMachine http://example.org/line/machine_I1",
+    "line_LINEA finalMachine http://example.org/line/machine_P1",
+    "line_LINEA finalMachine http://example.org/line/machine_P2",
+    "line_LINEA finalMachine http://example.org/line/machine_W1",
+    "line_NULL type http://example.org/mfg#ProductionLine",
+    "machine_A1 feeds http://example.org/line/buffer_B3",
+    "machine_A1 label assembly",
+    "machine_A1 label assembly a1",
+    "machine_A1 partOfLine http://example.org/line/line_A",
+    "machine_I1 feeds http://example.org/line/buffer_B4",
+    "machine_I1 feeds http://example.org/line/buffer_REDBOX",
+    "machine_I1 label inspection",
+    "machine_I1 label inspection i1",
+    "machine_I1 mttrH 45.0",
+    "machine_I1 partOfLine http://example.org/line/line_A",
+    "machine_K1 feeds http://example.org/line/buffer_B5",
+    "machine_K1 label packer",
+    "machine_K1 mttrH 12.0",
+    "machine_K1 partOfLine http://example.org/line/line_A",
+    "machine_P1 label press",
+    "machine_P1 partOfLine http://example.org/line/line_A",
+    "machine_P2 label press",
+    "machine_P2 partOfLine http://example.org/line/line_A",
+    "machine_W1 feeds http://example.org/line/buffer_B2",
+    "machine_W1 label washer",
+    "machine_W1 partOfLine http://example.org/line/line_A",
+    "machine_WASHER label washer",
+    "machine_WASHER machineType washer",
+    "machine_WASHER type http://example.org/mfg#Machine",
+    "shift_EARLY label early",
+    "shift_EARLY startHour 0.0",
+    "shift_EARLY startHour 4.0",
+    "shift_LATE label late",
+    "shift_LATE startHour 10.0",
+    "shift_LATE startHour 12.0",
+    "shift_LATE startHour 16.0",
+    "shift_LATE startHour 18.0",
+    "shift_LATE startHour 20.0",
+    "shift_NIGHT label night",
+    "shift_NIGHT startHour 16.0",
+    "shift_NIGHT startHour 20.0",
+    "shift_NULL type http://example.org/mfg#Shift"
+  ]
+}

@@ -1,0 +1,29 @@
+01_line_overview.txt: 3 triples, 31.3 s
+02_datasheet_P1.txt: 10 triples, 47.3 s
+03_datasheet_P2.txt: 6 triples, 36.1 s
+04_datasheet_W1.txt: 6 triples, 36.5 s
+05_datasheet_A1.txt: 1 triples, 28.8 s
+06_datasheet_I1.txt: 6 triples, 32.5 s
+07_datasheet_K1.txt: 6 triples, 29.2 s
+08_buffer_layout.txt: 17 triples, 57.0 s
+09_shift_plan.txt: 8 triples, 31.7 s
+10_report_WO-1101.txt: 7 triples, 42.4 s
+11_report_WO-1102.txt: 10 triples, 44.4 s
+12_report_WO-1103.txt: 7 triples, 41.9 s
+13_report_WO-1104.txt: 3 triples, 34.3 s
+14_report_WO-1105.txt: 8 triples, 39.4 s
+15_report_WO-1106.txt: 9 triples, 40.4 s
+16_report_WO-1107.txt: 8 triples, 39.4 s
+17_report_WO-1108.txt: 8 triples, 44.1 s
+18_shift_note_2026-03-17.txt: 2 triples, 26.0 s
+19_shift_note_2026-03-24.txt: 2 triples, 24.5 s
+20_energy_audit.txt: 3 triples, 8439.2 s
+21_safety_walk.txt: 8 triples, 36.8 s
+{
+  "precision": 0.651,
+  "recall": 0.313,
+  "f1": 0.423,
+  "correct": 56,
+  "extracted": 86,
+  "gold": 179
+}

@@ -1,0 +1,25 @@
+# A tiny graph that satisfies every shape. Each test breaks one thing in a copy of it.
+@prefix ex:   <http://example.org/line/> .
+@prefix mfg:  <http://example.org/mfg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Line1 a mfg:ProductionLine ; rdfs:label "Test line" ; mfg:finalMachine ex:M2 .
+
+ex:M1 a mfg:Machine ; rdfs:label "Press 1" ; mfg:machineType "Press" ;
+    mfg:cycleTimeS 40.0 ; mfg:powerKW 55.0 ; mfg:mtbfH 120.0 ; mfg:mttrH 2.5 ;
+    mfg:partOfLine ex:Line1 ; mfg:feeds ex:B1 .
+
+ex:B1 a mfg:Buffer ; rdfs:label "Buffer 1" ; mfg:capacity 20 ; mfg:feeds ex:M2 .
+
+ex:M2 a mfg:Machine ; rdfs:label "Packer" ; mfg:machineType "Packing" ;
+    mfg:cycleTimeS 30.0 ; mfg:powerKW 7.5 ; mfg:mtbfH 300.0 ; mfg:mttrH 1.0 ;
+    mfg:partOfLine ex:Line1 .
+
+ex:S1 a mfg:Shift ; rdfs:label "Early shift" ; mfg:startHour 6 .
+
+ex:F1 a mfg:Failure ; mfg:onMachine ex:M1 ; mfg:failureMode "Hydraulic leak" ;
+    mfg:downtimeH 3.0 ; mfg:date "2026-03-02"^^xsd:date ; mfg:duringShift ex:S1 .
+
+ex:A1 a mfg:MaintenanceAction ; mfg:onMachine ex:M1 ; mfg:actionType "Corrective" ;
+    mfg:date "2026-03-02"^^xsd:date ; mfg:durationH 3.0 ; mfg:addresses ex:F1 .

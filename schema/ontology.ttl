@@ -1,0 +1,64 @@
+# Small ontology for a discrete production line.
+# Deliberately lightweight (RDFS + a few OWL declarations): it documents the
+# vocabulary the LLM must use. The *rules* live in shapes.ttl (SHACL).
+#
+# Topology pattern:  Machine --feeds--> Buffer --feeds--> Machine --> ...
+# The last machine of the line feeds nothing (ProductionLine finalMachine).
+
+@prefix mfg:  <http://example.org/mfg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/mfg> a owl:Ontology ;
+    rdfs:label "Mini manufacturing line ontology" .
+
+# ---------- Classes ----------
+mfg:ProductionLine    a owl:Class ; rdfs:comment "A line of machines connected by buffers." .
+mfg:Machine           a owl:Class ; rdfs:comment "A workstation, e.g. press, washer, assembly, packing." .
+mfg:Buffer            a owl:Class ; rdfs:comment "Intermediate storage between two machines." .
+mfg:Failure           a owl:Class ; rdfs:comment "A breakdown event on a machine." .
+mfg:MaintenanceAction a owl:Class ; rdfs:comment "Preventive or corrective work on a machine." .
+mfg:Shift             a owl:Class ; rdfs:comment "A work shift (e.g. early, late, night)." .
+
+# ---------- Line / topology ----------
+mfg:partOfLine   a owl:ObjectProperty ; rdfs:domain mfg:Machine ; rdfs:range mfg:ProductionLine .
+mfg:finalMachine a owl:ObjectProperty ; rdfs:domain mfg:ProductionLine ; rdfs:range mfg:Machine ;
+    rdfs:comment "The last machine of the line; the only machine that feeds no buffer." .
+mfg:feeds        a owl:ObjectProperty ;
+    rdfs:comment "Material flow: a Machine feeds a Buffer, a Buffer feeds a Machine." .
+
+# ---------- Machine data ----------
+mfg:machineType a owl:DatatypeProperty ; rdfs:domain mfg:Machine ; rdfs:range xsd:string ;
+    rdfs:comment "One of: Press, Washer, Assembly, Inspection, Packing." .
+mfg:cycleTimeS  a owl:DatatypeProperty ; rdfs:domain mfg:Machine ; rdfs:range xsd:decimal ;
+    rdfs:comment "Cycle time per part, in seconds." .
+mfg:powerKW     a owl:DatatypeProperty ; rdfs:domain mfg:Machine ; rdfs:range xsd:decimal ;
+    rdfs:comment "Rated electrical power, in kW." .
+mfg:mtbfH       a owl:DatatypeProperty ; rdfs:domain mfg:Machine ; rdfs:range xsd:decimal ;
+    rdfs:comment "Mean time between failures, in hours." .
+mfg:mttrH       a owl:DatatypeProperty ; rdfs:domain mfg:Machine ; rdfs:range xsd:decimal ;
+    rdfs:comment "Mean time to repair, in hours." .
+
+# ---------- Buffer data ----------
+mfg:capacity a owl:DatatypeProperty ; rdfs:domain mfg:Buffer ; rdfs:range xsd:integer ;
+    rdfs:comment "Maximum number of parts the buffer can hold." .
+
+# ---------- Events ----------
+mfg:onMachine   a owl:ObjectProperty ; rdfs:range mfg:Machine ;
+    rdfs:comment "The machine a Failure or MaintenanceAction concerns." .
+mfg:failureMode a owl:DatatypeProperty ; rdfs:domain mfg:Failure ; rdfs:range xsd:string .
+mfg:downtimeH   a owl:DatatypeProperty ; rdfs:domain mfg:Failure ; rdfs:range xsd:decimal ;
+    rdfs:comment "Production downtime caused by the failure, in hours." .
+mfg:date        a owl:DatatypeProperty ; rdfs:range xsd:date .
+mfg:duringShift a owl:ObjectProperty ; rdfs:domain mfg:Failure ; rdfs:range mfg:Shift .
+
+mfg:actionType  a owl:DatatypeProperty ; rdfs:domain mfg:MaintenanceAction ; rdfs:range xsd:string ;
+    rdfs:comment "Preventive or Corrective." .
+mfg:durationH   a owl:DatatypeProperty ; rdfs:domain mfg:MaintenanceAction ; rdfs:range xsd:decimal .
+mfg:addresses   a owl:ObjectProperty ; rdfs:domain mfg:MaintenanceAction ; rdfs:range mfg:Failure ;
+    rdfs:comment "The failure a corrective action fixed." .
+
+# ---------- Shift data ----------
+mfg:startHour a owl:DatatypeProperty ; rdfs:domain mfg:Shift ; rdfs:range xsd:integer ;
+    rdfs:comment "Hour of day the shift starts (0-23)." .

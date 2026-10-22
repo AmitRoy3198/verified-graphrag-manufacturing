@@ -1,0 +1,10 @@
+Machine data sheet - Washer W1
+
+Type: industrial parts washer (Washer)
+Installed on: Line A
+Cycle time: 35 s per part
+Rated power: 45 kW (this includes the 30 kW tank heater)
+MTBF: 400 h
+MTTR: 1.5 h
+
+Notes: wash temperature 60 degrees C, tank volume 1200 litres.

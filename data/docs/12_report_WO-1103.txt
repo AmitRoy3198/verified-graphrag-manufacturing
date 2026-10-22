@@ -1,0 +1,7 @@
+Maintenance report WO-1103
+
+Date: 2026-03-09
+Machine: Press P1
+Incident INC-203 happened during the Late shift. Failure mode: Die misalignment.
+Production downtime: 3 h.
+Corrective maintenance: die realigned and clamps tightened. Work duration 3 h.

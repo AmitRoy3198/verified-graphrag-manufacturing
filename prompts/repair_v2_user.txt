@@ -1,0 +1,10 @@
+Entity: {entity} (a {cls})
+
+Locked facts (do not change):
+{locked}
+
+Properties to fix:
+{to_fix}
+
+Source documents:
+{documents}

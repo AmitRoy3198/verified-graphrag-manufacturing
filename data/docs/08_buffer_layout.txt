@@ -1,0 +1,7 @@
+Buffer layout, Line A (updated February 2026)
+
+Buffer B1 sits between Press P1 and Press P2. It is a roller conveyor with a capacity of 40 parts.
+Buffer B2 sits between Press P2 and Washer W1, capacity 30 parts.
+Buffer B3 sits between Washer W1 and Assembly cell A1, capacity 25 parts.
+Buffer B4 sits between Assembly cell A1 and Inspection station I1, capacity 20 parts.
+Buffer B5 sits between Inspection station I1 and Packer K1, capacity 15 parts.

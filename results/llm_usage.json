@@ -1,0 +1,28 @@
+{
+  "per_phase": {
+    "phase0": {
+      "calls": 3,
+      "hours": 0.01
+    },
+    "phase2": {
+      "calls": 43,
+      "hours": 3.02
+    },
+    "phase3": {
+      "calls": 57,
+      "hours": 0.76
+    },
+    "phase3_v2": {
+      "calls": 49,
+      "hours": 0.48
+    },
+    "phase4": {
+      "calls": 202,
+      "hours": 3.19
+    }
+  },
+  "total": {
+    "calls": 354,
+    "hours": 7.46
+  }
+}

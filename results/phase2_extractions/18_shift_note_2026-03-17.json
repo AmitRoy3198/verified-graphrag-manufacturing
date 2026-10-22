@@ -1,0 +1,55 @@
+{
+  "failures": [
+    {
+      "id": "INC-205",
+      "machine": "A1",
+      "failure_mode": "sensor fault",
+      "downtime_h": 1.0,
+      "date": "2026-03-17",
+      "shift": "Late"
+    }
+  ],
+  "maintenance_actions": [
+    {
+      "id": "Washer",
+      "machine": "Washer",
+      "action_type": "Preventive",
+      "date": "2026-03-17",
+      "duration_h": null,
+      "addresses_failure": "INC-205"
+    }
+  ],
+  "machines": [
+    {
+      "id": "A1",
+      "name": "Assembly",
+      "machine_type": "Assembly",
+      "line": null,
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": null
+    },
+    {
+      "id": "Washer",
+      "name": "Washer",
+      "machine_type": "Washer",
+      "line": null,
+      "cycle_time_s": null,
+      "power_kw": null,
+      "mtbf_h": null,
+      "mttr_h": null,
+      "feeds_buffer": null
+    }
+  ],
+  "buffers": [],
+  "shifts": [
+    {
+      "id": "Late",
+      "name": "Late",
+      "start_hour": 18
+    }
+  ],
+  "lines": []
+}

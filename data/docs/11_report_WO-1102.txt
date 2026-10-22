@@ -1,0 +1,7 @@
+Maintenance report WO-1102
+
+Date: 5 March 2026
+Machine: Assembly cell A1
+Incident INC-202 happened during the Early shift. Failure mode: Screwdriver torque fault on screwdriver 3.
+Production downtime: 2 h.
+Corrective maintenance: screwdriver 3 recalibrated. Work duration 2 h.

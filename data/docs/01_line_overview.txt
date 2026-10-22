@@ -1,0 +1,7 @@
+Line A - overview
+
+Line A produces aluminium pump housings. It runs an Early and a Late shift on weekdays and adds a Night shift when demand is high.
+
+Parts flow through six stations in this order. Press P1 feeds buffer B1, which feeds Press P2. Press P2 feeds buffer B2, which feeds Washer W1. Washer W1 feeds buffer B3, which feeds Assembly cell A1. Assembly cell A1 feeds buffer B4, which feeds Inspection station I1. Inspection station I1 feeds buffer B5, which feeds Packer K1.
+
+Packer K1 is the last station of Line A; packed boxes go straight to the shipping area.

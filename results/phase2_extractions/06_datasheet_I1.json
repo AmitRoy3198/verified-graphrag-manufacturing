@@ -1,0 +1,59 @@
+{
+  "failures": [
+    {
+      "id": "inspection_station_rejected_parts",
+      "machine": "I1",
+      "failure_mode": "Rejected parts",
+      "downtime_h": 0.75,
+      "date": null,
+      "shift": null
+    }
+  ],
+  "maintenance_actions": [],
+  "machines": [
+    {
+      "id": "I1",
+      "name": "Inspection station I1",
+      "machine_type": "Inspection",
+      "line": "Line A",
+      "cycle_time_s": 30.0,
+      "power_kw": 6.0,
+      "mtbf_h": 600.0,
+      "mttr_h": 45.0,
+      "feeds_buffer": null
+    }
+  ],
+  "buffers": [
+    {
+      "id": "red_box",
+      "name": "red box",
+      "capacity": null,
+      "fed_by_machine": "I1",
+      "feeds_machine": null
+    }
+  ],
+  "shifts": [
+    {
+      "id": "Late",
+      "name": "Late",
+      "start_hour": 20
+    },
+    {
+      "id": "Early",
+      "name": "Early",
+      "start_hour": 4
+    },
+    {
+      "id": "Night",
+      "name": "Night",
+      "start_hour": 22
+    }
+  ],
+  "lines": [
+    {
+      "id": "Line A",
+      "name": "Line A",
+      "final_machine": "I1"
+    }
+  ]
+}

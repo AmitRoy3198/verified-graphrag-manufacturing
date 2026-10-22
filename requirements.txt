@@ -1,0 +1,10 @@
+# Install CPU-only torch first:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+langchain
+langchain-core
+langchain-ollama
+sentence-transformers
+rdflib
+pyshacl
+pytest
+langchain-huggingface
