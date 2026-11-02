@@ -73,3 +73,40 @@ def test_no_answer_leaves_graph_unchanged():
     snapshot = set(g)
     rec = gated_repair(g, EX.M1, violations_of(g), lambda inputs, model: None)
     assert not rec["accepted"] and set(g) == snapshot
+
+
+def two_conflicts():
+    """M1 with two names AND two power values: two MaxCount violations on one entity."""
+    g = broken_two_labels()
+    g.add((EX.M1, MFG.powerKW, Literal("60.0", datatype=XSD.decimal)))
+    return g
+
+
+# The answer found in a live dashboard run: one good choice, one "none of these".
+MIXED_ANSWER = {"label": "Press 1", "powerKW": None, "delete_entity": False}
+
+
+def test_whole_entity_gate_lets_a_good_fix_carry_a_bad_one():
+    """Reproduces the weakness: the label fix lowers the total, so the power
+    deletion (MaxCount turned into MinCount) is accepted with it."""
+    g = two_conflicts()
+    rec = gated_repair(g, EX.M1, violations_of(g), lambda i, m: MIXED_ANSWER)
+    assert rec["accepted"]
+    assert not list(g.objects(EX.M1, MFG.powerKW))      # both power values are gone
+
+
+def test_per_property_gate_keeps_the_good_fix_and_rolls_back_the_bad_one():
+    g = two_conflicts()
+    rec = gated_repair(g, EX.M1, violations_of(g), lambda i, m: MIXED_ANSWER, per_property=True)
+    assert rec["kept_properties"] == ["label"] and rec["rolled_back_properties"] == ["powerKW"]
+    assert set(map(str, g.objects(EX.M1, RDFS.label))) == {"Press 1"}          # label fixed
+    assert len(list(g.objects(EX.M1, MFG.powerKW))) == 2                         # power untouched, still flagged
+    assert rec["violations_after"] == rec["violations_before"] - 1
+
+
+def test_per_property_gate_rolls_back_everything_when_nothing_helps():
+    g = two_conflicts()
+    snapshot = set(g)
+    rec = gated_repair(g, EX.M1, violations_of(g), lambda i, m: {"label": None, "powerKW": None,
+                                                                 "delete_entity": False}, per_property=True)
+    assert not rec["accepted"] and set(g) == snapshot

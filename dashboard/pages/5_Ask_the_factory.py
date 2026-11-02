@@ -1,5 +1,6 @@
-"""Ask the factory: the 25-question evaluation (Phase 4 v2), answer by answer.
-Live questions to the local model come in Phase D3."""
+"""Ask the factory: ask your own question live (local LLM), and the 25-question
+evaluation (Phase 4 v2), answer by answer."""
+import os
 import sys
 from pathlib import Path
 
@@ -8,11 +9,49 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 import plotly.graph_objects as go  # noqa: E402
 import streamlit as st  # noqa: E402
 
-from dashboard import data, ui  # noqa: E402
+from dashboard import data, live, ui  # noqa: E402
 
 ui.setup("Ask the factory", "💬")
+
+# ---------------------------------------------------------------- live question
+if os.environ.get("DASHBOARD_MODE") != "readonly":
+    st.subheader("Ask your own question")
+    st.caption(ui.MODEL_LINE)
+    question = st.text_input("Question about Line A",
+                             placeholder="e.g. What is the MTTR of the machine where incident INC-204 happened?")
+    methods = st.multiselect("Answer it with", ["GraphRAG · repaired graph", "Vector RAG", "GraphRAG · perfect graph"],
+                             default=["GraphRAG · repaired graph", "Vector RAG"],
+                             help="Each method is one call to the local model (about 40-90 s on this laptop).")
+    if st.button("Ask", type="primary", disabled=not (question.strip() and methods)):
+        if live.ollama_version() is None:
+            st.error("The local Ollama server is not running. Start Ollama, then ask again.", icon="🛑")
+        else:
+            run_dir = live.new_run_dir("question")
+            with st.spinner(f"Asking the local model {len(methods)} way(s) ..."):
+                st.session_state.live_answers = (question, live.ask_question(question, methods, run_dir),
+                                                 run_dir.name)
+    if "live_answers" in st.session_state:
+        q_text, answers, run_name = st.session_state.live_answers
+        st.markdown(f"**{q_text}**")
+        for col, a in zip(st.columns(len(answers)), answers):
+            with col.container(border=True):
+                st.markdown(f"**{a['method']}**")
+                st.markdown(f"### {a['answer'] or '(no answer)'}")
+                st.caption(f"{a['seconds']} s · " + (f"documents: {', '.join(a['info']['retrieved'])}"
+                           if "retrieved" in a["info"] else
+                           f"linked entities: {', '.join(a['info']['seeds']) or 'none'} · {a['info']['facts']} facts"))
+                with st.expander("Evidence the model cited"):
+                    for e in a["evidence"] or ["(none)"]:
+                        st.text(e)
+                with st.expander("Everything the model was given"):
+                    st.text(a["context"][:5000])
+        st.caption(f"Saved to `dashboard_runs/{run_name}/`. The answer is the model's; check it against the evidence. "
+                   "Counting and summing questions are its weak spot (see the results below).")
+    st.divider()
+
+st.subheader("The 25-question evaluation")
 st.caption("25 questions with SPARQL-verified answers, each answered four ways by the local LLM. "
-           "Source: `results/phase4_answers_*.json`. Asking your own question live arrives in Phase D3.")
+           "Source: `results/phase4_answers_*.json`.")
 
 qa = data.qa_answers()
 conds = list(data.QA_CONDITIONS.values())

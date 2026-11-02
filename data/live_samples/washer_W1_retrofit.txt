@@ -1,0 +1,6 @@
+Engineering change note - Washer W1 retrofit
+
+Date: 2026-04-05
+Washer W1 on Line A received a larger tank heater.
+New rated power of Washer W1: 52 kW.
+Cycle time unchanged.

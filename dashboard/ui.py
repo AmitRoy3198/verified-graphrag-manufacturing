@@ -29,7 +29,7 @@ def setup(title: str, icon: str) -> None:
 
 @st.cache_resource(show_spinner="Loading graph ...")
 def graph(source: str):
-    return data.load_graph(data.SOURCES[source])
+    return data.load_graph(data.all_sources()[source])
 
 
 @st.cache_resource(show_spinner=False)
@@ -70,7 +70,7 @@ def provenance():
 
 def source_picker(include_gold: bool = True) -> str:
     """One selector in the sidebar, shared by every page."""
-    options = [s for s in data.SOURCES if include_gold or "Ground" not in s]
+    options = [s for s in data.all_sources() if include_gold or "Ground" not in s]
     current = st.session_state.get("source", options[0])
     choice = st.sidebar.radio("Knowledge graph", options, index=options.index(current) if current in options else 0,
                               help="Switch between the graph before repair, after repair, and the hand-written "

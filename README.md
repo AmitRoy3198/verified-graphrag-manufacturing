@@ -99,8 +99,22 @@ A read-only Streamlit dashboard (`dashboard/`) shows the pipeline to an operator
 | Repair history | violations and F1 per repair round (v1 vs v2), every repair attempt with the gate's decision, v1's collateral damage |
 | Ask the factory | the 25-question evaluation: accuracy by type, every answer as a grid, one question in detail, paired sign test |
 | LLM monitor | every call to the local model: calls and time per stage, invalid JSON, the exact inputs and raw output |
+| Live pipeline | give it a new document (sample, pasted or uploaded) and watch it being extracted, checked and repaired by the local model |
+| Ask the factory (top) | ask your own question live, answered with GraphRAG and/or vector RAG, with the evidence the model cited |
 
-A switch in the sidebar picks the graph: extracted (before repair), repaired, or ground truth.
+A switch in the sidebar picks the graph: extracted (before repair), repaired, ground truth, or any finished live run.
+Live runs use only the local Qwen model through Ollama and write only to their own new folder
+`dashboard_runs/<timestamp>_<kind>/` (not committed); `results/` is never changed by the dashboard.
+`DASHBOARD_MODE=readonly` hides every live control, for sharing.
+
+**Finding from a live run: one gate per entity can let a good fix carry a bad one.** A new note set Washer W1's
+power to 52 kW (the graph already had 45 kW), and the merged entity also belonged to two lines. In one answer, the model
+chose the right line but "neither" for power. The line fix lowered the total violation count, so the
+per-entity gate also accepted the power change, and **both power values were deleted**. The live dashboard therefore
+gates **each property on its own** (`gated_repair(..., per_property=True)`): the line fix is kept, the power change is
+rolled back, and W1 keeps both values, flagged for a human. Both runs end with the same number of violations, so the
+count alone cannot show the difference. The published Phase 3 results used the per-entity gate and were not re-run;
+`tests/test_repair_v2.py` reproduces the weakness and the fix.
 No LLM computes a number on the dashboard: everything comes from SPARQL over the graph or from `results/`.
 It listens only on `localhost` and sends no usage statistics.
 

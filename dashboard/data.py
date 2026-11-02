@@ -22,6 +22,12 @@ SOURCES = {
     "Ground truth (hand-written)": DATA / "ground_truth.ttl",
 }
 
+def all_sources() -> dict:
+    """The three fixed graphs plus every finished live run (dashboard_runs/*_document/), newest first."""
+    runs = sorted((DATA.parent / "dashboard_runs").glob("*_document/graph_after.ttl"), reverse=True)
+    return SOURCES | {f"Live run {p.parent.name.split('_')[0]} (repaired graph + new document)": p for p in runs}
+
+
 PREFIXES = """PREFIX ex: <http://example.org/line/>
 PREFIX mfg: <http://example.org/mfg#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>

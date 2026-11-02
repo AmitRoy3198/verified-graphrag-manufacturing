@@ -1,0 +1,7 @@
+Maintenance report WO-1109
+
+Date: 31 March 2026
+Machine: Press P1
+Incident INC-209 happened during the Night shift. Failure mode: Die misalignment, second time this month.
+Production downtime: 45 minutes.
+Corrective maintenance: die realigned and the locating pins replaced. Work duration 45 minutes.

@@ -1,0 +1,5 @@
+Shift handover note - Late shift, 2 April 2026
+
+Output: 432 housings.
+INC-210: Gripper sensor fault on Assembly cell A1 during this Late shift. Downtime 20 minutes.
+The operator cleaned the sensor; no work order was opened.

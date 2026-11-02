@@ -107,11 +107,31 @@ def apply_fix(g: Graph, node, cls, plan: dict, answer: dict) -> None:
             g.add((node, p, term))
 
 
-def gated_repair(g: Graph, node, violations: list[dict], ask) -> dict:
+def _copy(g: Graph) -> Graph:
+    trial = Graph()
+    for t in g:
+        trial.add(t)
+    return trial
+
+
+def _replace(g: Graph, new: Graph) -> None:
+    g.remove((None, None, None))
+    for t in new:
+        g.add(t)
+
+
+def gated_repair(g: Graph, node, violations: list[dict], ask, per_property: bool = False) -> dict:
     """Ask for a fix, apply it to a copy, keep it only if total violations drop.
 
     `ask(inputs, model)` returns a dict answer or None. In the real run it calls
     the LLM; in the tests it is a fake, so the gate logic can be tested without an LLM.
+
+    per_property=False (the design used for the published results): the whole
+    answer is applied at once and gated once. Weakness found in a live dashboard
+    run: one good property fix can carry a bad one through the gate.
+    per_property=True (used by the live dashboard): the same single answer, but
+    each property's change is applied and gated on its own, so a bad change is
+    rolled back even when another property's fix in the same answer helps.
     """
     cls = node_class(g, node)
     plan = plan_fix(g, node, cls, violations)
@@ -128,16 +148,30 @@ def gated_repair(g: Graph, node, violations: list[dict], ask) -> dict:
         record.update(accepted=False, reason="no valid answer from LLM")
         return record
 
-    trial = Graph()
-    for t in g:
-        trial.add(t)
+    if per_property and not answer.get("delete_entity"):
+        kept, rolled, current = [], [], before
+        for prop in plan:                     # one property at a time, each with its own gate
+            trial = _copy(g)
+            apply_fix(trial, node, cls, {prop: plan[prop]}, answer)
+            n = len(validate_graph(trial)[1])
+            if n < current:
+                _replace(g, trial)
+                current = n
+                kept.append(prop)
+            else:
+                rolled.append(prop)
+        record.update(violations_before=before, violations_after=current, accepted=bool(kept),
+                      kept_properties=kept, rolled_back_properties=rolled)
+        if rolled:
+            record["reason"] = f"rolled back: {', '.join(rolled)} (did not lower the violations on its own)"
+        return record
+
+    trial = _copy(g)
     apply_fix(trial, node, cls, plan, answer)
     after = len(validate_graph(trial)[1])
     record.update(violations_before=before, violations_after=after, accepted=after < before)
     if after < before:
-        g.remove((None, None, None))
-        for t in trial:
-            g.add(t)
+        _replace(g, trial)
     else:
         record["reason"] = "rolled back: violations did not drop"
     return record
