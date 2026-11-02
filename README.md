@@ -77,7 +77,7 @@ python -m venv .venv
 Pipeline. LLM steps take minutes to hours on a CPU; total LLM time in this project was 7.45 h:
 
 ```bash
-.venv\Scripts\python -m pytest tests -v          # 111 tests, no LLM needed (results/pytest_final.txt)
+.venv\Scripts\python -m pytest tests -v          # 120 tests, no LLM needed (results/pytest_final.txt)
 .venv\Scripts\python -m src.hello                # Phase 0: LangChain -> Ollama smoke test
 .venv\Scripts\python -m src.phase1_schema        # Phase 1: ontology/shape statistics
 .venv\Scripts\python -m src.extract              # Phase 2: extraction + P/R/F1
@@ -262,6 +262,6 @@ src/        code: config, llm (only LLM entry point), validate, extract, to_rdf,
 prompts/    every prompt as a .txt file
 schema/     ontology.ttl, shapes.ttl
 data/       docs/, ground_truth.ttl, questions.json
-tests/      111 pytest tests (no LLM needed)
+tests/      120 pytest tests (no LLM needed)
 results/    every number, every graph version, every LLM response
 ```
