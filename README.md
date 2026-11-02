@@ -74,7 +74,7 @@ python -m venv .venv
 .venv\Scripts\python -m pip install -r requirements.txt
 ```
 
-Pipeline. LLM steps take minutes to hours on a CPU; total LLM time in this project was 7.46 h:
+Pipeline. LLM steps take minutes to hours on a CPU; total LLM time in this project was 7.45 h:
 
 ```bash
 .venv\Scripts\python -m pytest tests -v          # 111 tests, no LLM needed (results/pytest_final.txt)
@@ -96,6 +96,9 @@ A read-only Streamlit dashboard (`dashboard/`) shows the pipeline to an operator
 | Production line | the material flow stored in the graph, coloured by data health; inspect any entity, its sources and violations |
 | Factory analytics | machine table (availability, conflicts), bottleneck, downtime, failures per shift, maintenance, and the same analytics on all three graphs |
 | Data quality | SHACL violations by rule and entity, and the wrong facts the rules cannot see |
+| Repair history | violations and F1 per repair round (v1 vs v2), every repair attempt with the gate's decision, v1's collateral damage |
+| Ask the factory | the 25-question evaluation: accuracy by type, every answer as a grid, one question in detail, paired sign test |
+| LLM monitor | every call to the local model: calls and time per stage, invalid JSON, the exact inputs and raw output |
 
 A switch in the sidebar picks the graph: extracted (before repair), repaired, or ground truth.
 No LLM computes a number on the dashboard: everything comes from SPARQL over the graph or from `results/`.

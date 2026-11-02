@@ -278,3 +278,89 @@ def overview_numbers() -> dict:
         "llm_calls": usage["calls"],
         "llm_hours": usage["hours"],
     }
+
+
+# ---------------------------------------------------------------- Phase D2: process history
+REPAIR_RUNS = {"v1: whole entity rewritten": "phase3_v1_repair.json",
+               "v2: targeted + multiple choice + gate": "phase3_v2_repair.json"}
+
+
+def repair_rounds() -> pd.DataFrame:
+    """Violations and scores after each repair round, for both repair designs."""
+    rows = []
+    for name, f in REPAIR_RUNS.items():
+        for r in load_json(f)["rounds"]:
+            rows.append({"design": name, "round": r["round"], "violations": r["violations"],
+                         "f1": r["f1"], "precision": r["precision"], "recall": r["recall"], "triples": r["triples"]})
+    return pd.DataFrame(rows)
+
+
+def repair_attempts_v2() -> pd.DataFrame:
+    """Every v2 repair attempt: what could change, what the model chose, what the gate did."""
+    rows = []
+    for r in load_json("phase3_v2_repair.json")["repairs"]:
+        answer = r.get("answer") or {}
+        rows.append({
+            "round": r["round"], "entity": r["node"],
+            "status": "✓ kept" if r["accepted"] else "↩ rolled back",
+            "properties": ", ".join(r["plan"]),
+            "options": "; ".join(f"{k}: {' / '.join(v['choices'])}" for k, v in r["plan"].items() if v["choices"])
+                       or "(free value)",
+            "model answer": "delete entity" if answer.get("delete_entity") else
+                            "; ".join(f"{k} = {v}" for k, v in answer.items() if k != "delete_entity"),
+            "violations": f"{r.get('violations_before', '?')} → {r.get('violations_after', '?')}",
+            "seconds": r.get("seconds"),
+        })
+    return pd.DataFrame(rows)
+
+
+def repair_examples_v1() -> list[dict]:
+    """v1 repairs as before/after fact lists (shows what full rewriting did)."""
+    return load_json("phase3_v1_repair.json")["repairs"]
+
+
+def per_predicate_f1() -> pd.DataFrame:
+    before = load_json("phase2_scores.json")["per_predicate"]
+    after = load_json("phase3_v2_repair.json")["final_per_predicate"]
+    return pd.DataFrame([{"property": k, "before repair": v["f1"], "after v2 repair": after.get(k, {}).get("f1"),
+                          "gold facts": v["gold"]} for k, v in before.items()])
+
+
+QA_CONDITIONS = {"vector_rag": "Vector RAG", "graphrag_unrepaired": "GraphRAG · unrepaired",
+                 "graphrag_repaired": "GraphRAG · repaired", "graphrag_gold": "GraphRAG · perfect graph"}
+
+
+def qa_answers() -> pd.DataFrame:
+    """All 100 answers (25 questions x 4 conditions) from the Phase 4 v2 run."""
+    rows = []
+    for cond, label in QA_CONDITIONS.items():
+        for a in load_json(f"phase4_answers_{cond}.json"):
+            rows.append({**a, "condition": label,
+                         "result": "✓ right" if a["exact"] else ("~ right (lenient)" if a["lenient"] else "✗ wrong")})
+    return pd.DataFrame(rows)
+
+
+STAGES = {"phase0": "0 · Smoke test", "phase2": "2 · Extraction", "phase3": "3 · Repair v1",
+          "phase3_v2": "3 · Repair v2", "phase4": "4 · Question answering"}
+
+
+def llm_log(include_demo: bool = False) -> pd.DataFrame:
+    """Every logged LLM call. 'valid_json' tells whether a structured call returned parseable JSON."""
+    files = [RESULTS / "llm_log.jsonl"] + ([RESULTS / "demo_log.jsonl"] if include_demo else [])
+    rows = []
+    for f in files:
+        if not f.exists():
+            continue
+        for line in f.read_text(encoding="utf-8").splitlines():
+            r = json.loads(line)
+            structured = r["prompt"] != "hello"
+            try:
+                json.loads(r["output"])
+                valid = True
+            except (ValueError, TypeError):
+                valid = not structured
+            rows.append({"time": pd.to_datetime(r["time"]), "stage": STAGES.get(r["phase"], r["phase"]),
+                         "prompt": r["prompt"], "model": r["model"], "seconds": r["seconds"],
+                         "output chars": len(r["output"]), "valid_json": valid,
+                         "inputs": r["inputs"], "output": r["output"]})
+    return pd.DataFrame(rows)

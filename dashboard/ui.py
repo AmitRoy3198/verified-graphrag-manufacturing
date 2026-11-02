@@ -104,3 +104,25 @@ def bar(x, y, title: str, *, horizontal=False, highlight=None, highlight_label=N
 def sparql(name: str) -> None:
     with st.expander("SPARQL behind this chart"):
         st.code(data.QUERIES[name], language="sparql")
+
+
+SERIES = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100"]   # categorical slots 1-4, fixed order
+
+
+def lines(df, x: str, y: str, series: str, title: str, *, fmt=".3f", height=320) -> go.Figure:
+    """One line per series on ONE y-axis, with markers, a legend and a direct label
+    at each line's last point (so identity never rests on colour alone)."""
+    fig = go.Figure()
+    for i, (name, d) in enumerate(df.groupby(series, sort=False)):
+        color = SERIES[i % len(SERIES)]
+        fig.add_trace(go.Scatter(x=d[x], y=d[y], name=name, mode="lines+markers",
+                                 line=dict(width=2, color=color), marker=dict(size=8, color=color),
+                                 hovertemplate=f"{name}<br>{x} %{{x}}: %{{y:{fmt}}}<extra></extra>"))
+        last = d.iloc[-1]
+        fig.add_annotation(x=last[x], y=last[y], text=f"{last[y]:{fmt}}", showarrow=False, xanchor="left",
+                           xshift=8, font=dict(color=color, size=12))
+    fig.update_layout(title=dict(text=title, font_size=15), height=height, margin=dict(l=8, r=40, t=44, b=8),
+                      font_family=FONT, hovermode="x unified",
+                      legend=dict(orientation="h", yanchor="bottom", y=-0.35, x=0))
+    fig.update_xaxes(dtick=1, showgrid=False)
+    return fig

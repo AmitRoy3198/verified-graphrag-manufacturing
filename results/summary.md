@@ -95,4 +95,4 @@ Attempts: 49, accepted: 18, deleted entities: ['buffer_NULL']
 | phase3 | 57 | 0.76 |
 | phase3_v2 | 49 | 0.48 |
 | phase4 | 202 | 3.19 |
-| total | 354 | 7.46 |
+| total | 354 | 7.45 |

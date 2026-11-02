@@ -92,9 +92,10 @@ def llm_usage():
         u = usage.setdefault(r["phase"], {"calls": 0, "hours": 0.0})
         u["calls"] += 1
         u["hours"] += r["seconds"] / 3600
+    # total from the raw seconds: summing already-rounded phase hours gave 7.46 instead of 7.45
+    total = {"calls": sum(u["calls"] for u in usage.values()), "hours": round(sum(u["hours"] for u in usage.values()), 2)}
     for u in usage.values():
         u["hours"] = round(u["hours"], 2)
-    total = {"calls": sum(u["calls"] for u in usage.values()), "hours": round(sum(u["hours"] for u in usage.values()), 2)}
     (RESULTS / "llm_usage.json").write_text(json.dumps({"per_phase": usage, "total": total}, indent=2), encoding="utf-8")
     rows = [[p, u["calls"], u["hours"]] for p, u in usage.items()] + [["total", total["calls"], total["hours"]]]
     return table(["Phase (log label)", "LLM calls", "LLM hours"], rows)

@@ -8,3 +8,5 @@ rdflib
 pyshacl
 pytest
 langchain-huggingface
+streamlit
+plotly

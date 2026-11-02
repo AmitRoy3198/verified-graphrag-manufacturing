@@ -46,3 +46,19 @@ def test_overview_numbers_come_from_results():
     o = overview_numbers()
     assert (o["documents"], o["violations_before"], o["violations_after"]) == (21, 54, 21)
     assert (o["f1_before"], o["f1_after"]) == (0.742, 0.767)
+
+
+def test_d2_process_data_matches_results():
+    from dashboard.data import llm_log, per_predicate_f1, qa_answers, repair_attempts_v2, repair_rounds
+    rounds = repair_rounds()
+    assert list(rounds.groupby("design")["violations"].last().sort_values()) == [21, 71]
+    att = repair_attempts_v2()
+    assert len(att) == 49 and (att["status"] == "✓ kept").sum() == 18
+    assert per_predicate_f1().set_index("property").loc["feeds", "after v2 repair"] == 0.952
+    qa = qa_answers()
+    assert len(qa) == 100  # 25 questions x 4 conditions
+    lenient = qa.groupby("condition")["lenient"].mean().round(2).to_dict()
+    assert lenient == {"Vector RAG": 0.52, "GraphRAG · unrepaired": 0.36,
+                       "GraphRAG · repaired": 0.4, "GraphRAG · perfect graph": 0.64}
+    log = llm_log()
+    assert len(log) == 354 and round(log["seconds"].max()) == 8439
