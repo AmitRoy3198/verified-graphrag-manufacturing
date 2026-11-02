@@ -77,7 +77,7 @@ python -m venv .venv
 Pipeline. LLM steps take minutes to hours on a CPU; total LLM time in this project was 7.45 h:
 
 ```bash
-.venv\Scripts\python -m pytest tests -v          # 120 tests, no LLM needed (results/pytest_final.txt)
+.venv\Scripts\python -m pytest tests -v          # 124 tests, no LLM needed (results/pytest_final.txt)
 .venv\Scripts\python -m src.hello                # Phase 0: LangChain -> Ollama smoke test
 .venv\Scripts\python -m src.phase1_schema        # Phase 1: ontology/shape statistics
 .venv\Scripts\python -m src.extract              # Phase 2: extraction + P/R/F1
@@ -93,13 +93,13 @@ A read-only Streamlit dashboard (`dashboard/`) shows the pipeline to an operator
 | Page | What it shows |
 |---|---|
 | Overview | headline numbers, the five pipeline stages, entities that still break a rule |
+| Live pipeline (first in the menu) | give it a new document and follow five steps, each labelled with who does it: Reader agent (AI) → Organiser (code) → Rule checker (SHACL) → Repair agent (AI) + gate → you. Facts are sorted into new / already known / conflict; each agent's exact input and answer can be opened; conflicts the AI leaves open become a choice for the operator, saved to the run folder |
 | Production line | the material flow stored in the graph, coloured by data health; inspect any entity, its sources and violations |
 | Factory analytics | machine table (availability, conflicts), bottleneck, downtime, failures per shift, maintenance, and the same analytics on all three graphs |
 | Data quality | SHACL violations by rule and entity, and the wrong facts the rules cannot see |
 | Repair history | violations and F1 per repair round (v1 vs v2), every repair attempt with the gate's decision, v1's collateral damage |
 | Ask the factory | the 25-question evaluation: accuracy by type, every answer as a grid, one question in detail, paired sign test |
 | LLM monitor | every call to the local model: calls and time per stage, invalid JSON, the exact inputs and raw output |
-| Live pipeline | give it a new document (sample, pasted or uploaded) and watch it being extracted, checked and repaired by the local model |
 | Ask the factory (top) | ask your own question live, answered with GraphRAG and/or vector RAG, with the evidence the model cited |
 
 A switch in the sidebar picks the graph: extracted (before repair), repaired, ground truth, or any finished live run.
@@ -262,6 +262,6 @@ src/        code: config, llm (only LLM entry point), validate, extract, to_rdf,
 prompts/    every prompt as a .txt file
 schema/     ontology.ttl, shapes.ttl
 data/       docs/, ground_truth.ttl, questions.json
-tests/      120 pytest tests (no LLM needed)
+tests/      124 pytest tests (no LLM needed)
 results/    every number, every graph version, every LLM response
 ```
