@@ -1,0 +1,12 @@
+[theme]
+primaryColor = "#2a78d6"
+font = "sans-serif"
+
+[server]
+headless = true
+# listen only on this computer, not on the network
+address = "localhost"
+
+[browser]
+# keep everything local: no usage statistics sent to Streamlit
+gatherUsageStats = false

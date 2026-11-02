@@ -77,13 +77,32 @@ python -m venv .venv
 Pipeline. LLM steps take minutes to hours on a CPU; total LLM time in this project was 7.46 h:
 
 ```bash
-.venv\Scripts\python -m pytest tests -v          # 106 tests, no LLM needed (results/pytest_final.txt)
+.venv\Scripts\python -m pytest tests -v          # 111 tests, no LLM needed (results/pytest_final.txt)
 .venv\Scripts\python -m src.hello                # Phase 0: LangChain -> Ollama smoke test
 .venv\Scripts\python -m src.phase1_schema        # Phase 1: ontology/shape statistics
 .venv\Scripts\python -m src.extract              # Phase 2: extraction + P/R/F1
 .venv\Scripts\python -m src.repair_v2            # Phase 3: targeted + gated repair (src.repair = v1 baseline)
 .venv\Scripts\python -m src.phase4_eval          # Phase 4: 4 QA conditions x 25 questions
 .venv\Scripts\python -m src.report               # Phase 5: rebuild results/summary.md from results/
+```
+
+## Dashboard
+
+A read-only Streamlit dashboard (`dashboard/`) shows the pipeline to an operator:
+
+| Page | What it shows |
+|---|---|
+| Overview | headline numbers, the five pipeline stages, entities that still break a rule |
+| Production line | the material flow stored in the graph, coloured by data health; inspect any entity, its sources and violations |
+| Factory analytics | machine table (availability, conflicts), bottleneck, downtime, failures per shift, maintenance, and the same analytics on all three graphs |
+| Data quality | SHACL violations by rule and entity, and the wrong facts the rules cannot see |
+
+A switch in the sidebar picks the graph: extracted (before repair), repaired, or ground truth.
+No LLM computes a number on the dashboard: everything comes from SPARQL over the graph or from `results/`.
+It listens only on `localhost` and sends no usage statistics.
+
+```bash
+.venv\Scripts\python -m streamlit run dashboard\Home.py --server.port 8503
 ```
 
 ## Results
@@ -226,6 +245,6 @@ src/        code: config, llm (only LLM entry point), validate, extract, to_rdf,
 prompts/    every prompt as a .txt file
 schema/     ontology.ttl, shapes.ttl
 data/       docs/, ground_truth.ttl, questions.json
-tests/      106 pytest tests (no LLM needed)
+tests/      111 pytest tests (no LLM needed)
 results/    every number, every graph version, every LLM response
 ```
